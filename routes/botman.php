@@ -11,6 +11,9 @@
 	use BotMan\Drivers\Facebook\Interfaces\Airline;
 	use Illuminate\Support\Facades\Log;
 
+	use Illuminate\Support\Facades\Cache;
+
+
 	/** @var \BotMan\BotMan\BotMan $botman */
 	$botman = resolve('botman');
 	info('incoming', request()->all()); // this line was added
@@ -23,4 +26,9 @@
 		$bot->reply("You are user#".$bot->getUser()->getId()."");
 	});
 
+	$botman->hears("cache", function (BotMan $bot) {
+		Cache::put("Test-".$bot->getUser()->getId(), "ssa", 60);
+		$bot->typesAndWaits(1);
+		$bot->reply("Put it in the cache: " . Cache::get("Test-".$bot->getUser()->getId()));
+	});
 //	$botman->hears("Let's get started");
