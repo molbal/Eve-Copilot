@@ -11,12 +11,21 @@ class Characters extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+    public function up() {
+        Schema::create('characters', function (Blueprint $table) {
+            $table->bigInteger('ID')->primary()->comment("EVE character ID");
+            $table->string("NAME", 256)->comment("EVE character name");
+            $table->string("REFRESH_TOKEN",1000)->comment("Eve OAuth2 Refresh Token");
+            $table->timestamps();
+        });
+
+        Schema::create('link', function (Blueprint $table) {
+            $table->string("CHAT_ID", 64)->comment("Chat ID");
+            $table->bigInteger('CHAR_ID')->comment("EVE character ID");
+            $table->string("LINK_TOKEN", 32)->comment(" 	This token must be provided in the chat to allow access to this character");
+            $table->timestamps();
+            $table->primary(['CHAT_ID', 'ID']);
+            $table->foreign("CHAR_D")->references('ID')->on('characters');
         });
     }
 
@@ -25,8 +34,8 @@ class Characters extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        //
+    public function down() {
+        Schema::dropIfExists("characters");
+        Schema::dropIfExists("link");
     }
 }

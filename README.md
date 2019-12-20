@@ -91,7 +91,7 @@ This table links together chat user IDs to EVE User IDs, and has their password.
         <td>Primary</td>
     </tr>
     <tr>
-        <td>ID</td>
+        <td>CHAR_ID</td>
         <td>Eve Character ID</td>
         <td>BIGINT (unsigned)</td>
         <td>Foreign key on CHARACTER.ID</td>
