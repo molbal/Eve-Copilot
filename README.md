@@ -37,6 +37,12 @@
 This table contains basic character information and refresh token.
 <table>
     <tr>
+        <td><b>Column name</b></td>
+        <td><b>Purpose</b></td>
+        <td><b>Type</b></td>
+        <td><b>Index</b></td>
+    </tr>
+    <tr>
         <td>ID</td>
         <td>Eve Character ID</td>
         <td>BIGINT (unsigned)</td>
@@ -52,7 +58,19 @@ This table contains basic character information and refresh token.
         <td>REFRESH_TOKEN</td>
         <td>Eve OAuth2 Refresh Token Name</td>
         <td>VARCHAR (1000)</td>
-        <td></td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>Laravel created at column</td>
+        <td>Timestamp</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>updated_at</td>
+        <td>Laravel updated at column</td>
+        <td>Timestamp</td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -60,6 +78,12 @@ This table contains basic character information and refresh token.
 This table links together chat user IDs to EVE User IDs, and has their password. 
 
 <table>
+    <tr>
+        <td><b>Column name</b></td>
+        <td><b>Purpose</b></td>
+        <td><b>Type</b></td>
+        <td><b>Index</b></td>
+    </tr>
     <tr>
         <td>CHAT_ID</td>
         <td>Chat ID</td>
@@ -77,6 +101,18 @@ This table links together chat user IDs to EVE User IDs, and has their password.
         <td>This token must be provided in the chat to allow access to this character</td>
         <td>VARCHAR (32)</td>
         <td></td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>Laravel created at column</td>
+        <td>Timestamp</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>updated_at</td>
+        <td>Laravel updated at column</td>
+        <td>Timestamp</td>
+        <td>-</td>
     </tr>
 </table>
 
