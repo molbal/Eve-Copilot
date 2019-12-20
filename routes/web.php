@@ -11,9 +11,13 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::get('/botman/tinker', 'BotManController@tinker');
+Route::get("/eve/auth/start", 'Auth\AuthController@redirectToProvider');
+Route::get("/eve/auth/callback", 'Auth\AuthController@handleProviderCallback');
