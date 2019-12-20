@@ -8,10 +8,11 @@ use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
+
     /**
      * Redirect the user to the Eve Online authentication page.
      *
-     * @return Response
+     * @return mixed
      */
     public function redirectToProvider()
     {
@@ -23,12 +24,14 @@ class AuthController extends Controller
     /**
      * Obtain the user information from Eve Online.
      *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function handleProviderCallback()
     {
         $user = Socialite::driver('eveonline')->user();
 
-        dd($user);
+        // TODO: Save to table, cache access key, show view
+        return view('welcome');
+//        dd($user);
     }
 }

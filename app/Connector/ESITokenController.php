@@ -4,6 +4,7 @@
     namespace App\Connector;
 
 
+    use Exception;
     use Illuminate\Support\Facades\Cache;
     use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\Log;
@@ -26,7 +27,7 @@
         /**
          * Gets a usable, not expired access token
          * @return string Access token
-         * @throws \Exception
+         * @throws Exception
          */
         public function getAccessToken():string {
             $token = Cache::get("AccessToken-".$this->charId);
@@ -37,7 +38,7 @@
 
         /**
          * Gets a new, refreshed access token and places it in the cache + returns it.
-         * @throws \Exception
+         * @throws Exception
          */
         public function getAndCacheNewAccessToken(): string {
             $ch = curl_init();
@@ -80,7 +81,7 @@
         /**
          * Gets the stored refresh token from the database
          * @return string Refresh token
-         * @throws \Exception Throws exception if the character ID has no refresh token stored
+         * @throws Exception Throws exception if the character ID has no refresh token stored
          */
         public function getRefreshToken() {
             /** @var string $refreshToken */
@@ -90,7 +91,7 @@
                 ->first()->REFRESH_TOKEN;
 
             if (!$refreshToken) {
-                throw new \Exception("The user ID " . $this->charId. " has no refresh token stored");
+                throw new Exception("The user ID " . $this->charId. " has no refresh token stored");
             }
 
             return $refreshToken;
