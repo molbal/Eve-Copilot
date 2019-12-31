@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+
+Route::view("/landing", "landing")->name("landing");
 Route::get('/botman/tinker', 'BotManController@tinker');
 Route::get("/eve/auth/start", 'Auth\AuthController@redirectToProvider');
 Route::get("/eve/auth/callback", 'Auth\AuthController@handleProviderCallback');
