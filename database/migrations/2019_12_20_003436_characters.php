@@ -19,14 +19,7 @@ class Characters extends Migration
             $table->timestamps();
         });
 
-        Schema::create('link', function (Blueprint $table) {
-            $table->string("CHAT_ID", 64)->comment("Chat ID");
-            $table->bigInteger('CHAR_ID')->comment("EVE character ID");
-            $table->string("LINK_TOKEN", 32)->comment(" 	This token must be provided in the chat to allow access to this character");
-            $table->timestamps();
-            $table->primary(['CHAT_ID', 'ID']);
-            $table->foreign("CHAR_D")->references('ID')->on('characters');
-        });
+
     }
 
     /**
@@ -36,6 +29,5 @@ class Characters extends Migration
      */
     public function down() {
         Schema::dropIfExists("characters");
-        Schema::dropIfExists("link");
     }
 }
