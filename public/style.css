@@ -368,7 +368,7 @@ input:-webkit-autofill:focus {
 
 .client-area,
 .header-area {
-    background: #000000 url('images/poster.jpg') no-repeat scroll center center / cover;
+    /*background: #000000 url('images/poster.jpg') no-repeat scroll center center / cover;*/
 }
 
 .anlge-bg {

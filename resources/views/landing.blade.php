@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/custom.css">
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
@@ -76,7 +77,12 @@
 
 <!--Header-area-->
 <header class="header-area overlay full-height relative v-center" id="home-page">
-{{--    <div class="absolute anlge-bg"></div>--}}
+    <div class="absolute anlge-bg"></div>
+    <video id="video" class="video-cover" poster="videos/amarr.cdn.jpg" loop="true" preload="auto" controls="false" autoplay="true">
+        <source src="videos/amarr.cdn.mp4" type="video/mp4">
+        <source src="videos/amarr.cdn.ogv" type="video/ogg">
+        <source src="videos/amarr.cdn.webm" type="video/webm">
+    </video>
     <div class="container">s
         <div class="row v-center">
 
