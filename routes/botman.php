@@ -34,25 +34,31 @@
         $bot->reply("Put it in the cache: " . Cache::get("Test-" . $bot->getUser()->getId()));
     });
 
-    $botman->hears("Ship status|ship", function (BotMan $bot) {
+    $botman->hears("Status", function (BotMan $bot) {
         $bot->types();
         $location = "There was an error. ";
         try {
 
-            $location = new LocationService();
-            $currentShip = $location->getCurrentShip(ChatCharLink::getActive($bot->getUser()->getId()));
+            $locationService = new LocationService();
+            $currentShip = $locationService->getCurrentShip(ChatCharLink::getActive($bot->getUser()->getId()));
+            $status = $locationService->getCurrentLocation(ChatCharLink::getActive($bot->getUser()->getId()));
+
+            $dockedName = $status->station_name ?? $status->structure_name ?? null;
+            $statusText = "Your are ".((isset($status->station_id) || isset($status->structure_id)) ? "docked" : "in space") .
+                " in ".$status->solar_system_name . " ". ($dockedName ? "($dockedName)" : "").
+                " with a ".$currentShip->ship_name;
 
 
             $attachment = new Image(ImageAPI::getRenderLink($currentShip->ship_type_id));
 
             // Build message object
-            $message = OutgoingMessage::create($currentShip->ship_name)
+            $message = OutgoingMessage::create($statusText)
                 ->withAttachment($attachment);
 
             $bot->reply($message);
         } catch (Exception $e) {
-            $location .= $e->getMessage();
-            $bot->reply("Sorry, an error happened: " . $e->getMessage());
+            $location .= $e->getMessage() . " ". $e->getFile()." @".$e->getLine();
+            $bot->reply($location);
         }
 
     });

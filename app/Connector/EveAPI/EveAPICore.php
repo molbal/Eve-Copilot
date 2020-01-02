@@ -5,6 +5,7 @@
 
 
     use App\Connector\ESITokenController;
+    use Illuminate\Support\Facades\DB;
 
     abstract class EveAPICore {
 
@@ -26,32 +27,57 @@
          * @return false|resource
          * @throws \Exception
          */
-        protected function createGet(int $charId) {
+        protected function createGet(int $charId = null) {
             $curl = curl_init();
 
-            $tokenController = new ESITokenController($charId);
-            $accessToken = $tokenController->getAccessToken();
+            if ($charId) {
+                $tokenController = new ESITokenController($charId);
+                $accessToken = $tokenController->getAccessToken();
+            }
             curl_setopt_array($curl, [
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_URL => 'http://testcURL.com/?item1=value&item2=value2',
                 CURLOPT_USERAGENT =>  $this->userAgent,
                 CURLOPT_HTTPHEADER => [
-                    'authorization: Bearer ' . $accessToken,
+                    isset($accessToken) ? 'authorization: Bearer ' . $accessToken : 'X-a: b',
                     'accept: application/json'
                 ],
-                /**
-                 * Specify debug option.
-                 */
-                CURLOPT_VERBOSE => true,
 
-                /**
-                 * Specify log file.
-                 * Make sure that the folder is writable.
-                 */
-                CURLOPT_STDERR => fopen('./curl.log', 'w+'),
+                CURLOPT_VERBOSE => true,
+                CURLOPT_STDERR => fopen('./curl.log', 'a+'),
+
             ]);
 
             return $curl;
         }
 
+
+        /**
+         * @param int    $stationId
+         * @param string $stationName
+         */
+        protected function forevercachePut(int $stationId, string $stationName): void {
+            DB::table("forevercache")->insert([
+                "ID" => $stationId,
+                "Name" => $stationName
+            ]);
+        }
+
+        /**
+         * @param int $itemId
+         * @return bool
+         */
+        protected function forevercacheHas(int $itemId): bool {
+            return DB::table("forevercache")->where("ID", "=", $itemId)->exists();
+        }
+
+        /**
+         * @param int $itemId
+         * @return mixed
+         */
+        protected function forevercacheGet(int $itemId): string {
+            $results = DB::table("forevercache")->select("Name")->where("ID", "=", $itemId)->get();
+//            dd($results);
+            return $results->get(0)->Name;
+        }
     }

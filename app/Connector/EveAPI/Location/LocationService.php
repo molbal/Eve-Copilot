@@ -3,6 +3,7 @@
 
     namespace App\Connector\EveAPI\Location;
     use App\Connector\EveAPI\EveAPICore;
+    use App\Connector\EveAPI\Universe\ResourceLookupService;
 
     class LocationService extends EveAPICore {
 
@@ -35,8 +36,15 @@
             $ret = curl_exec($c);
             curl_close($c);
 
-            return json_decode($ret);
+            $val = json_decode($ret);
+            $res = new ResourceLookupService();
+            $val->solar_system_name = $res->getSystemName($val->solar_system_id);
+            if (isset($val->station_id))
+                $val->station_name = $res->getStationName($val->station_id);
+            if (isset($val->structure_id))
+                $val->structure_name = $res->getStructureName($val->structure_id);
 
+            return $val;
         }
 
     }

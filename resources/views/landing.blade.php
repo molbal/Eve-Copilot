@@ -76,11 +76,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#home-page">Home</a></li>
                 <li><a href="#activate-copilot">Getting started</a></li>
-                <li><a href="https://m.me/eveonlinecopilot" target="_blank">< Messenger</a></li>
-                <li><a href="http://t.me/eveonlinecopilot_bot" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                                                 width="16" height="16"
-                                                 viewBox="0 0 172 172"
-                                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M144.21797,22.84375c-1.86365,0.08222 -3.60003,0.62506 -5.12864,1.24297c-1.43191,0.57599 -6.90293,2.9225 -15.52032,6.61797c-8.62488,3.69868 -20.0452,8.60178 -32.2276,13.84062c-24.36481,10.47769 -51.75727,22.27192 -65.78776,28.30833c-0.52759,0.2269 -2.3685,0.815 -4.3224,2.34036c-1.9539,1.52536 -4.03125,4.68615 -4.03125,8.20808c0,2.83995 1.35345,5.66135 3.05703,7.34583c1.70358,1.68449 3.50619,2.5166 5.05026,3.14661c5.60242,2.28595 22.97797,9.39641 26.25911,10.7388c1.15472,3.53737 7.44387,22.77582 8.90234,27.49089c0.96144,3.1115 1.87665,5.06022 3.06823,6.60677c0.59579,0.77327 1.28835,1.45096 2.12761,1.98203c0.33546,0.21225 0.70327,0.37575 1.075,0.5263l0.02239,0.0112c0.08566,0.0344 0.1595,0.09279 0.24636,0.12317c0.16387,0.05733 0.27349,0.06421 0.49271,0.11198c0.87332,0.28204 1.75504,0.45911 2.54192,0.45911c3.35493,0.00001 5.40859,-1.84765 5.40859,-1.84765l0.12318,-0.08958l17.25599,-14.92683l20.92891,19.79792c0.29467,0.41669 3.04294,4.18802 9.10391,4.18802c3.5988,0 6.45362,-1.80585 8.28646,-3.72891c1.83284,-1.92306 2.97473,-3.9434 3.46016,-6.48359v-0.0112c0.45402,-2.40036 19.74192,-101.41953 19.74192,-101.41953l-0.03359,0.13437c0.56462,-2.57721 0.71258,-4.97734 0.08958,-7.34583c-0.62303,-2.36849 -2.26463,-4.63621 -4.3,-5.85651c-2.03517,-1.22003 -4.02645,-1.59394 -5.89011,-1.51172zM143.14297,34.82552c-0.02752,0.16733 0.02061,0.08319 -0.02239,0.27995l-0.0112,0.06719l-0.0112,0.06719c0,0 -19.04899,97.75268 -19.75312,101.47552c0.05152,-0.28115 -0.18403,0.27786 -0.42552,0.61589c-0.34143,-0.23532 -1.04141,-0.5375 -1.04141,-0.5375l-0.11198,-0.12317l-28.58828,-27.04297l-20.21224,17.46875l6.01329,-24.07552c0,0 37.58871,-38.91008 39.85338,-41.17474c1.82321,-1.81173 2.20599,-2.44329 2.20599,-3.06823c0,-0.83707 -0.43627,-1.44453 -1.41094,-1.44453c-0.8772,0 -2.05683,0.85283 -2.6875,1.25417c-8.21645,5.23766 -44.28806,26.26091 -60.45755,35.66536c-2.5696,-1.0516 -20.42155,-8.35909 -26.47187,-10.82839c0.04581,-0.02007 0.03073,-0.01295 0.07839,-0.03359c14.03417,-6.03799 41.41521,-17.83213 65.77656,-28.30833c12.18068,-5.2381 23.60967,-10.14492 32.22761,-13.84063c8.48524,-3.6388 14.38108,-6.14309 15.05,-6.41641z"></path></g></g></svg> Telegram</a></li>
+                <li><a href="https://m.me/eveonlinecopilot" target="_blank"><img src="/images/icons/fb-messenger.png" alt="."> Messenger</a></li>
+                <li><a href="http://t.me/eveonlinecopilot_bot" target="_blank"><img src="images/icons/telegram.png" alt=""> Telegram</a></li>
             </ul>
         </nav>
     </div>
@@ -110,8 +107,8 @@
                     <br>
                     On <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
                 <div class="btn-group">
-                    <a href="#" class="btn button">Activate co-pilot</a>
-                    <a href="#" class="btn button">See demo video</a>
+                    <a href="#" class="btn button">Get started</a>
+                    <a href="#" class="btn button">See functions</a>
                 </div>
             </div>
         </div>
@@ -125,7 +122,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                 <div class="page-title">
-                    <h2>How to activate copilot?</h2>
+                    <h2>Getting started</h2>
                     <p>You can turn it on in 3 easy steps. Here is how:</p>
                 </div>
             </div>
@@ -136,8 +133,8 @@
                     <div class="box-icon">
                         <img src="images/eve/rifter.png" alt="">
                     </div>
-                    <h4>1: Log in with EVE Online</h4>
-                    <p>Log in with your Eve Online account here, to let the co-pilot know you.</p>
+                    <h4>1<sup>st</sup> step</h4>
+                    <p>Log in with your Eve Online account here</p>
                     <a href="{{route("auth-start")}}" target="_blank"><img src="/images/sso_small.png" alt="SSO login"></a>
                 </div>
             </div>
@@ -146,7 +143,7 @@
                     <div class="box-icon">
                         <img src="images/eve/rupture.png" alt="">
                     </div>
-                    <h4>2: Copy your control token</h4>
+                    <h4>2<sup>nd</sup> step</h4>
                     <p>After you signed in, you will receive a token. The co-pilot will ask for it, so copy it to your clipboard.</p>
                 </div>
             </div>
@@ -155,8 +152,8 @@
                     <div class="box-icon">
                         <img src="images/eve/tempest.png" alt="">
                     </div>
-                    <h4>3: Tell the co-pilot your control token</h4>
-                    <p>Talk to your co-pilot on <a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook Messenger</a> or <a class="btn-link" href="http://t.me/eveonlinecopilot_bot" target="_blank">Telegram</a> and simply write him <code>Link character</code></p>
+                    <h4>3<sup>rd</sup> step</h4>
+                    <p>Open a conversation (<a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook Messenger</a> or <a class="btn-link" href="http://t.me/eveonlinecopilot_bot" target="_blank">Telegram</a>) and say <code>Link character</code></p>
                 </div>
             </div>
         </div>
@@ -366,217 +363,6 @@
 
 
 
-
-<section class="price-area overlay section-padding" id="price-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
-                <div class="page-title">
-                    <h2>Afortable Price</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptates, temporibus at, facere harum fugiat!</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-4">
-                <div class="price-table">
-                    <h3 class="text-uppercase price-title">Basic</h3>
-                    <hr>
-                    <ul class="list-unstyled">
-                        <li><strong class="amount">$ <span class="big">20</span></strong>/Month</li>
-                        <li>100 MB Disk Space</li>
-                        <li>2 Subdomains</li>
-                        <li>5 Email Accounts</li>
-                        <li>Webmail Support</li>
-                        <li>Customer Support 24/7</li>
-                    </ul>
-                    <hr>
-                    <a href="#" class="button">Purchase</a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="price-table active">
-                    <span class="price-info"><span class="ti-crown"></span></span>
-                    <h3 class="text-uppercase price-title">STABDARD</h3>
-                    <hr>
-                    <ul class="list-unstyled">
-                        <li><strong class="amount">$ <span class="big">39</span></strong>/Month</li>
-                        <li>100 MB Disk Space</li>
-                        <li>2 Subdomains</li>
-                        <li>5 Email Accounts</li>
-                        <li>Webmail Support</li>
-                        <li>Customer Support 24/7</li>
-                    </ul>
-                    <hr>
-                    <a href="#" class="button">Purchase</a>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="price-table">
-                    <h3 class="text-uppercase price-title">UNLIMITED</h3>
-                    <hr>
-                    <ul class="list-unstyled">
-                        <li><strong class="amount">$ <span class="big">59</span></strong>/Month</li>
-                        <li>100 MB Disk Space</li>
-                        <li>2 Subdomains</li>
-                        <li>5 Email Accounts</li>
-                        <li>Webmail Support</li>
-                        <li>Customer Support 24/7</li>
-                    </ul>
-                    <hr>
-                    <a href="#" class="button">Purchase</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<section class="section-padding gray-bg" id="team-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
-                <div class="page-title">
-                    <h2>Special team</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptates, temporibus at, facere harum fugiat!</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="single-team">
-                    <div class="team-photo">
-                        <img src="images/team-section-1.png" alt="">
-                    </div>
-                    <h4>JEMY SEDONCE</h4>
-                    <h6>Co. Founder</h6>
-                    <ul class="social-menu">
-                        <li><a href="#"><i class="ti-facebook"></i></a></li>
-                        <li><a href="#"><i class="ti-twitter"></i></a></li>
-                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                        <li><a href="#"><i class="ti-pinterest"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="single-team">
-                    <div class="team-photo">
-                        <img src="images/team-section-2.png" alt="">
-                    </div>
-                    <h4>DEBORAH BROWN</h4>
-                    <h6>UX Designer</h6>
-                    <ul class="social-menu">
-                        <li><a href="#"><i class="ti-facebook"></i></a></li>
-                        <li><a href="#"><i class="ti-twitter"></i></a></li>
-                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                        <li><a href="#"><i class="ti-pinterest"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="single-team">
-                    <div class="team-photo">
-                        <img src="images/team-section-3.png" alt="">
-                    </div>
-                    <h4>HARRY BANKS</h4>
-                    <h6>Founder</h6>
-                    <ul class="social-menu">
-                        <li><a href="#"><i class="ti-facebook"></i></a></li>
-                        <li><a href="#"><i class="ti-twitter"></i></a></li>
-                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                        <li><a href="#"><i class="ti-pinterest"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="single-team">
-                    <div class="team-photo">
-                        <img src="images/team-section-4.png" alt="">
-                    </div>
-                    <h4>VICTORIA CLARK</h4>
-                    <h6>Creative Director</h6>
-                    <ul class="social-menu">
-                        <li><a href="#"><i class="ti-facebook"></i></a></li>
-                        <li><a href="#"><i class="ti-twitter"></i></a></li>
-                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                        <li><a href="#"><i class="ti-pinterest"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-<section class="testimonial-area section-padding gray-bg overlay">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
-                <div class="page-title">
-                    <h2>Client says</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptates, temporibus at, facere harum fugiat!</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <div class="testimonial-photo">
-                            <img src="images/avatar-small-1.png" alt="">
-                        </div>
-                        <h3>AR Rahman</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel vero dolore officiis, velit id libero illum harum hic magni, quae repellendus adipisci possimus saepe nostrum doloribus repudiandae asperiores commodi voluptate.</p>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-photo">
-                            <img src="images/avatar-small-2.png" alt="">
-                        </div>
-                        <h3>AR Rahman</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel vero dolore officiis, velit id libero illum harum hic magni, quae repellendus adipisci possimus saepe nostrum doloribus repudiandae asperiores commodi voluptate.</p>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-photo">
-                            <img src="images/avatar-small-3.png" alt="">
-                        </div>
-                        <h3>AR Rahman</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel vero dolore officiis, velit id libero illum harum hic magni, quae repellendus adipisci possimus saepe nostrum doloribus repudiandae asperiores commodi voluptate.</p>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-photo">
-                            <img src="images/avatar-small-4.png" alt="">
-                        </div>
-                        <h3>AR Rahman</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel vero dolore officiis, velit id libero illum harum hic magni, quae repellendus adipisci possimus saepe nostrum doloribus repudiandae asperiores commodi voluptate.</p>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-photo">
-                            <img src="images/avatar-small-5.png" alt="">
-                        </div>
-                        <h3>AR Rahman</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel vero dolore officiis, velit id libero illum harum hic magni, quae repellendus adipisci possimus saepe nostrum doloribus repudiandae asperiores commodi voluptate.</p>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testimonial-photo">
-                            <img src="images/avatar-small-6.png" alt="">
-                        </div>
-                        <h3>AR Rahman</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel vero dolore officiis, velit id libero illum harum hic magni, quae repellendus adipisci possimus saepe nostrum doloribus repudiandae asperiores commodi voluptate.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
 <section class="gray-bg section-padding" id="faq-page">
     <div class="container">
         <div class="row">
@@ -631,68 +417,6 @@
 
 
 
-
-
-
-
-<section class="section-padding overlay client-area overlay" id="client-page">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-xs-12">
-                <div class="clients">
-                    <div class="item">
-                        <img src="images/themeforest.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/coadcanyon.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/graphicriver.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/docean.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/audiojungle.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/actividen.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/photodone.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/videgub.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/themeforest.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/coadcanyon.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/graphicriver.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/docean.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/audiojungle.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/actividen.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/photodone.gif" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/videgub.gif" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 
 <section class="section-padding gray-bg" id="blog-page">
