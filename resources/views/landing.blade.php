@@ -76,10 +76,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#home-page">Home</a></li>
                 <li><a href="#activate-copilot">Getting started</a></li>
-                <li><a href="https://m.me/eveonlinecopilot" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                                              width="16" height="16"
-                                              viewBox="0 0 172 172"
-                                              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill="#ffffff"><path d="M86,17.2c-37.9948,0 -68.8,29.52093 -68.8,65.93333c0,19.5003 8.89051,36.96413 22.93333,49.03567v28.36433l27.72604,-13.86302c5.78829,1.51519 11.8512,2.39636 18.14062,2.39636c37.9948,0 68.8,-29.52093 68.8,-65.93333c0,-36.4124 -30.8052,-65.93333 -68.8,-65.93333zM79.47161,65.11589l16.92005,16.94245l30.22317,-16.94245l-34.08646,36.94192l-16.52813,-17.75989l-31.01823,17.35677z"></path></g></g></svg> Messenger</a></li>
+                <li><a href="https://m.me/eveonlinecopilot" target="_blank">< Messenger</a></li>
                 <li><a href="http://t.me/eveonlinecopilot_bot" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                                  width="16" height="16"
                                                  viewBox="0 0 172 172"
