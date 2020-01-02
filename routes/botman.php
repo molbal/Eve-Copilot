@@ -1,5 +1,6 @@
 <?php
 
+    use App\Conversations\ExampleConversation;
     use App\Conversations\LinkCharacterConversation;
     use App\Http\Controllers\BotManController;
 	use BotMan\BotMan\BotMan;
@@ -13,7 +14,10 @@
 	$botman->hears('Hi', function (BotMan $bot) {
 		$bot->reply('Hello! (You said ' . $bot->getMessage()->getText() . ')');
 	});
-	$botman->hears('Link character', LinkCharacterConversation::class . '@startConversation');
+	$botman->hears('Link character', function(BotMan $bot) {
+
+        $bot->startConversation(new LinkCharacterConversation);
+    });
 
 	$botman->hears("whoami", function (BotMan $bot) {
 		$bot->typesAndWaits(1);

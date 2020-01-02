@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V6</title>
+    <title>Your EVE Co-pilot token ({{$name}})</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/token/vendor/bootstrap/css/bootstrap.min.css">
@@ -23,15 +23,25 @@
     <div class="container-login100">
         <div class="wrap-login100 p-t-85 p-b-20">
             <form class="login100-form validate-form">
-                <span class="login100-form-avatar">
-						<img src="{{$avatar}}" alt="AVATAR">
+                <span class="login100-form-avatar mb-3" style="width:360px;height:141px;border-radius: 0">
+						<img src="{{$avatar}}" style="height:128px;width:128px;border-radius: 50%" alt="AVATAR">
+                        <span style="font-size: 72px;position: relative;top: 22px;left: 11px;">+</span>
+						<img src="/images/eve/pod-1024.png" style="height:128px;width:128px;border-radius: 50%" alt="AVATAR">
 					</span>
-					<span class="login100-form-title p-b-70">
-						Hello {{$name}}, <br> This is your token: <br>
+                <span class="login100-form-title p-b-5">
+						{{$name}}
 					</span>
-                    <span>
+                <span class="text-center p-b-4 d-block"> This is your control token: <br>
                         <code>{{$token}}</code>
                     </span>
+                <span class="text-center d-block"><small>You can now return to the chat with this code.</small></span>
+
+                <span class="d-block p-t-250 text-center">
+                    You can return to the <a href="/">homepage</a> after you used the token. <br>
+                    One code can be used only once. <br>
+                    Logging in with EVE Online removes the previous code set for this character.
+                </span>
+
 
             </form>
         </div>

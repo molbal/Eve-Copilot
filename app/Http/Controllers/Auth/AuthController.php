@@ -7,6 +7,7 @@ use App\Helpers\ConversationCache;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\Two\User;
 
@@ -46,7 +47,7 @@ class AuthController extends Controller
         ]);
         $expiresInMinutes = floor($user->expiresIn/60);
         Cache::put("AccessToken-".$user->getId(), $user->token, $expiresInMinutes);
-
+        Session::put("char-name", $user->getName());
         return view('token', ["name" => $user->getName(), "token" => $controlToken, "avatar" => $user->getAvatar()]);
 //        dd($user);
     }
@@ -57,10 +58,10 @@ class AuthController extends Controller
      */
     private function getControlToken():string {
         try {
-            $tok = bin2hex(random_bytes(32));
+            $tok = bin2hex(random_bytes(64));
         } catch (\Exception $e) {
-            $tok = bin2hex(openssl_random_pseudo_bytes(32));
+            $tok = bin2hex(openssl_random_pseudo_bytes(64));
         }
-        return substr($tok, 0, min(strlen($tok),  32));
+        return substr($tok, 0, min(strlen($tok),  64));
     }
 }

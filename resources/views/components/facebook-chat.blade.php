@@ -21,6 +21,6 @@
      attribution=setup_tool
      page_id="104494617723582"
      theme_color="#138fc2"
-     logged_in_greeting="Ready to serve, Captain."
-     logged_out_greeting="Ready to serve, Captain.">
+     logged_in_greeting="Listening for orders, {{session("char-name") ?? "Captain"}}"
+     logged_out_greeting="Listening for orders, {{session("char-name") ?? "Captain"}}">
 </div>
