@@ -44,4 +44,13 @@ class ConversationCache
     public static function put($id, string $key, string $value, int $expiresInMinutes = 60) {
         Cache::put(self::getKey($id, $key), $value, $expiresInMinutes);
     }
+
+    /**
+     * You may remove items from the cache using the forget method.
+     * @param        $id
+     * @param string $key Cache key
+     */
+    public static function forget($id, string $key) {
+        Cache::forget(self::getKey($id, $key));
+    }
 }

@@ -114,6 +114,12 @@ This table links together chat user IDs to EVE User IDs, and has their password.
         <td>Timestamp</td>
         <td>-</td>
     </tr>
+    <tr>
+        <td>ACTIVE</td>
+        <td>Marks the active character/conversation</td>
+        <td>TINYINT</td>
+        <td>Foreign key on CHARACTER.ID</td>
+    </tr>
 </table>
 
 ## Cache scheme

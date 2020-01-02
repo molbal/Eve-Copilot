@@ -4,6 +4,7 @@
     namespace App\Conversations;
 
 
+    use App\Helpers\ConversationCache;
     use BotMan\BotMan\Messages\Conversations\Conversation;
     use BotMan\BotMan\Messages\Incoming\Answer;
     use BotMan\BotMan\Messages\Outgoing\Actions\Button;
