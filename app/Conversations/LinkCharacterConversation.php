@@ -56,26 +56,28 @@
          */
         public function askCode() {
             $this->bot->typesAndWaits(1);
-            $question = Question::create("Please paste the code here (Add nothing else to the message");
+            $question = Question::create("Please paste the code here (Add nothing else to the message)");
             $this->ask($question, function (Answer $answer) {
 
                 /** @var string $code */
-                $code = trim($answer->getValue());
+                $code = trim($answer->getText());
 
                 if (!$code) {
-                    $this->say("Please enter a code");
+                    $this->say("I don't see a code.  🤔 Please enter it and send");
                     $this->bot->typesAndWaits(1);
                     $this->askCode();
                     return;
                 }
+                DB::beginTransaction();
 
                 $character = DB::table("characters")
                     ->where("CONTROL_TOKEN", '=', $code)
                     ->get();
 
                 if ($character->count() != 1) {
+                    DB::rollBack();
                     if (!$code) {
-                        $this->say("This code was not found. Remember, you can only use a code once. ");
+                        $this->say("This code was not found. 🤔 Remember, you can only use a code once.");
                         $this->bot->typesAndWaits(1);
                         $this->askCode();
                         return;
@@ -87,9 +89,17 @@
 
                 DB::table("characters")
                     ->where("ID", "=", $charId)
-                    ->update(["CONTROL_TOKEN" => null]);
+                    ->update(["CONTROL_TOKEN" => ""]);
 
-                dd($character);
+                DB::table("link")
+                    ->insert([
+                        'CHAT_ID' => $this->bot->getUser()->getId(),
+                        'CHAR_ID' => $charId
+                    ]);
+
+                DB::commit();
+
+                $this->say("Perfect. I am now co-pilot for ".$charName." 👨‍✈️");
             });
         }
 
