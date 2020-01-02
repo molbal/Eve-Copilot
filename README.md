@@ -8,7 +8,7 @@ Co-Pilot for EVE Online: On Facebook Messenger and Telegram. Providing location,
 ## Supported commands
 
 - `Link character` Starts a conversation about authenticating and linking a new character to a conversation. 
-
+- `Status`Responds with the currently active ship, location and online status. 
 
 ## Installation
 

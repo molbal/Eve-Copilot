@@ -75,13 +75,15 @@
         <nav class="collapse navbar-collapse" id="primary-menu">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#home-page">Home</a></li>
-                <li><a href="#activate-copilot">Service</a></li>
-                <li><a href="#feature-page">Features</a></li>
-                <li><a href="#price-page">Pricing</a></li>
-                <li><a href="#team-page">Team</a></li>
-                <li><a href="#faq-page">FAQ</a></li>
-                <li><a href="#blog-page">Blog</a></li>
-                <li><a href="#contact-page">Contact</a></li>
+                <li><a href="#activate-copilot">Getting started</a></li>
+                <li><a href="https://m.me/eveonlinecopilot" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                              width="16" height="16"
+                                              viewBox="0 0 172 172"
+                                              style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g id="original-icon" fill="#ffffff"><path d="M86,17.2c-37.9948,0 -68.8,29.52093 -68.8,65.93333c0,19.5003 8.89051,36.96413 22.93333,49.03567v28.36433l27.72604,-13.86302c5.78829,1.51519 11.8512,2.39636 18.14062,2.39636c37.9948,0 68.8,-29.52093 68.8,-65.93333c0,-36.4124 -30.8052,-65.93333 -68.8,-65.93333zM79.47161,65.11589l16.92005,16.94245l30.22317,-16.94245l-34.08646,36.94192l-16.52813,-17.75989l-31.01823,17.35677z"></path></g></g></svg> Messenger</a></li>
+                <li><a href="http://t.me/eveonlinecopilot_bot" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                                 width="16" height="16"
+                                                 viewBox="0 0 172 172"
+                                                 style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M144.21797,22.84375c-1.86365,0.08222 -3.60003,0.62506 -5.12864,1.24297c-1.43191,0.57599 -6.90293,2.9225 -15.52032,6.61797c-8.62488,3.69868 -20.0452,8.60178 -32.2276,13.84062c-24.36481,10.47769 -51.75727,22.27192 -65.78776,28.30833c-0.52759,0.2269 -2.3685,0.815 -4.3224,2.34036c-1.9539,1.52536 -4.03125,4.68615 -4.03125,8.20808c0,2.83995 1.35345,5.66135 3.05703,7.34583c1.70358,1.68449 3.50619,2.5166 5.05026,3.14661c5.60242,2.28595 22.97797,9.39641 26.25911,10.7388c1.15472,3.53737 7.44387,22.77582 8.90234,27.49089c0.96144,3.1115 1.87665,5.06022 3.06823,6.60677c0.59579,0.77327 1.28835,1.45096 2.12761,1.98203c0.33546,0.21225 0.70327,0.37575 1.075,0.5263l0.02239,0.0112c0.08566,0.0344 0.1595,0.09279 0.24636,0.12317c0.16387,0.05733 0.27349,0.06421 0.49271,0.11198c0.87332,0.28204 1.75504,0.45911 2.54192,0.45911c3.35493,0.00001 5.40859,-1.84765 5.40859,-1.84765l0.12318,-0.08958l17.25599,-14.92683l20.92891,19.79792c0.29467,0.41669 3.04294,4.18802 9.10391,4.18802c3.5988,0 6.45362,-1.80585 8.28646,-3.72891c1.83284,-1.92306 2.97473,-3.9434 3.46016,-6.48359v-0.0112c0.45402,-2.40036 19.74192,-101.41953 19.74192,-101.41953l-0.03359,0.13437c0.56462,-2.57721 0.71258,-4.97734 0.08958,-7.34583c-0.62303,-2.36849 -2.26463,-4.63621 -4.3,-5.85651c-2.03517,-1.22003 -4.02645,-1.59394 -5.89011,-1.51172zM143.14297,34.82552c-0.02752,0.16733 0.02061,0.08319 -0.02239,0.27995l-0.0112,0.06719l-0.0112,0.06719c0,0 -19.04899,97.75268 -19.75312,101.47552c0.05152,-0.28115 -0.18403,0.27786 -0.42552,0.61589c-0.34143,-0.23532 -1.04141,-0.5375 -1.04141,-0.5375l-0.11198,-0.12317l-28.58828,-27.04297l-20.21224,17.46875l6.01329,-24.07552c0,0 37.58871,-38.91008 39.85338,-41.17474c1.82321,-1.81173 2.20599,-2.44329 2.20599,-3.06823c0,-0.83707 -0.43627,-1.44453 -1.41094,-1.44453c-0.8772,0 -2.05683,0.85283 -2.6875,1.25417c-8.21645,5.23766 -44.28806,26.26091 -60.45755,35.66536c-2.5696,-1.0516 -20.42155,-8.35909 -26.47187,-10.82839c0.04581,-0.02007 0.03073,-0.01295 0.07839,-0.03359c14.03417,-6.03799 41.41521,-17.83213 65.77656,-28.30833c12.18068,-5.2381 23.60967,-10.14492 32.22761,-13.84063c8.48524,-3.6388 14.38108,-6.14309 15.05,-6.41641z"></path></g></g></svg> Telegram</a></li>
             </ul>
         </nav>
     </div>
@@ -93,39 +95,26 @@
 <!--Header-area-->
 <header class="header-area overlay full-height relative v-center" id="home-page">
 {{--    <div class="absolute anlge-bg"></div>--}}
-    <video id="video" class="video-cover" poster="videos/amarr.cdn.jpg" loop="loop" preload="auto" autoplay="true">
+    <video id="video" class="video-cover" poster="videos/amarr.cdn.jpg" loop="loop" preload="auto" autoplay muted>
         <source src="videos/amarr.cdn.mp4" type="video/mp4">
         <source src="videos/amarr.cdn.ogv" type="video/ogg">
         <source src="videos/amarr.cdn.webm" type="video/webm">
     </video>
     <div class="container">s
         <div class="row v-center">
-
+            <div class="hidden-xs hidden-sm col-md-5 text-right">
+                    <div class="item">
+                        <img src="images/aura.png" alt="">
+                    </div>
+            </div>
             <div class="col-xs-12 col-md-7 header-text">
-                <h2>Co-Pilot for EVE Online</h2>
-                <p>On Facebook <strong>Messenger</strong> and <strong>Telegram</strong>. Providing <strong>location</strong>, <strong>mailing</strong>, <strong>emergency</strong> and <strong>intelligence</strong> services</p>
+                <h2>Chatbot Co-Pilot for EVE Online</h2>
+                <p>Providing <strong>location</strong>, <strong>mailing</strong>, <strong>emergency</strong> and <strong>intelligence</strong> services.
+                    <br>
+                    On <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
                 <div class="btn-group">
                     <a href="#" class="btn button">Activate co-pilot</a>
                     <a href="#" class="btn button">See demo video</a>
-                </div>
-            </div>
-            <div class="hidden-xs hidden-sm col-md-5 text-right">
-                <div class="screen-box screen-slider">
-                    <div class="item">
-                        <img src="images/screen-1.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/screen-2.jpg" alt="">
-                    </div>
-{{--                    <div class="item">
-                        <img src="images/screen-3.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/screen-4.jpg" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="images/screen-5.jpg" alt="">
-                    </div>--}}
                 </div>
             </div>
         </div>
