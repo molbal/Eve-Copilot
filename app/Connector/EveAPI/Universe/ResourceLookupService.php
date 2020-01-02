@@ -50,7 +50,6 @@
             curl_close($ch);
 
             /** @var string $stationName */
-            Log::info(print_r(json_decode($ret), 1));
             $stationName = json_decode($ret)->name;
 
             $this->forevercachePut($systemId, $stationName);

@@ -23,7 +23,7 @@
 
             $q = Question::create("Nice to meet you. Do you have the control token?")
             ->addButtons([
-                Button::create("Yes, I have a control token")->value("yes"),
+                Button::create("Yes, I have a token")->value("yes"),
                 Button::create("No, not yet")->value("no"),
             ]);
 
@@ -112,7 +112,7 @@
                 DB::commit();
 
                 // Respond
-                $this->say("Perfect. I am now co-pilot for ".$charName." 👨‍✈️");
+                $this->say("Perfect. I am now a co-pilot for ".$charName." 👨‍✈️");
 
                 // Set current link as active
                 ChatCharLink::setActive($this->bot->getUser()->getId(), $charId);

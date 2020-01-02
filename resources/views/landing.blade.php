@@ -76,6 +76,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#home-page">Home</a></li>
                 <li><a href="#activate-copilot">Getting started</a></li>
+                <li><a href="#activate-copilot">Features</a></li>
+                <li><a href="#faq-page">FAQ</a></li>
                 <li><a href="https://m.me/eveonlinecopilot" target="_blank"><img src="/images/icons/fb-messenger.png" alt="."> Messenger</a></li>
                 <li><a href="http://t.me/eveonlinecopilot_bot" target="_blank"><img src="images/icons/telegram.png" alt=""> Telegram</a></li>
             </ul>
@@ -107,7 +109,7 @@
                     <br>
                     On <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
                 <div class="btn-group">
-                    <a href="#" class="btn button">Get started</a>
+                    <a href="#activate-copilot" class="btn button">Get started</a>
                     <a href="#" class="btn button">See functions</a>
                 </div>
             </div>
@@ -161,7 +163,7 @@
 </section>
 <!--Feature-area/-->
 
-<section class="angle-bg sky-bg section-padding">
+<section class="angle-bg sky-bg section-padding overlay" >
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -471,79 +473,29 @@
     </div>
 </section>
 
-
-
-
-
 <footer class="footer-area relative sky-bg" id="contact-page">
     <div class="absolute footer-bg"></div>
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
-                    <div class="page-title">
-                        <h2>Contact with us</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptates, temporibus at, facere harum fugiat!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-md-4">
-                    <address class="side-icon-boxes">
-                        <div class="side-icon-box">
-                            <div class="side-icon">
-                                <img src="images/location-arrow.png" alt="">
-                            </div>
-                            <p><strong>Address: </strong> Box 564, Disneyland <br />USA</p>
-                        </div>
-                        <div class="side-icon-box">
-                            <div class="side-icon">
-                                <img src="images/phone-arrow.png" alt="">
-                            </div>
-                            <p><strong>Telephone: </strong>
-                                <a href="callto:8801812726495">+8801812726495</a> <br />
-                                <a href="callto:8801687420471">+8801687420471</a>
-                            </p>
-                        </div>
-                        <div class="side-icon-box">
-                            <div class="side-icon">
-                                <img src="images/mail-arrow.png" alt="">
-                            </div>
-                            <p><strong>E-mail: </strong>
-                                <a href="mailto:youremail@example.com">youremail@example.com</a> <br />
-                                <a href="mailto:youremail@example.com">example@mail.com</a>
-                            </p>
-                        </div>
-                    </address>
-                </div>
-                <div class="col-xs-12 col-md-8">
-                    <form action="process.php" id="contact-form" method="post" class="contact-form">
-                        <div class="form-double">
-                            <input type="text" id="form-name" name="form-name" placeholder="Your name" class="form-control" required="required">
-                            <input type="email" id="form-email" name="form-email" class="form-control" placeholder="E-mail address" required="required">
-                        </div>
-                        <input type="text" id="form-subject" name="form-subject" class="form-control" placeholder="Message topic">
-                        <textarea name="message" id="form-message" name="form-message" rows="5" class="form-control" placeholder="Your message" required="required"></textarea>
-                        <button type="sibmit" class="button">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="footer-middle">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 pull-right">
                     <ul class="social-menu text-right x-left">
-                        <li><a href="#"><i class="ti-facebook"></i></a></li>
-                        <li><a href="#"><i class="ti-twitter"></i></a></li>
-                        <li><a href="#"><i class="ti-google"></i></a></li>
-                        <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                        <li><a href="#"><i class="ti-github"></i></a></li>
+                        <li><a href="https://facebook.com/eveonlinecopilot"><i class="ti-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/veetor_in_eve"><i class="ti-twitter"></i></a></li>
+                        <li><a href="https://github.com/molbal"><i class="ti-github"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id corrupti architecto consequuntur, laborum quaerat sed nemo temporibus unde, beatae vel.</p>
+                    <p>
+                    <p>Any assistance with the server upkeep is greatly appreciated.</p>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_donations" />
+                        <input type="hidden" name="business" value="TZX5GJQA4USZQ" />
+                        <input type="hidden" name="currency_code" value="EUR" />
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                        <img alt="" border="0" src="https://www.paypal.com/en_HU/i/scr/pixel.gif" width="1" height="1" />
+                    </form>
+                    </p>
                 </div>
             </div>
         </div>
@@ -552,8 +504,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <p>&copy;Copyright 2018 All right resurved.  This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com">Colorlib</a></p>
+                  </p>
                     <p class="text-justify" style="font-size: 0.95rem">All images are material are property of CCP Games: EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are reserved worldwide. All other trademarks are the property of their respective owners. EVE Online, the EVE logo, EVE and all associated logos and designs are the intellectual property of CCP hf. All artwork, screenshots, characters, vehicles, storylines, world facts or other recognizable features of the intellectual property relating to these trademarks are likewise the intellectual property of CCP hf. CCP hf. has granted permission to evewho.com to use EVE Online and all associated logos and designs for promotional and zKillboard.com purposes on its website but does not endorse, and is not in any way affiliated with, zKillboard.com. CCP is in no way responsible for the content on or functioning of this website, nor can it be liable for any damage arising from the use of this website.</p>
+                    <p class="text-justify" style="font-size: 0.95rem">Contributions by <a href="https://colorlib.com" target="_blank" rel="nofollow">Colorlib</a> and  <a href="https://icons8.com" target="_blank" rel="nofollow">Icons8</a> - thank you.</p>
                 </div>
             </div>
         </div>
@@ -578,6 +531,16 @@
 <script src="js/main.js"></script>
 
 @component("components.facebook-chat") @endcomponent
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86961430-7"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-86961430-7');
+</script>
+
 </body>
 
 </html>

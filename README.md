@@ -122,6 +122,36 @@ This table links together chat user IDs to EVE User IDs, and has their password.
     </tr>
 </table>
 
+### forevercache
+This table stores entries that should be cached, but would be too much to keep in Redis 
+
+<table>
+    <tr>
+        <td><b>Column name</b></td>
+        <td><b>Purpose</b></td>
+        <td><b>Type</b></td>
+        <td><b>Index</b></td>
+    </tr>
+    <tr>
+        <td>ID</td>
+        <td>EVE ID</td>
+        <td>Unsigned bigint</td>
+        <td>Primary</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>Human readable name</td>
+        <td>Varchar (256)</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>Laravel created at column</td>
+        <td>Timestamp</td>
+        <td>-</td>
+    </tr>
+</table>
+
 ## Cache scheme
 - Eve ESI access tokens (each valid for 20m) are cached.
 - Ongoing chats "session" variables are also cached 
