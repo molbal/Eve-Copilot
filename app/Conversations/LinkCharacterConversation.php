@@ -89,10 +89,18 @@
                 $charId = $character->get(0)->ID;
                 $charName = $character->get(0)->NAME;
 
+                // Clean control token
                 DB::table("characters")
                     ->where("ID", "=", $charId)
                     ->update(["CONTROL_TOKEN" => ""]);
 
+                // Clean DB
+                DB::table("link")
+                    ->where('CHAT_ID', '=', $this->bot->getUser()->getId())
+                    ->where('CHAR_ID', '=', $charId)
+                    ->delete();
+
+                // Insert new link
                 DB::table("link")
                     ->insert([
                         'CHAT_ID' => $this->bot->getUser()->getId(),
@@ -100,10 +108,13 @@
                         "active" => 0
                     ]);
 
+                // Commit
                 DB::commit();
 
+                // Respond
                 $this->say("Perfect. I am now co-pilot for ".$charName." 👨‍✈️");
 
+                // Set current link as active
                 ChatCharLink::setActive($this->bot->getUser()->getId(), $charId);
             });
         }

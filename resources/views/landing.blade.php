@@ -93,7 +93,7 @@
 <!--Header-area-->
 <header class="header-area overlay full-height relative v-center" id="home-page">
 {{--    <div class="absolute anlge-bg"></div>--}}
-    <video id="video" class="video-cover" poster="videos/amarr.cdn.jpg" loop="loop" preload="auto" autoplay="autoplay">
+    <video id="video" class="video-cover" poster="videos/amarr.cdn.jpg" loop="loop" preload="auto" autoplay="true">
         <source src="videos/amarr.cdn.mp4" type="video/mp4">
         <source src="videos/amarr.cdn.ogv" type="video/ogg">
         <source src="videos/amarr.cdn.webm" type="video/webm">
@@ -843,6 +843,7 @@
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <p>&copy;Copyright 2018 All right resurved.  This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com">Colorlib</a></p>
+                    <p class="text-justify" style="font-size: 0.95rem">All images are material are property of CCP Games: EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are reserved worldwide. All other trademarks are the property of their respective owners. EVE Online, the EVE logo, EVE and all associated logos and designs are the intellectual property of CCP hf. All artwork, screenshots, characters, vehicles, storylines, world facts or other recognizable features of the intellectual property relating to these trademarks are likewise the intellectual property of CCP hf. CCP hf. has granted permission to evewho.com to use EVE Online and all associated logos and designs for promotional and zKillboard.com purposes on its website but does not endorse, and is not in any way affiliated with, zKillboard.com. CCP is in no way responsible for the content on or functioning of this website, nor can it be liable for any damage arising from the use of this website.</p>
                 </div>
             </div>
         </div>

@@ -18,7 +18,6 @@ class Link extends Migration
             $table->bigInteger('CHAR_ID')->comment("EVE character ID");
             $table->timestamps();
             $table->primary(['CHAT_ID', 'CHAR_ID']);
-            $table->foreign("CHAR_ID")->references('ID')->on('characters');
         });
     }
 

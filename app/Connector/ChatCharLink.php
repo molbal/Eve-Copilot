@@ -44,7 +44,7 @@
             $ret = DB::table("link")
                 ->where("CHAT_ID", '=', $chatId)
                 ->where("active", '=', 1)
-                ->get('CHAR_ID');
+                ->get(['CHAR_ID']);
 
             $charId = $ret->get(0)->CHAR_ID;
 
