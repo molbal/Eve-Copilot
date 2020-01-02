@@ -30,6 +30,21 @@
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/v1/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/v1/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/v1/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/v1/site.webmanifest">
+    <link rel="mask-icon" href="images/favicons/v1/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="images/favicons/v1/favicon.ico">
+    <meta name="msapplication-TileColor" content="#6998de">
+    <meta name="msapplication-config" content="images/favicons/v1/browserconfig.xml">
+    <meta name="theme-color" content="#7bbceb">
+
+
 </head>
 
 <body data-spy="scroll" data-target="#primary-menu">
@@ -60,7 +75,7 @@
         <nav class="collapse navbar-collapse" id="primary-menu">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#home-page">Home</a></li>
-                <li><a href="#service-page">Service</a></li>
+                <li><a href="#activate-copilot">Service</a></li>
                 <li><a href="#feature-page">Features</a></li>
                 <li><a href="#price-page">Pricing</a></li>
                 <li><a href="#team-page">Team</a></li>
@@ -77,8 +92,8 @@
 
 <!--Header-area-->
 <header class="header-area overlay full-height relative v-center" id="home-page">
-    <div class="absolute anlge-bg"></div>
-    <video id="video" class="video-cover" poster="videos/amarr.cdn.jpg" loop="true" preload="auto" controls="false" autoplay="true">
+{{--    <div class="absolute anlge-bg"></div>--}}
+    <video id="video" class="video-cover" poster="videos/amarr.cdn.jpg" loop="loop" preload="auto" autoplay="autoplay">
         <source src="videos/amarr.cdn.mp4" type="video/mp4">
         <source src="videos/amarr.cdn.ogv" type="video/ogg">
         <source src="videos/amarr.cdn.webm" type="video/webm">
@@ -88,8 +103,11 @@
 
             <div class="col-xs-12 col-md-7 header-text">
                 <h2>Co-Pilot for EVE Online</h2>
-                <p>On Facebook Messenger and Telegram. Providing <strong>location</strong>, <strong>mailing</strong>, <strong>emergency</strong> and <strong>intelligence</strong> services</p>
-                <a href="#" class="button white">Activate co-pilot</a>
+                <p>On Facebook <strong>Messenger</strong> and <strong>Telegram</strong>. Providing <strong>location</strong>, <strong>mailing</strong>, <strong>emergency</strong> and <strong>intelligence</strong> services</p>
+                <div class="btn-group">
+                    <a href="#" class="btn button">Activate co-pilot</a>
+                    <a href="#" class="btn button">See demo video</a>
+                </div>
             </div>
             <div class="hidden-xs hidden-sm col-md-5 text-right">
                 <div class="screen-box screen-slider">
@@ -99,7 +117,7 @@
                     <div class="item">
                         <img src="images/screen-2.jpg" alt="">
                     </div>
-                    <div class="item">
+{{--                    <div class="item">
                         <img src="images/screen-3.jpg" alt="">
                     </div>
                     <div class="item">
@@ -107,7 +125,7 @@
                     </div>
                     <div class="item">
                         <img src="images/screen-5.jpg" alt="">
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>
@@ -115,37 +133,44 @@
 </header>
 <!--Header-area/-->
 
-
-
 <!--Feature-area-->
-<section class="gray-bg section-padding" id="service-page">
+<section class="gray-bg section-padding" id="activate-copilot">
     <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                <div class="page-title">
+                    <h2>How to activate copilot?</h2>
+                    <p>You can turn it on in 3 easy steps. Here is how:</p>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-xs-12 col-sm-4">
                 <div class="box">
                     <div class="box-icon">
-                        <img src="images/service-icon-1.png" alt="">
+                        <img src="images/eve/rifter.png" alt="">
                     </div>
-                    <h4>Your chatbot co-pilot</h4>
-                    <p>Your co-pilot, like in real life, you talk to it and it responds</p>
+                    <h4>1: Log in with EVE Online</h4>
+                    <p>Log in with your Eve Online account here, to let the co-pilot know you.</p>
+                    <a href="{{route("auth-start")}}" target="_blank"><img src="/images/sso_small.png" alt="SSO login"></a>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-4">
                 <div class="box">
                     <div class="box-icon">
-                        <img src="images/service-icon-2.png" alt="">
+                        <img src="images/eve/rupture.png" alt="">
                     </div>
-                    <h4>Messenger and Telegram</h4>
-                    <p>You can talk to your Co-pilot on Messenger or Telegram</p>
+                    <h4>2: Copy your control token</h4>
+                    <p>After you signed in, you will receive a token. The co-pilot will ask for it, so copy it to your clipboard.</p>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-4">
                 <div class="box">
                     <div class="box-icon">
-                        <img src="images/service-icon-3.png" alt="">
+                        <img src="images/eve/tempest.png" alt="">
                     </div>
-                    <h4>Multiple characters support</h4>
-                    <p>Authenticate as many characters you want to and switch between them in an easy command</p>
+                    <h4>3: Tell the co-pilot your control token</h4>
+                    <p>Talk to your co-pilot on <a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook Messenger</a> or <a class="btn-link" href="http://t.me/eveonlinecopilot_bot" target="_blank">Telegram</a> and simply write him <code>Link character</code></p>
                 </div>
             </div>
         </div>
@@ -166,7 +191,7 @@
                                         <h2>Multi character support</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
-                                        <p>You can authenticate more users on this website and then add the characters to your chat via <code>Add character</code>.
+                                        <p>You can authenticate more users on this website and then add the characters to your chat via <code>Link character</code>.
                                             <br> After you added the characters you can refer to them using their names, like  <code>Switch to [character name]</code></p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">
@@ -840,6 +865,8 @@
 <script src="js/wow.min.js"></script>
 <!--Main-active-JS-->
 <script src="js/main.js"></script>
+
+@component("components.facebook-chat") @endcomponent
 </body>
 
 </html>

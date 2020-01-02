@@ -19,7 +19,7 @@
 
     Route::view("/", "landing")->name("home");
     Route::get('/botman/tinker', 'BotManController@tinker');
-    Route::get("/eve/auth/start", 'Auth\AuthController@redirectToProvider');
+    Route::get("/eve/auth/start", 'Auth\AuthController@redirectToProvider')->name("auth-start");
     Route::get("/eve/auth/callback", 'Auth\AuthController@handleProviderCallback');
 
     Route::get("/maintenance/db", function () {
@@ -39,3 +39,5 @@
 
         Artisan::call("optimize", ["--force" => true]);
     });
+
+    Route::view("/token/view", "token");

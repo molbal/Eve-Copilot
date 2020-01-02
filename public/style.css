@@ -172,11 +172,12 @@ input:-webkit-autofill:focus {
 
 .overlay:before,
 .sky-bg {
-    background: #75cbe7;
-    background: -webkit-gradient(linear, left top, left bottom, from(#75cbe7), to(#138fc2));
-    background: linear-gradient(to bottom, #75cbe7 0%, #138fc2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#138fc2', GradientType=0);
+    background: #217096;
+    background: -webkit-gradient(linear, left top, left bottom, from(#217096), to(#11407f));
+    background: linear-gradient(to bottom, #217096 0%, #11407f 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#217096', endColorstr='#11407f', GradientType=0);
     color: #ffffff;
+    /*opacity: 0.5;*/
 }
 
 .gray-bg {
@@ -386,7 +387,7 @@ input:-webkit-autofill:focus {
     top: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.8
+    opacity: 0.4;
 }
 
 .header-text h2 {

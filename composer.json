@@ -25,7 +25,8 @@
         "predis/predis": "^1.1",
         "ext-curl": "*",
       "ext-http": "*",
-      "ext-json": "*"
+      "ext-json": "*",
+      "ext-openssl": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

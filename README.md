@@ -1,13 +1,13 @@
-<!-- <p align="center"><img height="188" width="198" src="#"></p>-->
-<h1 align="center">Eve Co-Pilot</h1>
+<p align="center"><img height="120"  src="https://co-pilot.eve-nt.uk/images/logo-color.png"></p>
+<h1 align="center">EVE Co-Pilot</h1>
 
 ## Introduction
 
-...
+Co-Pilot for EVE Online: On Facebook Messenger and Telegram. Providing location, mailing, emergency and intelligence services
 
 ## Supported commands
 
-...
+- `Link character` Starts a conversation about authenticating and linking a new character to a conversation. 
 
 
 ## Installation
@@ -61,6 +61,12 @@ This table contains basic character information and refresh token.
         <td>-</td>
     </tr>
     <tr>
+        <td>CONTROL_TOKEN</td>
+        <td>This token must be provided in the chat to allow access to this character</td>
+        <td>VARCHAR (32)</td>
+        <td></td>
+    </tr>
+    <tr>
         <td>created_at</td>
         <td>Laravel created at column</td>
         <td>Timestamp</td>
@@ -95,12 +101,6 @@ This table links together chat user IDs to EVE User IDs, and has their password.
         <td>Eve Character ID</td>
         <td>BIGINT (unsigned)</td>
         <td>Foreign key on CHARACTER.ID</td>
-    </tr>
-    <tr>
-        <td>LINK_TOKEN</td>
-        <td>This token must be provided in the chat to allow access to this character</td>
-        <td>VARCHAR (32)</td>
-        <td></td>
     </tr>
     <tr>
         <td>created_at</td>

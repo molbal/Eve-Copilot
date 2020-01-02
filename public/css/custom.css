@@ -4,3 +4,7 @@ video.video-cover{
     width: auto; height: auto; z-index: -100;
     background-size: cover;
 }
+
+.header-area {
+    text-shadow: 1px 1px 0 rgba(13, 24, 40, 0.9)
+}

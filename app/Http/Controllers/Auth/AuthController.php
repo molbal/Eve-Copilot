@@ -3,8 +3,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helpers\ConversationCache;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 use Laravel\Socialite\Facades\Socialite;
+use Laravel\Socialite\Two\User;
 
 class AuthController extends Controller
 {
@@ -28,10 +32,35 @@ class AuthController extends Controller
      */
     public function handleProviderCallback()
     {
+        /** @var User $user */
         $user = Socialite::driver('eveonline')->user();
 
-        // TODO: Save to table, cache access key, show view
-        return view('welcome');
+
+        DB::table("characters")->where("ID",'=',$user->getId())->delete();
+        $controlToken = $this->getControlToken();
+        DB::table("characters")->insert([
+            "ID" => $user->getId(),
+            "NAME" => $user->getName(),
+            "REFRESH_TOKEN" => $user->refreshToken,
+            "CONTROL_TOKEN" => $controlToken
+        ]);
+        $expiresInMinutes = floor($user->expiresIn/60);
+        Cache::put("AccessToken-".$user->getId(), $user->token, $expiresInMinutes);
+
+        return view('token', ["name" => $user->getName(), "token" => $controlToken, "avatar" => $user->getAvatar()]);
 //        dd($user);
+    }
+
+    /**
+     * Gets a control token
+     * @return bool|string
+     */
+    private function getControlToken():string {
+        try {
+            $tok = bin2hex(random_bytes(32));
+        } catch (\Exception $e) {
+            $tok = bin2hex(openssl_random_pseudo_bytes(32));
+        }
+        return substr($tok, 0, min(strlen($tok),  32));
     }
 }
