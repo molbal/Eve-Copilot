@@ -4,6 +4,7 @@
     namespace App\Conversations;
 
 
+    use App\Connector\ChatCharLink;
     use App\Helpers\ConversationCache;
     use BotMan\BotMan\Messages\Conversations\Conversation;
     use BotMan\BotMan\Messages\Incoming\Answer;
@@ -95,12 +96,15 @@
                 DB::table("link")
                     ->insert([
                         'CHAT_ID' => $this->bot->getUser()->getId(),
-                        'CHAR_ID' => $charId
+                        'CHAR_ID' => $charId,
+                        "active" => 0
                     ]);
 
                 DB::commit();
 
                 $this->say("Perfect. I am now co-pilot for ".$charName." 👨‍✈️");
+
+                ChatCharLink::setActive($this->bot->getUser()->getId(), $charId);
             });
         }
 
