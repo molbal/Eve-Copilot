@@ -36,7 +36,6 @@
             }
             curl_setopt_array($curl, [
                 CURLOPT_RETURNTRANSFER => 1,
-                CURLOPT_URL => 'http://testcURL.com/?item1=value&item2=value2',
                 CURLOPT_USERAGENT =>  $this->userAgent,
                 CURLOPT_HTTPHEADER => [
                     isset($accessToken) ? 'authorization: Bearer ' . $accessToken : 'X-a: b',
@@ -49,6 +48,31 @@
             ]);
 
             return $curl;
+        }
+
+        protected function createPost(int $charId = null) {
+            $curl = curl_init();
+
+            if ($charId) {
+                $tokenController = new ESITokenController($charId);
+                $accessToken = $tokenController->getAccessToken();
+            }
+            curl_setopt_array($curl, [
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_USERAGENT =>  $this->userAgent,
+                CURLOPT_POST => true,
+                CURLOPT_HTTPHEADER => [
+                    isset($accessToken) ? 'authorization: Bearer ' . $accessToken : 'X-a: b',
+                    'accept: application/json'
+                ],
+
+                CURLOPT_VERBOSE => true,
+                CURLOPT_STDERR => fopen('./curl.log', 'a+'),
+
+            ]);
+
+            return $curl;
+
         }
 
 

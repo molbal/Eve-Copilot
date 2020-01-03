@@ -109,8 +109,8 @@
                     <br>
                     On <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
                 <div class="btn-group">
-                    <a href="#activate-copilot" class="btn button">Get started</a>
-                    <a href="#" class="btn button">See functions</a>
+                    <a href="#activate-copilot" class="btn button white">Get started</a>
+                    <a href="#" class="btn button white">See functions</a>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                 <div class="page-title">
                     <h2>Getting started</h2>
-                    <p>You can turn it on in 3 easy steps. Here is how:</p>
+                    <p>Here is how you can start using the co-pilot: just talk to it!</p>
                 </div>
             </div>
         </div>
@@ -155,7 +155,7 @@
                         <img src="images/eve/tempest.png" alt="">
                     </div>
                     <h4>3<sup>rd</sup> step</h4>
-                    <p>Open a conversation (<a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook Messenger</a> or <a class="btn-link" href="http://t.me/eveonlinecopilot_bot" target="_blank">Telegram</a>) and say <code>Link character</code></p>
+                    <p>Open a conversation (<a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook Messenger</a> or <a class="btn-link" href="http://t.me/eveonlinecopilot_bot" target="_blank">Telegram</a>) and say <code>Add character</code></p>
                 </div>
             </div>
         </div>
@@ -176,7 +176,7 @@
                                         <h2>Multi character support</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
-                                        <p>You can authenticate more users on this website and then add the characters to your chat via <code>Link character</code>.
+                                        <p>You can authenticate more users on this website and then add the characters to your chat via <code>Add character</code>.
                                             <br> After you added the characters you can refer to them using their names, like  <code>Switch to [character name]</code></p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">

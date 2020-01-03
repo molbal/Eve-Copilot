@@ -10,6 +10,33 @@
 
     class ResourceLookupService extends EveAPICore {
 
+        public function getCharacterName(int $charId) {
+             if (DB::table("characters")->where("ID", "=", $charId)->exists()) {
+                 return DB::table("characters")->where("ID", "=", $charId)->get()->get(0)->NAME;
+             }
+
+            if ($this->forevercacheHas($charId)) {
+                return $this->forevercacheGet($charId);
+            }
+
+            $ch = $this->createPost();
+            curl_setopt($ch, CURLOPT_URL, $this->apiRoot . "universe/names/");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([$charId]));
+
+            $ret = curl_exec($ch);
+            curl_close($ch);
+
+            $ret = json_decode($ret);
+            if (isset($ret->error)) {
+                throw new \Exception($ret->error);
+            }
+            else {
+                $ret = $ret[0]->name;
+            }
+            //$this->forevercachePut($charId, $ret);
+            return $ret;
+        }
+
         /**
          * @param mixed $userAgent
          * @return mixed|string
