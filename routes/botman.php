@@ -29,27 +29,20 @@
         }
     });
 
-    $botman->hears("Switch to {charName}", function (BotMan $bot, string $charName) {
+    /**
+     * @return Closure
+     */
 
-        try {
-            $chatId = $bot->getUser()->getId();
-            $switchedChar = ChatCharLink::getSwitchedChar($chatId, $charName);
-            ChatCharLink::setActive($chatId, $switchedChar);
 
-            $rlp = new ResourceLookupService();
-            $bot->reply("My Captain is now ".$rlp->getCharacterName($switchedChar));
-        } catch (RuntimeException $e) {
-
-            $bot->reply("Cannot find this character. To check which characters you have linked, say 'My characters'");
-        }
-
-    });
 
 
     /**
      * Character management commands
      */
-    $botman->hears("My chars|My characters", CharacterManagementCommands::listMyCharacters());
+    /** @var CharacterManagementCommands $charManagement */
+    $charManagement = resolve('App\Conversations\SingleCommands\CharacterManagementCommands');
+    $botman->hears("Switch to {charName}", $charManagement->switchToCharacter());
+    $botman->hears("My chars|My characters", $charManagement->listMyCharacters());
 
     /**
      * Location Service

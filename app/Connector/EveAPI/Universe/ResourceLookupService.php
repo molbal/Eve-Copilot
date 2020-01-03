@@ -10,6 +10,16 @@
 
     class ResourceLookupService extends EveAPICore {
 
+        /**
+         * Gets the character name in the following order:
+         *  1. Checks the registered characters table (Among the users of co-pilot)
+         *  2. Checks the "Forever cache" table for known entries
+         *  3. Calls the ESI for name lookup (And caches the result afterwards)
+         *
+         * @param int $charId
+         * @return bool|mixed|string
+         * @throws \Exception
+         */
         public function getCharacterName(int $charId) {
              if (DB::table("characters")->where("ID", "=", $charId)->exists()) {
                  return DB::table("characters")->where("ID", "=", $charId)->get()->get(0)->NAME;
@@ -33,12 +43,14 @@
             else {
                 $ret = $ret[0]->name;
             }
-            //$this->forevercachePut($charId, $ret);
+            $this->forevercachePut($charId, $ret);
             return $ret;
         }
 
         /**
-         * @param mixed $userAgent
+         * Gets a station name. Makes a call to ESI unless the result is already cached.
+         *
+         * @param int $stationId
          * @return mixed|string
          * @throws \Exception
          */
@@ -47,13 +59,7 @@
                 return $this->forevercacheGet($stationId);
             }
 
-            $ch = $this->createGet();
-            curl_setopt($ch, CURLOPT_URL, $this->apiRoot . "universe/stations/{$stationId}/");
-            $ret = curl_exec($ch);
-            curl_close($ch);
-
-            /** @var string $stationName */
-            $stationName = json_decode($ret)->name;
+            $stationName = $this->simpleGet(null, "universe/stations/{$stationId}/")->name;
 
             $this->forevercachePut($stationId, $stationName);
             return $stationName;
@@ -62,7 +68,9 @@
 
 
         /**
-         * @param mixed $userAgent
+         * Gets a solar system name. Makes a call to ESI unless the result is already cached.
+         *
+         * @param int $systemId
          * @return mixed|string
          * @throws \Exception
          */
@@ -85,9 +93,10 @@
         }
 
 
-
         /**
-         * @param mixed $userAgent
+         * Gets a structure name. Makes a call to ESI unless the result is already cached.
+         *
+         * @param int $structureId
          * @return mixed|string
          * @throws \Exception
          */
@@ -102,7 +111,6 @@
             $stationName = json_decode($ret)->name;
 
             return $stationName;
-
         }
 
     }

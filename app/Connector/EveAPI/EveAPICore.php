@@ -23,6 +23,8 @@
         }
 
         /**
+         * Creates a get CURL request with ESI authentication
+         *
          * @param int $charId Character ID
          * @return false|resource
          * @throws \Exception
@@ -50,7 +52,47 @@
             return $curl;
         }
 
-        protected function createPost(int $charId = null) {
+        /**
+         * Makes a call to the ESI with authentication
+         * @param int    $charId
+         * @param string $fullPath
+         * @return mixed
+         * @throws \Exception
+         */
+        protected function simpleGet(?int $charId, string $fullPath) {
+
+            $curl = curl_init();
+
+            if ($charId) {
+                $tokenController = new ESITokenController($charId);
+                $accessToken = $tokenController->getAccessToken();
+            }
+            curl_setopt_array($curl, [
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_USERAGENT =>  $this->userAgent,
+                CURLOPT_POST => true,
+                CURLOPT_HTTPHEADER => [
+                    isset($accessToken) ? 'authorization: Bearer ' . $accessToken : 'X-a: b',
+                    'accept: application/json'
+                ],
+
+                CURLOPT_VERBOSE => true,
+                CURLOPT_STDERR => fopen('./curl.log', 'a+'),
+
+            ]);
+            $ret = curl_exec($curl);
+            curl_close($curl);
+
+            return json_decode($ret);
+        }
+
+        /**
+         * Creates a post CURL request with ESI authentication
+         * @param int|null $charId
+         * @return false|resource
+         * @throws \Exception
+         */
+        protected function createPost(?int $charId = null) {
             $curl = curl_init();
 
             if ($charId) {
