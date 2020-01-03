@@ -15,24 +15,34 @@
 
     class LocationCommands {
 
+        private $locationService;
+
+        /**
+         * LocationCommands constructor.
+         *
+         * @param $locationService
+         */
+        public function __construct(LocationService $locationService) {
+            $this->locationService = $locationService;
+        }
+
 
         /**
          * @return Closure
          */
-        public static function statusCommand(): Closure {
-            return function (BotMan $bot) {
+        public function statusCommand(): Closure {
+            return function (BotMan $bot, string $charId) {
                 $bot->types();
                 $location = "There was an error. ";
                 try {
 
-                    $locationService = new LocationService();
-                    $currentShip = $locationService->getCurrentShip(ChatCharLink::getActive($bot->getUser()->getId()));
-                    $status = $locationService->getCurrentLocation(ChatCharLink::getActive($bot->getUser()->getId()));
+                    $currentShip = $this->locationService->getCurrentShip(ChatCharLink::getActive($bot->getUser()->getId()));
+                    $status = $this->locationService->getCurrentLocation(ChatCharLink::getActive($bot->getUser()->getId()));
 
                     $dockedName = $status->station_name ?? $status->structure_name ?? null;
                     $statusText = "Your are " . ((isset($status->station_id) || isset($status->structure_id)) ? "docked" : "in space") .
                         " in " . $status->solar_system_name . " " . ($dockedName ? "($dockedName)" : "") .
-                        " with a " . $currentShip->ship_name;
+                        ". Your ship's name is: " . $currentShip->ship_name;
 
 
                     $attachment = new Image(ImageAPI::getRenderLink($currentShip->ship_type_id));
@@ -42,7 +52,7 @@
                         ->withAttachment($attachment);
 
                     $bot->reply($message);
-                } catch (Exception $e) {
+                } catch (\Exception $e) {
                     $location .= $e->getMessage() . " " . $e->getFile() . " @" . $e->getLine();
                     Log::error($location);
                     $bot->reply("An error occurred while coming up with the response. (".$e->getMessage().")");

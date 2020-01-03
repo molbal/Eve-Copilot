@@ -70,7 +70,7 @@
             curl_setopt_array($curl, [
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_USERAGENT =>  $this->userAgent,
-                CURLOPT_POST => true,
+                CURLOPT_URL => $this->apiRoot.$fullPath,
                 CURLOPT_HTTPHEADER => [
                     isset($accessToken) ? 'authorization: Bearer ' . $accessToken : 'X-a: b',
                     'accept: application/json'
