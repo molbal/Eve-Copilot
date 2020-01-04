@@ -5,6 +5,16 @@ video.video-cover{
     background-size: cover;
 }
 
-.header-area {
+.header-area h2, .header-area p{
     text-shadow: 1px 1px 0 rgba(13, 24, 40, 0.9)
+}
+
+code {
+    padding: 3px 4px;
+    font-size: 100%;
+    color: #11407f;
+    background-color: #f2fefe;
+    border: 1px solid #6589b2;
+    border-radius: 3px;
+    font-family: 'Share Tech Mono', monospace;
 }

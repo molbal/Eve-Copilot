@@ -96,7 +96,7 @@
         <source src="videos/amarr.cdn.ogv" type="video/ogg">
         <source src="videos/amarr.cdn.webm" type="video/webm">
     </video>
-    <div class="container">s
+    <div class="container">
         <div class="row v-center">
             <div class="hidden-xs hidden-sm col-md-5 text-right">
                     <div class="item">
@@ -155,7 +155,8 @@
                         <img src="images/eve/tempest.png" alt="">
                     </div>
                     <h4>3<sup>rd</sup> step</h4>
-                    <p>Open a conversation (<a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook Messenger</a> or <a class="btn-link" href="http://t.me/eveonlinecopilot_bot" target="_blank">Telegram</a>) and say <code>Add character</code></p>
+                    <p>Open a conversation (<a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook Messenger</a> or <a class="btn-link" href="http://t.me/eveonlinecopilot_bot" target="_blank">Telegram</a>) and say
+                        <br> <code>Add character</code></p>
                 </div>
             </div>
         </div>
@@ -163,7 +164,7 @@
 </section>
 <!--Feature-area/-->
 
-<section class="angle-bg sky-bg section-padding overlay" >
+<section class="section-padding overlay" style="">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -185,12 +186,12 @@
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo one" data-animation="animated fadeInRight">
-                                        <img src="images/screen-1.jpg" alt="">
+                                        <img src="images/eve/chars/2.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo two" data-animation="animated fadeInRight">
-                                        <img src="images/screen-2.jpg" alt="">
+                                        <img src="images/eve/chars/2-ship.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -199,7 +200,7 @@
                             <div class="v-center">
                                 <div class="col-xs-12 col-md-6">
                                     <div class="caption-title" data-animation="animated fadeInUp">
-                                        <h2>Easy to use</h2>
+                                        <h2>Location Services</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute</p>
@@ -210,12 +211,12 @@
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo one" data-animation="animated fadeInRight">
-                                        <img src="images/screen-3.jpg" alt="">
+                                        <img src="images/eve/chars/1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo two" data-animation="animated fadeInRight">
-                                        <img src="images/screen-4.jpg" alt="">
+                                        <img src="images/eve/chars/1-ship.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -224,7 +225,7 @@
                             <div class="v-center">
                                 <div class="col-xs-12 col-md-6">
                                     <div class="caption-title" data-animation="animated fadeInUp">
-                                        <h2>Easy to customize</h2>
+                                        <h2>Emergency services</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute</p>
@@ -235,12 +236,12 @@
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo one" data-animation="animated fadeInRight">
-                                        <img src="images/screen-7.jpg" alt="">
+                                        <img src="images/eve/chars/3.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo two" data-animation="animated fadeInRight">
-                                        <img src="images/screen-2.jpg" alt="">
+                                        <img src="images/eve/chars/3-ship.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +250,7 @@
                             <div class="v-center">
                                 <div class="col-xs-12 col-md-6">
                                     <div class="caption-title" data-animation="animated fadeInUp">
-                                        <h2>Awesome design</h2>
+                                        <h2>Intelligence services</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute</p>
@@ -260,12 +261,12 @@
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo one" data-animation="animated fadeInRight">
-                                        <img src="images/screen-3.jpg" alt="">
+                                        <img src="images/eve/chars/4.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo two" data-animation="animated fadeInRight">
-                                        <img src="images/screen-4.jpg" alt="">
+                                        <img src="images/eve/chars/4-ship.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
