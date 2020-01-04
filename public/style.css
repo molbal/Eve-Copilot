@@ -31,8 +31,7 @@ CSS INDEX
 1. Google font
 ------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
-@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Share+Tech+Mono');
 
 /*-------------------
 2. Theme Default CSS

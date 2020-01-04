@@ -32,7 +32,6 @@
     <![endif]-->
 
 
-
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/v1/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/v1/favicon-32x32.png">
@@ -78,8 +77,10 @@
                 <li><a href="#activate-copilot">Getting started</a></li>
                 <li><a href="#activate-copilot">Features</a></li>
                 <li><a href="#faq-page">FAQ</a></li>
-                <li><a href="https://m.me/eveonlinecopilot" target="_blank"><img src="/images/icons/fb-messenger.png" alt="."> Messenger</a></li>
-                <li><a href="http://t.me/eveonlinecopilot_bot" target="_blank"><img src="images/icons/telegram.png" alt=""> Telegram</a></li>
+                <li><a href="https://m.me/eveonlinecopilot" target="_blank"><img src="/images/icons/fb-messenger.png"
+                                                                                 alt="."> Messenger</a></li>
+                <li><a href="http://t.me/eveonlinecopilot_bot" target="_blank"><img src="images/icons/telegram.png"
+                                                                                    alt=""> Telegram</a></li>
             </ul>
         </nav>
     </div>
@@ -87,10 +88,9 @@
 <!--Mainmenu-area/-->
 
 
-
 <!--Header-area-->
 <header class="header-area overlay full-height relative v-center" id="home-page">
-{{--    <div class="absolute anlge-bg"></div>--}}
+    {{--    <div class="absolute anlge-bg"></div>--}}
     <video id="video" class="video-cover" poster="videos/amarr.cdn.jpg" loop="loop" preload="auto" autoplay muted>
         <source src="videos/amarr.cdn.mp4" type="video/mp4">
         <source src="videos/amarr.cdn.ogv" type="video/ogg">
@@ -99,13 +99,14 @@
     <div class="container">
         <div class="row v-center">
             <div class="hidden-xs hidden-sm col-md-5 text-right">
-                    <div class="item">
-                        <img src="images/aura.png" alt="">
-                    </div>
+                <div class="item">
+                    <img src="images/aura.png" alt="">
+                </div>
             </div>
             <div class="col-xs-12 col-md-7 header-text">
                 <h2>Chatbot Co-Pilot for EVE Online</h2>
-                <p>Providing <strong>location</strong>, <strong>mailing</strong>, <strong>emergency</strong> and <strong>intelligence</strong> services.
+                <p>Providing <strong>location</strong>, <strong>mailing</strong>, <strong>emergency</strong> and
+                    <strong>intelligence</strong> services.
                     <br>
                     On <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
                 <div class="btn-group">
@@ -146,7 +147,8 @@
                         <img src="images/eve/rupture.png" alt="">
                     </div>
                     <h4>2<sup>nd</sup> step</h4>
-                    <p>After you signed in, you will receive a token. The co-pilot will ask for it, so copy it to your clipboard.</p>
+                    <p>After you signed in, you will receive a token. The co-pilot will ask for it, so copy it to your
+                        clipboard.</p>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-4">
@@ -155,7 +157,9 @@
                         <img src="images/eve/tempest.png" alt="">
                     </div>
                     <h4>3<sup>rd</sup> step</h4>
-                    <p>Open a conversation (<a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook Messenger</a> or <a class="btn-link" href="http://t.me/eveonlinecopilot_bot" target="_blank">Telegram</a>) and say
+                    <p>Open a conversation (<a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook
+                            Messenger</a> or <a class="btn-link" href="http://t.me/eveonlinecopilot_bot"
+                                                target="_blank">Telegram</a>) and say
                         <br> <code>Add character</code></p>
                 </div>
             </div>
@@ -177,8 +181,10 @@
                                         <h2>Multi character support</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
-                                        <p>You can authenticate more users on this website and then add the characters to your chat via <code>Add character</code>.
-                                            <br> After you added the characters you can refer to them using their names, like  <code>Switch to [character name]</code></p>
+                                        <p>You can authenticate more users on this website and then add the characters
+                                            to your chat via <code>Add character</code>.
+                                            <br> After you added the characters you can refer to them using their names,
+                                            like <code>Switch to [character name]</code></p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">
                                         <a href="#" class="button">Read more</a>
@@ -186,12 +192,12 @@
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo one" data-animation="animated fadeInRight">
-                                        <img src="images/eve/chars/2.png" alt="">
+                                        <img class="img-rounded" src="images/eve/chars/2.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo two" data-animation="animated fadeInRight">
-                                        <img src="images/eve/chars/2-ship.jpg" alt="">
+                                        <img class="img-rounded" src="images/eve/chars/2-ship.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +209,10 @@
                                         <h2>Location Services</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute</p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">
                                         <a href="#" class="button">Read more</a>
@@ -211,12 +220,12 @@
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo one" data-animation="animated fadeInRight">
-                                        <img src="images/eve/chars/1.png" alt="">
+                                        <img class="img-rounded" src="images/eve/chars/1.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo two" data-animation="animated fadeInRight">
-                                        <img src="images/eve/chars/1-ship.jpg" alt="">
+                                        <img class="img-rounded" src="images/eve/chars/1-ship.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -228,7 +237,10 @@
                                         <h2>Emergency services</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute</p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">
                                         <a href="#" class="button">Read more</a>
@@ -236,12 +248,12 @@
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo one" data-animation="animated fadeInRight">
-                                        <img src="images/eve/chars/3.png" alt="">
+                                        <img class="img-rounded" src="images/eve/chars/3.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo two" data-animation="animated fadeInRight">
-                                        <img src="images/eve/chars/3-ship.jpg" alt="">
+                                        <img class="img-rounded" src="images/eve/chars/3-ship.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -253,7 +265,10 @@
                                         <h2>Intelligence services</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                            consequat. Duis aute</p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">
                                         <a href="#" class="button">Read more</a>
@@ -261,12 +276,12 @@
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo one" data-animation="animated fadeInRight">
-                                        <img src="images/eve/chars/4.png" alt="">
+                                        <img class="img-rounded" src="images/eve/chars/4.png" alt="">
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
                                     <div class="caption-photo two" data-animation="animated fadeInRight">
-                                        <img src="images/eve/chars/4-ship.jpg" alt="">
+                                        <img class="img-rounded" src="images/eve/chars/4-ship.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -294,76 +309,119 @@
 </section>
 
 
-
 <section class="gray-bg section-padding" id="feature-page">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                 <div class="page-title">
-                    <h2>SPECIAL FEATURES</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptates, temporibus at, facere harum fugiat!</p>
+                    <h2 id="feature-multichar">Multi character features</h2>
+                    <p>These commands help you manage your characters with the Co-pilot</p>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="box">
-                    <div class="box-icon">
-                        <img src="images/portfolio-icon-1.png" alt="">
-                    </div>
-                    <h3>Creative Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quas nulla est adipisci,</p>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <img data-toggle="tooltip" src="images/eve/chars/2.png"
+                     class="img-rounded pull-left shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
+                <div>
+                    <h3>Add a new character</h3>
+                    <small>
+                        <code>Link character</code>, <code>Add character</code>,
+                        <code>Link char</code>, <code>Add char</code>
+                    </small>
+                    <p>
+                        This command adds a new character to your current chat. It gives you a link where you can log in with your EVE Online account. The bot will never ask for your EVE Online password or username.
+                    </p>
+
+                    <h3>List my characters</h3>
+                    <small>
+                        <code>My chars</code>, <code>My characters</code>
+                    </small>
+                    <p>Unsure how many characters are added? This command will list your already added characters.
+                        It will also show which character the Co-pilot is assigned to.</p>
+
+                    <h3>Switch to account</h3>
+                    <small>
+                        <code>Switch to {Character name}</code>
+                    </small>
+                    <p>
+                        Have more, than 1 characters added and you want to switch between them? This command lets you do
+                        that easily. Pro tip: You don't have to write the entire name, just the first few letters.
+                    </p>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="box">
-                    <div class="box-icon">
-                        <img src="images/portfolio-icon-2.png" alt="">
-                    </div>
-                    <h3>Unlimited Features</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quas nulla est adipisci,</p>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                <div class="page-title">
+                    <h2 id="feature-location" class="margin-top-xl">Location services</h2>
+                    <p>These commands help you find and navigate the universe of New Eden</p>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="box">
-                    <div class="box-icon">
-                        <img src="images/portfolio-icon-3.png" alt="">
-                    </div>
-                    <h3>Full Free Chat</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quas nulla est adipisci,</p>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <img data-toggle="tooltip" src="images/eve/chars/1.png"
+                     class="img-rounded pull-left shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
+                <div>
+                    <h3>Quick status</h3>
+                    <small>
+                        <code>Status</code>
+                    </small>
+                    <p>
+                        This command shows you where is the current character location and which ship is used.
+                    </p>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="box">
-                    <div class="box-icon">
-                        <img src="images/portfolio-icon-4.png" alt="">
-                    </div>
-                    <h3>Retina ready</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quas nulla est adipisci,</p>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                <div class="page-title">
+                    <h2 id="feature-emergency" class="margin-top-xl">Emergency services</h2>
+                    <p>Emergency services can provide assistance when in need</p>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="box">
-                    <div class="box-icon">
-                        <img src="images/portfolio-icon-5.png" alt="">
-                    </div>
-                    <h3>High Resolution</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quas nulla est adipisci,</p>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <img data-toggle="tooltip" src="images/eve/chars/3.png"
+                     class="img-rounded pull-left shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
+                <div>
+                    <h3>Quick status</h3>
+                    <small>
+                        <code>Status</code>
+                    </small>
+                    <p>
+                        This command shows you where is the current character location and which ship is used.
+                    </p>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="box">
-                    <div class="box-icon">
-                        <img src="images/portfolio-icon-6.png" alt="">
-                    </div>
-                    <h3>Clean Codes</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quas nulla est adipisci,</p>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                <div class="page-title">
+                    <h2 id="feature-intel" class="margin-top-xl">Intelligence services</h2>
+                    <p>Intelligence services help you quickly make decisions and identify other capsuleers</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <img data-toggle="tooltip" src="images/eve/chars/4.png"
+                     class="img-rounded pull-left shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
+                <div>
+                    <h3>Quick status</h3>
+                    <small>
+                        <code>Status</code>
+                    </small>
+                    <p>
+                        This command shows you where is the current character location and which ship is used.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 
 <section class="gray-bg section-padding" id="faq-page">
@@ -372,7 +430,8 @@
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                 <div class="page-title">
                     <h2>Frequently Asked Questions</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptates, temporibus at, facere harum fugiat!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptates, temporibus at, facere
+                        harum fugiat!</p>
                 </div>
             </div>
         </div>
@@ -381,34 +440,50 @@
                 <div class="panel-group" id="accordion">
                     <div class="panel">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Sedeiusmod tempor inccsetetur aliquatraiy?</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Sedeiusmod
+                                tempor inccsetetur aliquatraiy?</a>
                         </h4>
                         <div id="collapse1" class="panel-collapse collapse in">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd
+                                exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in
+                                reprehenderit.</p>
                         </div>
                     </div>
                     <div class="panel">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Tempor inccsetetur aliquatraiy?</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Tempor inccsetetur
+                                aliquatraiy?</a>
                         </h4>
                         <div id="collapse2" class="panel-collapse collapse">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd
+                                exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in
+                                reprehenderit.</p>
                         </div>
                     </div>
                     <div class="panel">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Lorem ipsum dolor amet, consectetur adipisicing ?</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Lorem ipsum dolor amet,
+                                consectetur adipisicing ?</a>
                         </h4>
                         <div id="collapse3" class="panel-collapse collapse">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd
+                                exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in
+                                reprehenderit.</p>
                         </div>
                     </div>
                     <div class="panel">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Lorem ipsum dolor amet, consectetur adipisicing ?</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Lorem ipsum dolor amet,
+                                consectetur adipisicing ?</a>
                         </h4>
                         <div id="collapse4" class="panel-collapse collapse">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd
+                                exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in
+                                reprehenderit.</p>
                         </div>
                     </div>
                 </div>
@@ -416,10 +491,6 @@
         </div>
     </div>
 </section>
-
-
-
-
 
 
 <section class="section-padding gray-bg" id="blog-page">
@@ -436,7 +507,8 @@
                             <li><span class="ti-user"></span> <a href="#">Admin</a></li>
                             <li><span class="ti-calendar"></span> <a href="#">Feb 01, 2017</a></li>
                         </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita aliquid dolorem repellat perferendis, facilis aut fugit, impedit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita aliquid
+                            dolorem repellat perferendis, facilis aut fugit, impedit.</p>
                     </div>
                 </div>
             </div>
@@ -451,7 +523,8 @@
                             <li><span class="ti-user"></span> <a href="#">Admin</a></li>
                             <li><span class="ti-calendar"></span> <a href="#">Feb 01, 2017</a></li>
                         </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita aliquid dolorem repellat perferendis, facilis aut fugit, impedit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita aliquid
+                            dolorem repellat perferendis, facilis aut fugit, impedit.</p>
                     </div>
                 </div>
             </div>
@@ -466,7 +539,8 @@
                             <li><span class="ti-user"></span> <a href="#">Admin</a></li>
                             <li><span class="ti-calendar"></span> <a href="#">Feb 01, 2017</a></li>
                         </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita aliquid dolorem repellat perferendis, facilis aut fugit, impedit.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita aliquid
+                            dolorem repellat perferendis, facilis aut fugit, impedit.</p>
                     </div>
                 </div>
             </div>
@@ -490,11 +564,13 @@
                     <p>
                     <p>Any assistance with the server upkeep is greatly appreciated.</p>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input type="hidden" name="cmd" value="_donations" />
-                        <input type="hidden" name="business" value="TZX5GJQA4USZQ" />
-                        <input type="hidden" name="currency_code" value="EUR" />
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypal.com/en_HU/i/scr/pixel.gif" width="1" height="1" />
+                        <input type="hidden" name="cmd" value="_donations"/>
+                        <input type="hidden" name="business" value="TZX5GJQA4USZQ"/>
+                        <input type="hidden" name="currency_code" value="EUR"/>
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                               border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                               alt="Donate with PayPal button"/>
+                        <img alt="" border="0" src="https://www.paypal.com/en_HU/i/scr/pixel.gif" width="1" height="1"/>
                     </form>
                     </p>
                 </div>
@@ -505,17 +581,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                  </p>
-                    <p class="text-justify" style="font-size: 0.95rem">All images are material are property of CCP Games: EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are reserved worldwide. All other trademarks are the property of their respective owners. EVE Online, the EVE logo, EVE and all associated logos and designs are the intellectual property of CCP hf. All artwork, screenshots, characters, vehicles, storylines, world facts or other recognizable features of the intellectual property relating to these trademarks are likewise the intellectual property of CCP hf. CCP hf. has granted permission to evewho.com to use EVE Online and all associated logos and designs for promotional and zKillboard.com purposes on its website but does not endorse, and is not in any way affiliated with, zKillboard.com. CCP is in no way responsible for the content on or functioning of this website, nor can it be liable for any damage arising from the use of this website.</p>
-                    <p class="text-justify" style="font-size: 0.95rem">Contributions by <a href="https://colorlib.com" target="_blank" rel="nofollow">Colorlib</a> and  <a href="https://icons8.com" target="_blank" rel="nofollow">Icons8</a> - thank you.</p>
+                    </p>
+                    <p class="text-justify" style="font-size: 0.95rem">All images are material are property of CCP
+                        Games: EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are
+                        reserved worldwide. All other trademarks are the property of their respective owners. EVE
+                        Online, the EVE logo, EVE and all associated logos and designs are the intellectual property of
+                        CCP hf. All artwork, screenshots, characters, vehicles, storylines, world facts or other
+                        recognizable features of the intellectual property relating to these trademarks are likewise the
+                        intellectual property of CCP hf. CCP hf. has granted permission to evewho.com to use EVE Online
+                        and all associated logos and designs for promotional and zKillboard.com purposes on its website
+                        but does not endorse, and is not in any way affiliated with, zKillboard.com. CCP is in no way
+                        responsible for the content on or functioning of this website, nor can it be liable for any
+                        damage arising from the use of this website.</p>
+                    <p class="text-justify" style="font-size: 0.95rem">Contributions by <a href="https://colorlib.com"
+                                                                                           target="_blank"
+                                                                                           rel="nofollow">Colorlib</a>
+                        and <a href="https://icons8.com" target="_blank" rel="nofollow">Icons8</a> - thank you.</p>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-
-
-
 
 
 <!--Vendor-JS-->
@@ -536,10 +622,73 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86961430-7"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
 
     gtag('config', 'UA-86961430-7');
+</script>
+
+<script type="text/javascript">
+
+    function copyToClipboard(strToCopy) {
+        console.log(strToCopy);
+        // create hidden text element, if it doesn't already exist
+        var targetId = "_hiddenCopyText_";
+        var origSelectionStart, origSelectionEnd;
+        // must use a temporary form element for the selection and copy
+        target = document.getElementById(targetId);
+        if (!target) {
+            var target = document.createElement("textarea");
+            target.style.position = "fixed";
+            target.style.left = "-9999px";
+            target.style.top = "0";
+            target.id = targetId;
+            document.body.appendChild(target);
+        }
+        target.textContent = strToCopy;
+        // select the content
+        var currentFocus = document.activeElement;
+        target.focus();
+        target.setSelectionRange(0, target.value.length);
+
+        // copy the selection
+        var succeed;
+        try {
+            succeed = document.execCommand("copy");
+        } catch (e) {
+            succeed = false;
+        }
+        // restore original focus
+        if (currentFocus && typeof currentFocus.focus === "function") {
+            currentFocus.focus();
+        }
+
+        target.textContent = "";
+        return succeed;
+    }
+
+    $(function () {
+        $('code').each(function () {
+            $(this).click(function () {
+                copyToClipboard($(this).text());
+                alert( $(this).text() + " copied to clipboard.");
+            });
+
+           $(this)
+               .attr("title", "Click to copy to clipboard")
+               .attr("data-placement", "top");
+        });
+
+        setTimeout(function () {
+            $('code').tooltip();
+        }, 200);
+    });
+
+
 </script>
 
 </body>
