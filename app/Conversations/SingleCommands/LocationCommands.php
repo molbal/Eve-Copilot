@@ -31,7 +31,7 @@
          * @return Closure
          */
         public function statusCommand(): Closure {
-            return function (BotMan $bot, string $charId) {
+            return function (BotMan $bot) {
                 $bot->types();
                 $location = "There was an error. ";
                 try {
