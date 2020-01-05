@@ -48,10 +48,11 @@
                     $attachment = new Image(ImageAPI::getRenderLink($currentShip->ship_type_id));
 
                     // Build message object
-                    $message = OutgoingMessage::create($statusText)
+                    $message = OutgoingMessage::create("")
                         ->withAttachment($attachment);
 
                     $bot->reply($message);
+                    $bot->reply($statusText);
                 } catch (\Exception $e) {
                     $location .= $e->getMessage() . " " . $e->getFile() . " @" . $e->getLine();
                     Log::error($location);

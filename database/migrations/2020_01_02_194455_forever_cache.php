@@ -16,7 +16,7 @@ class ForeverCache extends Migration
         Schema::create("forevercache", function (Blueprint $table) {
            $table->unsignedBigInteger("ID")->primary();
            $table->timestamp("created_at")->useCurrent();
-           $table->string("Name", 256);
+           $table->string("Name", 256)->index();
         });
     }
 

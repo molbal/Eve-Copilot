@@ -51,17 +51,25 @@
     /**
      * Caches the cache and optimizes config and cache
      */
-    Route::get("/maintenance/cache/{secret}", function ($secret) {
+    Route::get("/maintenance/reset-cache/{secret}", function ($secret) {
         if ($secret != env("MAINTENANCE_TOKEN")) {
             abort(403, "Invalid maintenance token.");
         }
 
         Artisan::call("config:clear");
-        Artisan::call("config:cache");
-
         Artisan::call("route:clear");
-        Artisan::call("route:cache");
+    });
 
+    /**
+     * Caches the cache and optimizes config and cache
+     */
+    Route::get("/maintenance/enable-cache/{secret}", function ($secret) {
+        if ($secret != env("MAINTENANCE_TOKEN")) {
+            abort(403, "Invalid maintenance token.");
+        }
+
+        Artisan::call("config:cache");
+        Artisan::call("route:cache");
         Artisan::call("optimize", ["--force" => true]);
     });
 

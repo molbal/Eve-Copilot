@@ -113,4 +113,15 @@
             return $stationName;
         }
 
+        public function getStationId(string $stationFullName) {
+            $response = $this->simplePost(null, "universe/ids", json_encode([$stationFullName]));
+
+            if (isset($response->stations)) {
+                $stationId = $response->stations[0]->id;
+            }
+            else {
+                throw new \InvalidArgumentException("Cannot find the Eve ID number for this station.");
+            }
+            return $stationId;
+        }
     }

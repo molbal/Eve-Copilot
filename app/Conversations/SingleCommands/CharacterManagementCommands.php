@@ -62,27 +62,21 @@
                     }
                     switch ($switchedChar->count()) {
                         case 0:
-                            $bot->reply("You don't have a character linked yet.");
+                            $firstline = "You don't have a character linked yet.";
                             break;
                         case 1:
-                            $bot->reply("You have " . $switchedChar->count() . " character linked:");
+                            $firstline = "You have " . $switchedChar->count() . " character linked:";
                             break;
                         default:
-                            $bot->reply("You have " . $switchedChar->count() . " characters linked:");
+                            $firstline = "You have " . $switchedChar->count() . " characters linked:";
                             break;
                     }
+                    $chars = [];
                     for ($i = 0; $i < $switchedChar->count(); $i++) {
-
-
                         $me = $active == $switchedChar->get($i)->CHAR_ID ? " (Active 👨‍✈️)" : "";
-                        $profile = new Image(ImageAPI::getCharacterPortrait($switchedChar->get($i)->CHAR_ID));
-                        $message = OutgoingMessage::create($switchedChar->get($i)->NAME . $me)
-                            ->withAttachment($profile);
-
-                        // Reply message object
-                        $bot->reply($message);
+                        $chars [] = $switchedChar->get($i)->NAME . $me;
                     }
-                    $bot->reply("To add ".($switchedChar->count() > 0 ? "another" : "your first")." character, say 'Add char'");
+                    $bot->reply($firstline."\n".implode(", ", $chars) ."\n"."To add ".($switchedChar->count() > 0 ? "another" : "your first")." character, say 'Add char'");
                 } catch (\Exception $e) {
                     $bot->reply("No characters for this chat. Add a new one with saying 'Link character'");
                 }

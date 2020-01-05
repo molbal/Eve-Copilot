@@ -12,6 +12,7 @@
         /** @var string */
         protected $apiRoot;
 
+        /** @var string $this */
         protected $userAgent;
 
         /**
@@ -53,7 +54,7 @@
         }
 
         /**
-         * Makes a call to the ESI with authentication
+         * Makes a GET call to ESI with authentication
          * @param int    $charId
          * @param string $fullPath
          * @return mixed
@@ -76,6 +77,42 @@
                     'accept: application/json'
                 ],
 
+                CURLOPT_VERBOSE => true,
+                CURLOPT_STDERR => fopen('./curl.log', 'a+'),
+
+            ]);
+            $ret = curl_exec($curl);
+            curl_close($curl);
+
+            return json_decode($ret);
+        }
+
+
+        /**
+         * Makes a POST call to ESI with authentication
+         * @param int    $charId
+         * @param string $fullPath
+         * @return mixed
+         * @throws \Exception
+         */
+        protected function simplePost(?int $charId, string $fullPath, string $requestBody) {
+
+            $curl = curl_init();
+
+            if ($charId) {
+                $tokenController = new ESITokenController($charId);
+                $accessToken = $tokenController->getAccessToken();
+            }
+            curl_setopt_array($curl, [
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_POST => true,
+                CURLOPT_USERAGENT =>  $this->userAgent,
+                CURLOPT_URL => $this->apiRoot.$fullPath,
+                CURLOPT_HTTPHEADER => [
+                    isset($accessToken) ? 'authorization: Bearer ' . $accessToken : 'X-a: b',
+                    'accept: application/json'
+                ],
+                CURLOPT_POSTFIELDS => $requestBody,
                 CURLOPT_VERBOSE => true,
                 CURLOPT_STDERR => fopen('./curl.log', 'a+'),
 

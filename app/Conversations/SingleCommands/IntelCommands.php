@@ -28,8 +28,9 @@
         public function simpleWhois(): Closure {
             return function (BotMan $bot, string $charId) {
                 try {
-                    $bot->reply("Looking up code..");
-                    $bot->reply(print_r($this->rlp->getCharacterName($charId), 1));
+                    $bot->reply($this->rlp->getStationId($charId));
+                    //$bot->reply("Looking up code..");
+                    //$bot->reply(print_r($this->rlp->getCharacterName($charId), 1));
                 } catch (\Exception $e) {
                     $bot->reply("Cannot find this character: " . $e->getMessage());
                 }

@@ -37,8 +37,6 @@
                         case  'no':
                             $this->say("No worries. Click the link in the next message to get a token.");
                             $this->say(route("auth-start"));
-                            $this->bot->typesAndWaits(2);
-                            $this->say("Once you have a code, please paste it here.");
                             $this->askCode();
                             break;
                         default:
