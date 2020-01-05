@@ -420,6 +420,29 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                <div class="page-title">
+                    <h2 id="feature-intel" class="margin-top-xl">Miscellaneous commands</h2>
+                    <p>Other commands to make communication smoother</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <img data-toggle="tooltip" src="images/eve/chars/5.png"
+                     class="img-rounded pull-left shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
+                <div>
+                    <h3>Greeting</h3>
+                    <small>
+                        <code>hi</code>, <code>hey</code>, <code>sup</code>, <code>yo</code>
+                    </small>
+                    <p>
+                        This command shows you where is the current character location and which ship is used.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -581,7 +604,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    </p>
+                    <p><a class="white" href="{{route("privacy")}}">Privacy policy</a></p>
                     <p class="text-justify" style="font-size: 0.95rem">All images are material are property of CCP
                         Games: EVE Online and the EVE logo are the registered trademarks of CCP hf. All rights are
                         reserved worldwide. All other trademarks are the property of their respective owners. EVE

@@ -7,14 +7,7 @@ Co-Pilot for EVE Online: On Facebook Messenger and Telegram. Providing location,
 
 ## Supported commands
 
-### Character management
-- __Add character__ Starts a conversation about authenticating and linking a new character to a conversation. (Also works: Link char, Link character, Add char) 
-- __My chars__ Lists which characters are linked to this chat (Also workds: my characters)
-- __Switch to {Character Name}__  Switches to another, already linked character in this chat. 
-
-
-### Location service
-- `Status`Responds with the currently active ship, location and online status. 
+Please see the website homepage for commands. (No reason for documenting them twice)
 
 ## Installation
 

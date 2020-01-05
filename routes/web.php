@@ -77,3 +77,8 @@
      * Token view
      */
     Route::view("/token/view", "token");
+
+    /**
+     * Privacy policy
+     */
+    Route::view("/privacy-policy", "privacy")->name("privacy");
