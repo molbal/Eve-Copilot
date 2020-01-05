@@ -322,7 +322,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <img data-toggle="tooltip" src="images/eve/chars/2.png"
-                     class="img-rounded pull-left shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
+                     class="img-rounded pull-right shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
                 <div>
                     <h3>Add a new character</h3>
                     <small>
@@ -348,6 +348,14 @@
                         Have more, than 1 characters added and you want to switch between them? This command lets you do
                         that easily. Pro tip: You don't have to write the entire name, just the first few letters.
                     </p>
+
+                    <h3>Set character home</h3>
+                    <small>
+                        <code>Set home</code>, <code>New home</code>
+                    </small>
+                    <p>
+                        Sets home station/structure for a character. This can come useful for the emergency warp and navigate home commands
+                    </p>
                 </div>
             </div>
         </div>
@@ -362,7 +370,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <img data-toggle="tooltip" src="images/eve/chars/1.png"
-                     class="img-rounded pull-left shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
+                     class="img-rounded pull-right shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
                 <div>
                     <h3>Quick status</h3>
                     <small>
@@ -385,7 +393,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <img data-toggle="tooltip" src="images/eve/chars/3.png"
-                     class="img-rounded pull-left shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
+                     class="img-rounded pull-right shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
                 <div>
                     <h3>Quick status</h3>
                     <small>
@@ -408,7 +416,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <img data-toggle="tooltip" src="images/eve/chars/4.png"
-                     class="img-rounded pull-left shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
+                     class="img-rounded pull-right shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
                 <div>
                     <h3>Quick status</h3>
                     <small>
@@ -431,7 +439,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <img data-toggle="tooltip" src="images/eve/chars/5.png"
-                     class="img-rounded pull-left shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
+                     class="img-rounded pull-right shadow margin-right-md" style="height: 356px;width: 200px;" alt="">
                 <div>
                     <h3>Greeting</h3>
                     <small>

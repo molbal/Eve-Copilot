@@ -1,6 +1,7 @@
 <?php
 
     use App\Conversations\LinkCharacterConversation;
+    use App\Conversations\SetHomeConversation;
     use App\Conversations\SingleCommands\CharacterManagementCommands;
     use App\Conversations\SingleCommands\IntelCommands;
     use App\Conversations\SingleCommands\LocationCommands;
@@ -21,6 +22,9 @@
     $botman->hears("My chars|My characters", $charManagement->listMyCharacters());
     $botman->hears('Link char|Link character|Add character|Add char', function (BotMan $bot) {
         $bot->startConversation(new LinkCharacterConversation);
+    });
+    $botman->hears('Set home|New home', function (BotMan $bot) {
+        $bot->startConversation(new SetHomeConversation);
     });
 
     /**

@@ -151,6 +151,41 @@ This table stores entries that should be cached, but would be too much to keep i
     </tr>
 </table>
 
+### charsettings
+This table stores eve character related settings, like home location and emergency contact
+<table>
+    <tr>
+        <td><b>Column name</b></td>
+        <td><b>Purpose</b></td>
+        <td><b>Type</b></td>
+        <td><b>Index</b></td>
+    </tr>
+    <tr>
+        <td>CHAR_ID</td>
+        <td>EVE ID</td>
+        <td>Unsigned bigint</td>
+        <td>Composite: CHAR_ID+PARAM</td>
+    </tr>
+    <tr>
+        <td>PARAM</td>
+        <td>Key name</td>
+        <td>Varchar (32)</td>
+        <td>Composite: CHAR_ID+PARAM</td>
+    </tr>
+    <tr>
+        <td>VALUE</td>
+        <td>Setting value</td>
+        <td>Varchar(512)</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>CREATED_AT</td>
+        <td>Laravel created at column</td>
+        <td>Timestamp</td>
+        <td>-</td>
+    </tr>
+</table>
+
 ## Cache scheme
 - Eve ESI access tokens (each valid for 20m) are cached.
 - Ongoing chats "session" variables are also cached 

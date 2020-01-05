@@ -56,6 +56,7 @@
             abort(403, "Invalid maintenance token.");
         }
 
+        Artisan::call("cache:clear");
         Artisan::call("config:clear");
         Artisan::call("route:clear");
     });
