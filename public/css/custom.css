@@ -37,6 +37,9 @@ code:hover {
     font-family: 'Share Tech Mono', monospace;
 }
 
+p a, ul:not(.nav) > li > a {
+    text-decoration: underline;
+}
 
 /* Why the fuck are these missing */
 /* Why the fuck I am using bootstrap 3 */

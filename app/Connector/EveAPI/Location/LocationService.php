@@ -51,4 +51,19 @@
             return $val;
         }
 
+
+        /**
+         * Set a solar system, station or structure as autopilot waypoint
+         * @param int $charId
+         * @param int $destinationId
+         * @throws \Exception
+         */
+        public function setWaypoint(int $charId, int $destinationId):void {
+            $resp = $this->simplePost($charId, "/ui/autopilot/waypoint/?add_to_beginning=true&clear_other_waypoints=true&datasource=tranquility&destination_id=".$destinationId, "");
+
+            if (!isset($resp->error)) {
+                throw new \Exception("The EVE api returned an error: " . $resp->error);
+            }
+        }
+
     }

@@ -12,7 +12,7 @@
     class ESITokenController {
 
         /** @var int EVE Character ID */
-        private $charId;
+        protected $charId;
 
         /**
          * ESITokenController constructor.
@@ -96,14 +96,15 @@
          * @throws Exception Throws exception if the character ID has no refresh token stored
          */
         public function getRefreshToken() {
-            /** @var string $refreshToken */
+
             $refreshToken = DB::table('characters')
                 ->select('REFRESH_TOKEN')
-                ->where('ID', '=', $this->charId)
-                ->first()->REFRESH_TOKEN;
-
-            if (!$refreshToken) {
+                ->where('ID', '=', $this->charId);
+            if (!$refreshToken->exists()) {
                 throw new Exception("The user ID " . $this->charId. " has no refresh token stored");
+            }
+            else {
+                $refreshToken = $refreshToken->get()->first()->REFRESH_TOKEN;
             }
 
             return $refreshToken;

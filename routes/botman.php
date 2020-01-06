@@ -34,9 +34,10 @@
     /**
      * Location Service commands
      */
-    /** @var LocationCommands $charManagement */
+    /** @var LocationCommands $locationCommands */
     $locationCommands = resolve('App\Conversations\SingleCommands\LocationCommands');
     $botman->hears("Status", $locationCommands->statusCommand());
+    $botman->hears("Navigate {target}", $locationCommands->navigateTo());
 
     /**
      * Intelligence service

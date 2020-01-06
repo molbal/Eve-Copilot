@@ -190,6 +190,23 @@
         }
 
         /**
+         * Gets the ID of a solar system, from its name
+         *
+         * @param string $fullName
+         * @return mixed
+         * @throws \Exception
+         */
+        public function getSolarSystemId(string $fullName): int {
+            $response = $this->simplePost(null, "universe/ids", json_encode([$fullName]));
+
+            if (isset($response->systems[0]->id)) {
+                $systemId = $response->systems[0]->id;
+            } else {
+                throw new \InvalidArgumentException("Cannot find the Eve ID number for this structure.");
+            }
+            return $systemId;
+        }
+        /**
          * General name lookup. Caches and works for ItemIDs
          *
          * @param int $id

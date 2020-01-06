@@ -209,13 +209,11 @@
                                         <h2>Location Services</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute</p>
+                                        <p>Want to get from A to B quickly? Do you wish EVE had intelligent, conflict aware navigation?
+                                            <br>Set waypoints easily by telling your co-pilot <code>Go {somewhere}</code> or <code>Navigate home</code>. or if you are AFK and on autopilot, you can have the co-pilot alert you when you reach your destination.</p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">
-                                        <a href="#" class="button">Read more</a>
+                                        <a href="#feature-location" class="button">Read more</a>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
@@ -237,13 +235,11 @@
                                         <h2>Emergency services</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute</p>
+                                        <p>Are you mining peacefully in hisec in your Hulk with no tank, when a catalyst arrives in the belt? Starting to panic? Send <code>Emergency warp</code> and the co-pilot will find you a safe warp-out location, from where you can get to a station.
+                                            <br> Or are you peacefully ratting in bling ship when bombers arrive? Say <code>mayday</code> to instantly send a message to your emergency contact with your location, ship type, ship name to ask for reinforcement.</p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">
-                                        <a href="#" class="button">Read more</a>
+                                        <a href="#feature-emergency" class="button">Read more</a>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
@@ -265,13 +261,16 @@
                                         <h2>Intelligence services</h2>
                                     </div>
                                     <div class="caption-desc" data-animation="animated fadeInUp">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute</p>
+                                        <p>See someone appear in local? Tell your co-pilot his name (<code>identify {name}</code>)
+                                            and it will return basic info, such as corp, alliance info. But you can do that ingame
+                                            easier so the co-pilot will also give you the pilot's most commonly used ships and other details.
+                                            <br>
+                                            If you scanned the ship type you can guess his fit and capabilities by sending <code>intel {ship type}</code>
+                                            after the identify command.
+                                        </p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">
-                                        <a href="#" class="button">Read more</a>
+                                        <a href="#feature-intel" class="button">Read more</a>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
@@ -293,13 +292,13 @@
                             <strong>Multi character support</strong> and easy switching
                         </li>
                         <li data-target="#caption_slide" data-slide-to="1">
-                            <strong>Lorem ipsum </strong>consectetur adipisicing elit.
+                            <strong>Location & navigation </strong>never get lost again
                         </li>
                         <li data-target="#caption_slide" data-slide-to="2">
-                            <strong>Lorem ipsum </strong>consectetur adipisicing elit.
+                            <strong>Emergency response </strong>react to danger in seconds
                         </li>
                         <li data-target="#caption_slide" data-slide-to="3">
-                            <strong>Lorem ipsum </strong>consectetur adipisicing elit.
+                            <strong>Intel service </strong> Identify and analyse easily
                         </li>
                     </ol>
                 </div>
@@ -506,7 +505,8 @@
                                 <li>I was teaching newcomers to become pirates (with.. mixed success: <a href="https://zkillboard.com/corporation/98359883/" class="btn-link" target="_blank">Jumpstart Academy [JMPS]</a>)</li>
                                 <li>You might have used the ship painter application <a href="https://eve-nt.uk/designer" class="btn-link" target="_blank">EVE_NT Designer</a></li>
                                 <li>I am a member of the EVE_NT staff, if you watched any Alliance Tournaments you probably saw my work as most of the fit displays, graphs, voting screens, profile screens were designed by me</li>
-                                </ul>
+                                <li>The source code for this service is available on <a href="https://https://github.com/molbal/Eve-Copilot" class="btn-link" target="_blank">GitHub</a> </li>
+                            </ul>
                             </p>
                         </div>
                     </div>
@@ -556,9 +556,23 @@
                     <div class="blog-content">
                         <h3><a href="javascript:void(0)">Veetor Nara</a></h3>
                         <ul class="blog-meta">
-                            <li><span class="ti-user"></span> <a href="#">Developer</a></li>
+                            <li><span class="ti-user"></span> <a href="#">FC & DPS</a></li>
                         </ul>
                         <p>Hello, I am Veetor Nara (IRL Balint Molnar) and I made this. <br>You can talk to me on <a href="https://twitter.com/veetor_in_eve" class="btn-link" target="_blank"><i class="ti-twitter"></i> Twitter</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="single-blog">
+                    <div class="blog-photo">
+                        <img src="https://images.evetech.net/types/1529/render" alt="">
+                    </div>
+                    <div class="blog-content">
+                        <h3><a href="javascript:void(0)">EVE Online Community</a></h3>
+                        <ul class="blog-meta">
+                            <li><span class="ti-user"></span> <a href="#">Support & Reps</a></li>
+                        </ul>
+                        <p>Thank you Squizz for letting this service rely on zKillboard stats</p>
                     </div>
                 </div>
             </div>
