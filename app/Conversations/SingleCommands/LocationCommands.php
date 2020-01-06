@@ -71,30 +71,31 @@
         public function navigateTo(): Closure {
             return function (Botman $bot, string $target) {
                 try {
+                    $charId = ChatCharLink::getActive($bot->getUser()->getId());
 
                     switch (mb_strtolower($target)) {
                         case "jita":
                             $target_id = "60003760";
-                            $name = "Jita (Trade hub station work 🚚)";
+                            $name = "Jita (Trade hub station 🚚)";
                             break;
                         case "hek":
-                            $target_id = "60011866";
-                            $name = "Hek (Trade hub station work 🚚)";
+                            $target_id = "60005686";
+                            $name = "Hek (Trade hub station 🚚)";
                             break;
                         case 'amarr':
                             $target_id = "60008494";
-                            $name = "Amarr (Trade hub station work 🚚)";
+                            $name = "Amarr (Trade hub station 🚚)";
                             break;
                         case 'rens':
                             $target_id = "60004588";
-                            $name = "Rens (Trade hub station work 🚚)";
+                            $name = "Rens (Trade hub station 🚚)";
                             break;
                         case 'dodixie':
                             $target_id = "60011866";
-                            $name = "Dodixie (Trade hub station work 🚚)";
+                            $name = "Dodixie (Trade hub station 🚚)";
                             break;
                         case 'home':
-                            $target_id = CharacterSettings::getSettings($bot->getUser()->getId(), "HOME_ID");
+                            $target_id = CharacterSettings::getSettings($charId, "HOME_ID");
                             if (!$target_id) {
                                 throw new \RuntimeException("You don't have a home set. Send 'set home' to set it.");
                             }
@@ -124,7 +125,7 @@
                             }
                     }
 
-                    $this->locationService->setWaypoint(ChatCharLink::getActive($bot->getUser()->getId()), $target_id);
+                    $this->locationService->setWaypoint($charId, $target_id);
                     $bot->reply("Route set to $name - Follow the waypoints or press Ctrl+S in EVE to toggle the autopilot.");
                 } catch (\Exception $e) {
                     $bot->reply("Could not set waypoint: " . $e->getMessage(). " (".$e->getFile()."@".$e->getLine().")");

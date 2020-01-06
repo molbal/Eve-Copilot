@@ -38,6 +38,9 @@
     $locationCommands = resolve('App\Conversations\SingleCommands\LocationCommands');
     $botman->hears("Status", $locationCommands->statusCommand());
     $botman->hears("Navigate {target}", $locationCommands->navigateTo());
+    $botman->hears("Navigate to {target}", $locationCommands->navigateTo());
+    $botman->hears("Go to {target}", $locationCommands->navigateTo());
+    $botman->hears("Set route to {target}", $locationCommands->navigateTo());
 
     /**
      * Intelligence service
