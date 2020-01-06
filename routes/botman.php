@@ -1,6 +1,7 @@
 <?php
 
     use App\Conversations\LinkCharacterConversation;
+    use App\Conversations\SetEmergencyContactConversation;
     use App\Conversations\SetHomeConversation;
     use App\Conversations\SingleCommands\CharacterManagementCommands;
     use App\Conversations\SingleCommands\IntelCommands;
@@ -25,6 +26,9 @@
     });
     $botman->hears('Set home|New home', function (BotMan $bot) {
         $bot->startConversation(new SetHomeConversation);
+    });
+    $botman->hears('New emergency contact|Set emergency contact', function (BotMan $bot) {
+        $bot->startConversation(new SetEmergencyContactConversation);
     });
 
     /**

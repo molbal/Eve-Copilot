@@ -173,14 +173,12 @@
         protected function forevercacheHas(int $itemId): bool {
             return DB::table("forevercache")->where("ID", "=", $itemId)->exists();
         }
-
         /**
          * @param int $itemId
          * @return mixed
          */
         protected function forevercacheGet(int $itemId): string {
             $results = DB::table("forevercache")->select("Name")->where("ID", "=", $itemId)->get();
-//            dd($results);
             return $results->get(0)->Name;
         }
     }

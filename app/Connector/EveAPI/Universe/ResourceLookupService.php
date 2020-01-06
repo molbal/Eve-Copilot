@@ -5,6 +5,7 @@
 
 
     use App\Connector\EveAPI\EveAPICore;
+    use Illuminate\Filesystem\Cache;
     use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\Log;
 
@@ -21,9 +22,9 @@
          * @throws \Exception
          */
         public function getCharacterName(int $charId) {
-             if (DB::table("characters")->where("ID", "=", $charId)->exists()) {
-                 return DB::table("characters")->where("ID", "=", $charId)->get()->get(0)->NAME;
-             }
+            if (DB::table("characters")->where("ID", "=", $charId)->exists()) {
+                return DB::table("characters")->where("ID", "=", $charId)->get()->get(0)->NAME;
+            }
 
             if ($this->forevercacheHas($charId)) {
                 return $this->forevercacheGet($charId);
@@ -44,6 +45,46 @@
                 $ret = $ret[0]->name;
             }
             $this->forevercachePut($charId, $ret);
+            return $ret;
+        }
+        /**
+         * Gets the character name in the following order:
+         *  1. Checks the registered characters table (Among the users of co-pilot)
+         *  2. Checks the "Forever cache" table for known entries
+         *  3. Calls the ESI for name lookup (And caches the result afterwards)
+         *
+         * @param int $charName
+         * @return bool|mixed|string
+         * @throws \Exception
+         */
+        public function getCharacterId(string $charName): int {
+            if (DB::table("characters")->where("NAME", "=", $charName)->exists()) {
+                return DB::table("characters")->where("NAME", "=", $charName)->get()->get(0)->ID;
+            }
+
+            $cacheKey = "CharNameLookup-" . md5($charName);
+            if (\Illuminate\Support\Facades\Cache::has($cacheKey)) {
+                return \Illuminate\Support\Facades\Cache::get($cacheKey);
+            }
+
+
+            $ch = $this->createPost();
+            curl_setopt($ch, CURLOPT_URL, $this->apiRoot . "universe/ids/");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([$charName]));
+
+            $ret = curl_exec($ch);
+            curl_close($ch);
+
+            $ret = json_decode($ret);
+            if (isset($ret->error)) {
+                throw new \Exception($ret->error);
+            }
+            else {
+                $ret = $ret->characters[0]->id;
+            }
+
+            // Cache name for 3 days
+            \Illuminate\Support\Facades\Cache::put($cacheKey, $ret, 60*24*3);
             return $ret;
         }
 

@@ -356,6 +356,14 @@
                     <p>
                         Sets home station/structure for a character. This can come useful for the emergency warp and navigate home commands
                     </p>
+
+                    <h3>Set emergency contact</h3>
+                    <small>
+                        <code>Set emergency contact</code>, <code>New emergency contact</code>
+                    </small>
+                    <p>
+                        Sets the emergency contact for a character. This can come useful when you need to send a quick automated mayday message
+                    </p>
                 </div>
             </div>
         </div>
