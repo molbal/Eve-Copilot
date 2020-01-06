@@ -42,7 +42,7 @@
                     $dockedName = $status->station_name ?? $status->structure_name ?? null;
                     $statusText = "Your are " . ((isset($status->station_id) || isset($status->structure_id)) ? "docked" : "in space") .
                         " in " . $status->solar_system_name . " " . ($dockedName ? "($dockedName)" : "") .
-                        ". Your ship's name is: " . $currentShip->ship_name;
+                        ". Your ship is a ".$currentShip->ship_type_name." and its name is " . $currentShip->ship_name;
 
 
                     $attachment = new Image(ImageAPI::getRenderLink($currentShip->ship_type_id));
@@ -56,7 +56,7 @@
                 } catch (\Exception $e) {
                     $location .= $e->getMessage() . " " . $e->getFile() . " @" . $e->getLine();
                     Log::error($location);
-                    $bot->reply("An error occurred while coming up with the response. (".$e->getMessage().")");
+                    $bot->reply("An error occurred while coming up with the response. (".$e->getMessage().":".$e->getFile()."@".$e->getLine().")");
                 }
 
             };

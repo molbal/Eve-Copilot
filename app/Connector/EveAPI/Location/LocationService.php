@@ -20,7 +20,11 @@
             $ret = curl_exec($c);
             curl_close($c);
 
-            return json_decode($ret);
+            $ret = json_decode($ret);
+            $rlp = new ResourceLookupService();
+            $ret->ship_type_name = $rlp->generalNameLookup($ret->ship_type_id);
+
+            return $ret;
         }
 
 

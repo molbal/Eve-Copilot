@@ -75,7 +75,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#home-page">Home</a></li>
                 <li><a href="#activate-copilot">Getting started</a></li>
-                <li><a href="#activate-copilot">Features</a></li>
+                <li><a href="#features-summary">Features</a></li>
                 <li><a href="#faq-page">FAQ</a></li>
                 <li><a href="https://m.me/eveonlinecopilot" target="_blank"><img src="/images/icons/fb-messenger.png"
                                                                                  alt="."> Messenger</a></li>
@@ -111,7 +111,7 @@
                     On <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
                 <div class="btn-group">
                     <a href="#activate-copilot" class="btn button white">Get started</a>
-                    <a href="#" class="btn button white">See functions</a>
+                    <a href="#features-summary" class="btn button white">See functions</a>
                 </div>
             </div>
         </div>
@@ -168,7 +168,7 @@
 </section>
 <!--Feature-area/-->
 
-<section class="section-padding overlay" style="">
+<section class="section-padding overlay" style="" id="features-summary">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -187,7 +187,7 @@
                                             like <code>Switch to [character name]</code></p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">
-                                        <a href="#" class="button">Read more</a>
+                                        <a href="#feature-multichar" class="button">Read more</a>
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-md-3">
@@ -463,14 +463,13 @@
 </section>
 
 
-<section class="gray-bg section-padding" id="faq-page">
+<section class="section-padding overlay" id="faq-page">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                 <div class="page-title">
                     <h2>Frequently Asked Questions</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit voluptates, temporibus at, facere
-                        harum fugiat!</p>
+                    <p>If you can't find the answer for your question here, drop me an ingame mail</p>
                 </div>
             </div>
         </div>
@@ -479,50 +478,56 @@
                 <div class="panel-group" id="accordion">
                     <div class="panel">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Sedeiusmod
-                                tempor inccsetetur aliquatraiy?</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Who can read my messages and data?</a>
                         </h4>
                         <div id="collapse1" class="panel-collapse collapse in">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd
-                                exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in
-                                reprehenderit.</p>
+                            <p>If you are using this via Telegram, then noone, and if you are using Messenger, then page admins can. Currently the only admin is me, Veetor Nara and you have my word I won't read it.</p>
                         </div>
                     </div>
                     <div class="panel">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Tempor inccsetetur
-                                aliquatraiy?</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Is it not botting?</a>
                         </h4>
                         <div id="collapse2" class="panel-collapse collapse">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd
-                                exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in
-                                reprehenderit.</p>
+                            <p>No, the bot only gives simple commands via the <a class="btn-link" href="https://esi.evetech.net/ui" target="_blank">EVE API</a>. It uses the same API and zKillboard to get data. The rest is just clever combination of those resources. </p>
                         </div>
                     </div>
                     <div class="panel">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Lorem ipsum dolor amet,
-                                consectetur adipisicing ?</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">I still have second thoughts about this</a>
                         </h4>
                         <div id="collapse3" class="panel-collapse collapse">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd
-                                exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in
-                                reprehenderit.</p>
+                            <p>I know the word of a capsuleer is not always enough so here is what I have done over the years where you could have heard about me:
+                                <ul>
+                                    <li>You might have met me in Gallente FW space</li>
+                                    <li>You might have been to the Trillionare XMAS party in 2015, which was advertised by CCP Guard:
+                                        <a class="btn-link" target="_blank" href="https://www.eveonline.com/article/trillionaires-xmas-party-this-saturday-dec-19">EVE News article</a></li>
+                                    <li>You might have played on an old site Trillionaire, which was allowed to run for a while after IWantIsk and other sites were banned.</li>
+                                <li>I was teaching newcomers to become pirates (with.. mixed success: <a href="https://zkillboard.com/corporation/98359883/" class="btn-link" target="_blank">Jumpstart Academy [JMPS]</a>)</li>
+                                <li>You might have used the ship painter application <a href="https://eve-nt.uk/designer" class="btn-link" target="_blank">EVE_NT Designer</a></li>
+                                <li>I am a member of the EVE_NT staff, if you watched any Alliance Tournaments you probably saw my work as most of the fit displays, graphs, voting screens, profile screens were designed by me</li>
+                                </ul>
+                            </p>
                         </div>
                     </div>
                     <div class="panel">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Lorem ipsum dolor amet,
-                                consectetur adipisicing ?</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">What is the cost for this?</a>
                         </h4>
                         <div id="collapse4" class="panel-collapse collapse">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd
-                                exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in
-                                reprehenderit.</p>
+                            <p>
+                                <b>This is a hobby project and it's forever free to use.</b> However, if you would like to contribute to the server upkeep that is very welcome:
+                            </p>
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_donations"/>
+                                <input type="hidden" name="business" value="TZX5GJQA4USZQ"/>
+                                <input type="hidden" name="currency_code" value="EUR"/>
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                                       border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                                       alt="Donate with PayPal button"/>
+                                <img alt="" border="0" src="https://www.paypal.com/en_HU/i/scr/pixel.gif" width="1" height="1"/>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -535,51 +540,25 @@
 <section class="section-padding gray-bg" id="blog-page">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-4">
-                <div class="single-blog">
-                    <div class="blog-photo">
-                        <img src="images/small1.jpg" alt="">
-                    </div>
-                    <div class="blog-content">
-                        <h3><a href="#">Beautiful Place for your Great Journey</a></h3>
-                        <ul class="blog-meta">
-                            <li><span class="ti-user"></span> <a href="#">Admin</a></li>
-                            <li><span class="ti-calendar"></span> <a href="#">Feb 01, 2017</a></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita aliquid
-                            dolorem repellat perferendis, facilis aut fugit, impedit.</p>
-                    </div>
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                <div class="page-title">
+                    <h2>Creators</h2>
+                    <p>Who is responsible for this?</p>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-xs-12 col-sm-4">
                 <div class="single-blog">
                     <div class="blog-photo">
-                        <img src="images/small2.jpg" alt="">
+                        <img src="https://images.evetech.net/characters/93940047/portrait?size=512" alt="">
                     </div>
                     <div class="blog-content">
-                        <h3><a href="#">Beautiful Place for your Great Journey</a></h3>
+                        <h3><a href="javascript:void(0)">Veetor Nara</a></h3>
                         <ul class="blog-meta">
-                            <li><span class="ti-user"></span> <a href="#">Admin</a></li>
-                            <li><span class="ti-calendar"></span> <a href="#">Feb 01, 2017</a></li>
+                            <li><span class="ti-user"></span> <a href="#">Developer</a></li>
                         </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita aliquid
-                            dolorem repellat perferendis, facilis aut fugit, impedit.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-                <div class="single-blog">
-                    <div class="blog-photo">
-                        <img src="images/small3.jpg" alt="">
-                    </div>
-                    <div class="blog-content">
-                        <h3><a href="#">Beautiful Place for your Great Journey</a></h3>
-                        <ul class="blog-meta">
-                            <li><span class="ti-user"></span> <a href="#">Admin</a></li>
-                            <li><span class="ti-calendar"></span> <a href="#">Feb 01, 2017</a></li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nemo eaque expedita aliquid
-                            dolorem repellat perferendis, facilis aut fugit, impedit.</p>
+                        <p>Hello, I am Veetor Nara (IRL Balint Molnar) and I made this. <br>You can talk to me on <a href="https://twitter.com/veetor_in_eve" class="btn-link" target="_blank"><i class="ti-twitter"></i> Twitter</a></p>
                     </div>
                 </div>
             </div>

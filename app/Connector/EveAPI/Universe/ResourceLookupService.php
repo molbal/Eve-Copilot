@@ -40,13 +40,13 @@
             $ret = json_decode($ret);
             if (isset($ret->error)) {
                 throw new \Exception($ret->error);
-            }
-            else {
+            } else {
                 $ret = $ret[0]->name;
             }
             $this->forevercachePut($charId, $ret);
             return $ret;
         }
+
         /**
          * Gets the character name in the following order:
          *  1. Checks the registered characters table (Among the users of co-pilot)
@@ -78,13 +78,12 @@
             $ret = json_decode($ret);
             if (isset($ret->error)) {
                 throw new \Exception($ret->error);
-            }
-            else {
+            } else {
                 $ret = $ret->characters[0]->id;
             }
 
             // Cache name for 3 days
-            \Illuminate\Support\Facades\Cache::put($cacheKey, $ret, 60*24*3);
+            \Illuminate\Support\Facades\Cache::put($cacheKey, $ret, 60 * 24 * 3);
             return $ret;
         }
 
@@ -154,26 +153,60 @@
             return $stationName;
         }
 
-        public function getStationId(string $stationFullName) {
+        /**
+         * Gets the ID of a station, from its name
+         *
+         * @param string $stationFullName
+         * @return mixed
+         * @throws \Exception
+         */
+        public function getStationId(string $stationFullName): int {
             $response = $this->simplePost(null, "universe/ids", json_encode([$stationFullName]));
 
             if (isset($response->stations)) {
                 $stationId = $response->stations[0]->id;
-            }
-            else {
+            } else {
                 throw new \InvalidArgumentException("Cannot find the Eve ID number for this station.");
             }
             return $stationId;
         }
-        public function getStructureId(string $fullName) {
+
+        /**
+         * Gets the ID of a structure, from its name
+         *
+         * @param string $fullName
+         * @return mixed
+         * @throws \Exception
+         */
+        public function getStructureId(string $fullName): int {
             $response = $this->simplePost(null, "universe/ids", json_encode([$fullName]));
 
             if (isset($response->structure)) {
                 $stationId = $response->structure[0]->id;
-            }
-            else {
+            } else {
                 throw new \InvalidArgumentException("Cannot find the Eve ID number for this structure.");
             }
             return $stationId;
+        }
+
+        /**
+         * General name lookup. Caches and works for ItemIDs
+         *
+         * @param int $id
+         * @return string
+         * @throws \Exception
+         */
+        public function generalNameLookup(int $id): string {
+            if ($this->forevercacheHas($id)) {
+                return $this->forevercacheGet($id);
+            }
+            $resp = $this->simplePost(null, "universe/names", json_encode([$id]));
+
+            $name = $resp[0]->name;
+            if (isset($name)) {
+                $this->forevercachePut($id, $name);
+                return $name;
+            }
+            throw new \InvalidArgumentException("No item ID with name $id found in ESI");
         }
     }
