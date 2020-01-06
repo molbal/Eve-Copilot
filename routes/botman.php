@@ -59,5 +59,5 @@
      */
     /** @var MiscCommands $miscCommands */
     $miscCommands = resolve('App\Conversations\SingleCommands\MiscCommands');
-    $botman->hears("Hi|Hello|Yo|Sup|Hey", $miscCommands->sayHi());
+    $botman->hears("Hi|Hello|Yo|Sup|Hey|o7|o/", $miscCommands->sayHi());
     $botman->fallback($miscCommands->fallback());

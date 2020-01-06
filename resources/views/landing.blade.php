@@ -105,8 +105,8 @@
             </div>
             <div class="col-xs-12 col-md-7 header-text">
                 <h2>Chatbot Co-Pilot for EVE Online</h2>
-                <p>Providing <strong>location</strong>, <strong>mailing</strong>, <strong>emergency</strong> and
-                    <strong>intelligence</strong> services.
+                <p>Providing <strong>location &amp; navigation</strong>, <strong>intelligence</strong> and
+                    <strong>emergency</strong> assistance.
                     <br>
                     On <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
                 <div class="btn-group">
@@ -321,12 +321,14 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <img data-toggle="tooltip" src="images/eve/chars/2.png"
-                     class="img-rounded pull-right shadow margin-right-md hidden-xs" style="height: 356px;width: 200px;" alt="">
+                     class="img-rounded pull-right shadow margin-left-md hidden-xs" style="height: 356px;width: 200px;" alt="">
                 <div>
                     <h3>Add a new character</h3>
                     <small>
-                        <code>Link character</code>, <code>Add character</code>,
-                        <code>Link char</code>, <code>Add char</code>
+                        <code>Link character</code>
+                        <code>Add character</code>
+                        <code>Link char</code>
+                        <code>Add char</code>
                     </small>
                     <p>
                         This command adds a new character to your current chat. It gives you a link where you can log in with your EVE Online account. The bot will never ask for your EVE Online password or username.
@@ -334,7 +336,8 @@
 
                     <h3>List my characters</h3>
                     <small>
-                        <code>My chars</code>, <code>My characters</code>
+                        <code>My chars</code>
+                        <code>My characters</code>
                     </small>
                     <p>Unsure how many characters are added? This command will list your already added characters.
                         It will also show which character the Co-pilot is assigned to.</p>
@@ -350,7 +353,8 @@
 
                     <h3>Set character home</h3>
                     <small>
-                        <code>Set home</code>, <code>New home</code>
+                        <code>Set home</code>
+                        <code>New home</code>
                     </small>
                     <p>
                         Sets home station/structure for a character. This can come useful for the emergency warp and navigate home commands
@@ -358,7 +362,8 @@
 
                     <h3>Set emergency contact</h3>
                     <small>
-                        <code>Set emergency contact</code>, <code>New emergency contact</code>
+                        <code>Set emergency contact</code>
+                        <code>New emergency contact</code>
                     </small>
                     <p>
                         Sets the emergency contact for a character. This can come useful when you need to send a quick automated mayday message
@@ -377,7 +382,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <img data-toggle="tooltip" src="images/eve/chars/1.png"
-                     class="img-rounded pull-right shadow margin-right-md hidden-xs" style="height: 356px;width: 200px;" alt="">
+                     class="img-rounded pull-right shadow margin-left-md hidden-xs" style="height: 356px;width: 200px;" alt="">
                 <div>
                     <h3>Quick status</h3>
                     <small>
@@ -385,6 +390,20 @@
                     </small>
                     <p>
                         This command shows you where is the current character location and which ship is used.
+                    </p>
+
+                    <h3>Set route</h3>
+                    <small>
+                        <code>Go to {destination}</code>
+                        <code>Navigate to {destination}</code>
+                        <code>Navigate {destination}</code>
+                        <code>Set route to {destination}</code>
+                    </small>
+                    <p>
+                        This command will set your waypoints in EVE (clearing other waypoints). Target can be: <strong>Jita</strong>,
+                        <strong>Amarr</strong>, <strong>Dodixie</strong>, <strong>Hek</strong>, <strong>Rens</strong> to set route
+                        to the trade stations, <strong>home</strong> for your home set with <code>set home</code>, or any
+                        <strong>structure</strong>, <strong>station</strong> or <strong>solar system</strong>.
                     </p>
                 </div>
             </div>
@@ -400,14 +419,14 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <img data-toggle="tooltip" src="images/eve/chars/3.png"
-                     class="img-rounded pull-right shadow margin-right-md hidden-xs" style="height: 356px;width: 200px;" alt="">
+                     class="img-rounded pull-right shadow margin-left-md hidden-xs" style="height: 356px;width: 200px;" alt="">
                 <div>
-                    <h3>Quick status</h3>
+                    <h3>TBA</h3>
                     <small>
-                        <code>Status</code>
+                        <code>...</code>
                     </small>
                     <p>
-                        This command shows you where is the current character location and which ship is used.
+                        ...
                     </p>
                 </div>
             </div>
@@ -423,14 +442,14 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <img data-toggle="tooltip" src="images/eve/chars/4.png"
-                     class="img-rounded pull-right shadow margin-right-md hidden-xs" style="height: 356px;width: 200px;" alt="">
+                     class="img-rounded pull-right shadow margin-left-md hidden-xs" style="height: 356px;width: 200px;" alt="">
                 <div>
-                    <h3>Quick status</h3>
+                    <h3>TBA</h3>
                     <small>
-                        <code>Status</code>
+                        <code>...</code>
                     </small>
                     <p>
-                        This command shows you where is the current character location and which ship is used.
+                        ...
                     </p>
                 </div>
             </div>
@@ -446,15 +465,23 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <img data-toggle="tooltip" src="images/eve/chars/5.png"
-                     class="img-rounded pull-right shadow margin-right-md hidden-xs" style="height: 356px;width: 200px;" alt="">
+                     class="img-rounded pull-right shadow margin-left-md hidden-xs" style="height: 356px;width: 200px;" alt="">
                 <div>
                     <h3>Greeting</h3>
                     <small>
-                        <code>hi</code>, <code>hey</code>, <code>sup</code>, <code>yo</code>
+                        <code>hi</code>
+                        <code>hey</code>
+                        <code>sup</code>
+                        <code>yo</code>
+                        <code>o7</code>
+                        <code>o/</code>
                     </small>
                     <p>
-                        This command shows you where is the current character location and which ship is used.
+                        The co-pilot briefly introduces itself.
                     </p>
+
+                    <h3>Clarification request</h3>
+                    <p>When the co-pilot can not understand your message, it will ask you to check for typos and link this page.</p>
                 </div>
             </div>
         </div>
