@@ -131,7 +131,7 @@
                 $stationId = $response->structure[0]->id;
             }
             else {
-                throw new \InvalidArgumentException("Cannot find the Eve ID number for this station.");
+                throw new \InvalidArgumentException("Cannot find the Eve ID number for this structure.");
             }
             return $stationId;
         }

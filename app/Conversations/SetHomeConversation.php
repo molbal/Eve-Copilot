@@ -18,30 +18,30 @@
     class SetHomeConversation extends Conversation {
 
         /** @var ResourceLookupService */
-        private $resourceLookup;
+        protected $resourceLookup;
 
-        private $charId;
-        private $charName;
+        protected $charId;
+        protected $charName;
         /**
          * @var ?int
          */
-        private $previousHomeId;
+        protected $previousHomeId;
         /**
          * @var ?string
          */
-        private $previousHomeName;
+        protected $previousHomeName;
         /**
          * @var ?string
          */
-        private $previousHomeType;
+        protected $previousHomeType;
         /**
          * @var ?string
          */
-        private $newHomeType;
+        protected $newHomeType;
         /**
          * @var ?int
          */
-        private $newHomeId;
+        protected $newHomeId;
 
 
         public function confirmUser() {
@@ -116,49 +116,48 @@
 
         private function askForStationName() {
             try {
-
-                $getFullName = Question::create("Please paste here the full name of your home, for example 'Jita IV - Moon 4 - Caldari Navy Assembly Plant'");
+                $getFullName = Question::create("Please paste  the full name of your home, for example 'Jita IV - Moon 4 - Caldari Navy Assembly Plant'");
                 $this->ask($getFullName, function (Answer $answer3) {
                     if ($answer3->getText() == "cancel") {
                         $this->say("Alright, cancelled.");
                         return;
                     }
 
-                    $this->resourceLookup = new ResourceLookupService();
                     $this->newHomeId = null;
-                    if ($this->newHomeType == "station") {
+                    $homeName = trim($answer3->getText());
+                    if (strtolower($this->newHomeType) == "station") {
                         try {
-                            Log::info("Getting ID for station " . trim($answer3->getText()));
-                            $this->newHomeId = $this->resourceLookup->getStationId(trim($answer3->getText()));
+                            $this->newHomeId = $this->resourceLookup->getStationId($homeName);
                         } catch (\Exception $e) {
-                            $this->say("Error: ".$e->getMessage());
+                            $this->say("❌ Error: " . $e->getMessage());
                             Log::info($e->getMessage());
                         }
                         if ($this->newHomeType == null) {
-                            $this->say("Could not find this station. Please write cancel to cancel or try again and watch for typos");
+                            $this->say("⚠ Could not find this station ($homeName). Please write cancel to cancel or try again and watch for typos");
                             $this->askForStationName();
                         } else {
                             CharacterSettings::setSetting($this->charId, "HOME_ID", $this->newHomeId);
                             CharacterSettings::setSetting($this->charId, "HOME_TYPE", "station");
+
+                            $this->say("Saved! ✔");
                         }
                     } else {
                         try {
-                            Log::info("Getting ID for structure " . trim($answer3->getText()));
-                            $this->newHomeId = $this->resourceLookup->getStructureId(trim($answer3->getText()));
+                            $this->newHomeId = $this->resourceLookup->getStructureId($homeName);
                         } catch (\Exception $e) {
-                            $this->say("Error: ".$e->getMessage());
+                            $this->say("❌ Error: " . $e->getMessage());
                             Log::info($e->getMessage());
                         }
                         if ($this->newHomeType == null) {
-                            $this->say("Could not find this station. Please write cancel to cancel or try again and watch for typos");
+                            $this->say("⚠ Could not find this structure ($homeName). Please write cancel to cancel or try again and watch for typos");
                             $this->askForStationName();
                         } else {
                             CharacterSettings::setSetting($this->charId, "HOME_ID", $this->newHomeId);
                             CharacterSettings::setSetting($this->charId, "HOME_TYPE", "structure");
+
+                            $this->say("Saved! ✔");
                         }
                     }
-
-                    $this->say("Saved! ✔");
                 });
             } catch (\Exception $e) {
                 $this->say($e->getMessage());
@@ -194,6 +193,5 @@
                 $this->say($e->getMessage());
             }
         }
-
 
     }
