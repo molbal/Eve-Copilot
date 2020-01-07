@@ -39,7 +39,7 @@
             }
             curl_setopt_array($curl, [
                 CURLOPT_RETURNTRANSFER => 1,
-                CURLOPT_USERAGENT =>  $this->userAgent,
+                CURLOPT_USERAGENT => $this->userAgent,
                 CURLOPT_HTTPHEADER => [
                     isset($accessToken) ? 'authorization: Bearer ' . $accessToken : 'X-a: b',
                     'accept: application/json'
@@ -55,6 +55,7 @@
 
         /**
          * Makes a GET call to ESI with authentication
+         *
          * @param int    $charId
          * @param string $fullPath
          * @return mixed
@@ -70,8 +71,8 @@
             }
             curl_setopt_array($curl, [
                 CURLOPT_RETURNTRANSFER => 1,
-                CURLOPT_USERAGENT =>  $this->userAgent,
-                CURLOPT_URL => $this->apiRoot.$fullPath,
+                CURLOPT_USERAGENT => $this->userAgent,
+                CURLOPT_URL => $this->apiRoot . $fullPath,
                 CURLOPT_HTTPHEADER => [
                     isset($accessToken) ? 'authorization: Bearer ' . $accessToken : 'X-a: b',
                     'accept: application/json'
@@ -90,12 +91,15 @@
 
         /**
          * Makes a POST call to ESI with authentication
+         *
          * @param int    $charId
          * @param string $fullPath
+         * @param string $requestBody
+         * @param bool   $jsonReply Set to true if the expected response is JSON
          * @return mixed
          * @throws \Exception
          */
-        protected function simplePost(?int $charId, string $fullPath, string $requestBody) {
+        protected function simplePost(?int $charId, string $fullPath, string $requestBody, bool $jsonReply = true) {
 
             $curl = curl_init();
 
@@ -106,11 +110,12 @@
             curl_setopt_array($curl, [
                 CURLOPT_RETURNTRANSFER => 1,
                 CURLOPT_POST => true,
-                CURLOPT_USERAGENT =>  $this->userAgent,
-                CURLOPT_URL => $this->apiRoot.$fullPath,
+                CURLOPT_USERAGENT => $this->userAgent,
+                CURLOPT_URL => $this->apiRoot . $fullPath,
                 CURLOPT_HTTPHEADER => [
                     isset($accessToken) ? 'authorization: Bearer ' . $accessToken : 'X-a: b',
-                    'accept: application/json'
+                    'accept: application/json',
+                    "Content-type: application/json"
                 ],
                 CURLOPT_POSTFIELDS => $requestBody,
                 CURLOPT_VERBOSE => true,
@@ -120,11 +125,16 @@
             $ret = curl_exec($curl);
             curl_close($curl);
 
-            return json_decode($ret);
+            if ($jsonReply) {
+                return json_decode($ret);
+            } else {
+                return $ret;
+            }
         }
 
         /**
          * Creates a post CURL request with ESI authentication
+         *
          * @param int|null $charId
          * @return false|resource
          * @throws \Exception
@@ -138,7 +148,7 @@
             }
             curl_setopt_array($curl, [
                 CURLOPT_RETURNTRANSFER => 1,
-                CURLOPT_USERAGENT =>  $this->userAgent,
+                CURLOPT_USERAGENT => $this->userAgent,
                 CURLOPT_POST => true,
                 CURLOPT_HTTPHEADER => [
                     isset($accessToken) ? 'authorization: Bearer ' . $accessToken : 'X-a: b',
@@ -173,6 +183,7 @@
         protected function forevercacheHas(int $itemId): bool {
             return DB::table("forevercache")->where("ID", "=", $itemId)->exists();
         }
+
         /**
          * @param int $itemId
          * @return mixed

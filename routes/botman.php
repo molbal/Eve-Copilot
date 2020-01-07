@@ -4,6 +4,7 @@
     use App\Conversations\SetEmergencyContactConversation;
     use App\Conversations\SetHomeConversation;
     use App\Conversations\SingleCommands\CharacterManagementCommands;
+    use App\Conversations\SingleCommands\EmergencyCommands;
     use App\Conversations\SingleCommands\IntelCommands;
     use App\Conversations\SingleCommands\LocationCommands;
     use App\Conversations\SingleCommands\MiscCommands;
@@ -43,11 +44,19 @@
     $botman->hears("Set route to {target}", $locationCommands->navigateTo());
 
     /**
+     * Emergency contacts
+     */
+    /** @var EmergencyCommands $emergencyCommands */
+    $emergencyCommands = resolve('App\Conversations\SingleCommands\EmergencyCommands');
+    $botman->hears("mayday|call reinforcements|send help", $emergencyCommands->mayday());
+    /**
      * Intelligence service
      */
     /** @var IntelCommands $intelService */
     $intelService = resolve('App\Conversations\SingleCommands\IntelCommands');
     $botman->hears("whois {charId}", $intelService->simpleWhois());
+
+
 
 
     /**
