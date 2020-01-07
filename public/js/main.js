@@ -28,7 +28,7 @@
         responsiveClass: true,
         nav: true,
         autoplay: true,
-        autoplayTimeout: 4000,
+        autoplayTimeout: 40000,
         smartSpeed: 1000,
         navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right" ></i>'],
         items: 1
@@ -41,7 +41,7 @@
         responsiveClass: true,
         nav: true,
         autoplay: true,
-        autoplayTimeout: 4000,
+        autoplayTimeout: 40000,
         smartSpeed: 1000,
         navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right" ></i>'],
         items: 1,
@@ -57,7 +57,7 @@
         responsiveClass: true,
         nav: true,
         autoplay: true,
-        autoplayTimeout: 4000,
+        autoplayTimeout: 40000,
         smartSpeed: 1000,
         navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right" ></i>'],
         responsive: {

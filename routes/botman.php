@@ -49,13 +49,9 @@
     $intelService = resolve('App\Conversations\SingleCommands\IntelCommands');
     $botman->hears("whois {charId}", $intelService->simpleWhois());
 
-    /**
-     * Introduction
-     */
-
 
     /**
-     * Fallback command
+     * Introduction & fallback command
      */
     /** @var MiscCommands $miscCommands */
     $miscCommands = resolve('App\Conversations\SingleCommands\MiscCommands');
