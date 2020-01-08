@@ -38,7 +38,7 @@
                     ChatCharLink::setActive($chatId, $switchedChar);
 
                     $bot->reply("My Captain is now " . $this->resourceLookupService->getCharacterName($switchedChar) . " 👨‍✈️");
-                } catch (\RuntimeException $e) {
+                } catch (\Exception $e) {
                     $bot->reply("Cannot find this character. To check which characters you have linked, say 'My characters'");
                 }
 

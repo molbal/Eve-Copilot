@@ -1,6 +1,7 @@
 <?php
 
-    use App\Conversations\LinkCharacterConversation;
+	use App\Connector\DotlanConnector\RouteConnector;
+	use App\Conversations\LinkCharacterConversation;
     use App\Conversations\SetEmergencyContactConversation;
     use App\Conversations\SetHomeConversation;
     use App\Conversations\SingleCommands\CharacterManagementCommands;
@@ -32,6 +33,7 @@
         $bot->startConversation(new SetEmergencyContactConversation);
     });
 
+
     /**
      * Location Service commands
      */
@@ -49,14 +51,24 @@
     /** @var EmergencyCommands $emergencyCommands */
     $emergencyCommands = resolve('App\Conversations\SingleCommands\EmergencyCommands');
     $botman->hears("mayday|call reinforcements|send help", $emergencyCommands->mayday());
+
+
     /**
      * Intelligence service
      */
     /** @var IntelCommands $intelService */
     $intelService = resolve('App\Conversations\SingleCommands\IntelCommands');
     $botman->hears("whois {charId}", $intelService->simpleWhois());
+    $botman->hears("testr {a} {b} {c}", function (BotMan $bot, string $a, string $b, int $c) {
+    	try {
+    		$rc = new RouteConnector();
+    		$bot->reply($rc->checkRouteSafety($a, $b, $c));
 
-
+    	}
+		catch (Exception $e) {
+    		$bot->reply($e->getMessage()." ".$e->getFile()." ".$e->getLine());
+    	}
+	});
 
 
     /**
@@ -64,5 +76,5 @@
      */
     /** @var MiscCommands $miscCommands */
     $miscCommands = resolve('App\Conversations\SingleCommands\MiscCommands');
-    $botman->hears("Hi|Hello|Yo|Sup|Hey|o7|o/", $miscCommands->sayHi());
+    $botman->hears("Hi|Hello|Yo|Sup|Hey|o7|o/|Oi", $miscCommands->sayHi());
     $botman->fallback($miscCommands->fallback());

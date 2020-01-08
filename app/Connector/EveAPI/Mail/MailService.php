@@ -8,6 +8,9 @@
 
     class MailService extends EveAPICore {
 
+
+
+
         /**
          * Sends an EVE-mail
          *
@@ -31,11 +34,10 @@
                 "subject" => $title];
             $id = $this->simplePost($charId, "characters/$charId/mail/", json_encode($params), false);
 
-            throw new \Exception(print_r($id, 1));
-            if (is_int($id)) {
-                return $id;
-            } else {
-                throw new \Exception("Unable to send email: " . $id->error);
-            }
+            if ($this->isJson($id) && isset(json_decode($id)->error)) {
+				throw new \Exception("Unable to send email: " . $id->error);
+			} else {
+				return $id;
+			}
         }
     }

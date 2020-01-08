@@ -421,12 +421,15 @@
                 <img data-toggle="tooltip" src="images/eve/chars/3.png"
                      class="img-rounded pull-right shadow margin-left-md hidden-xs" style="height: 356px;width: 200px;" alt="">
                 <div>
-                    <h3>TBA</h3>
+                    <h3>Call for reinforcements</h3>
                     <small>
-                        <code>...</code>
+                        <code>Mayday</code>
+                        <code>Call reinforcements</code>
+                        <code>Send help</code>
                     </small>
                     <p>
-                        ...
+                        Unless you are docked in a station or a structure, this the bot will send a message to your emergency
+                        contact (Set with <code>Set emergency contact</code>) with your ship type, ship name, and solar system.
                     </p>
                 </div>
             </div>
@@ -475,6 +478,7 @@
                         <code>yo</code>
                         <code>o7</code>
                         <code>o/</code>
+                        <code>Oi</code>
                     </small>
                     <p>
                         The co-pilot briefly introduces itself.
@@ -668,7 +672,6 @@
 <script src="js/vendor/bootstrap.min.js"></script>
 <!--Plugin-JS-->
 <script src="js/owl.carousel.min.js"></script>
-<script src="js/contact-form.js"></script>
 <script src="js/jquery.parallax-1.1.3.js"></script>
 <script src="js/scrollUp.min.js"></script>
 <script src="js/magnific-popup.min.js"></script>

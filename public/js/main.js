@@ -12,6 +12,7 @@
     new WOW().init({
         mobile: true,
     });
+
     /* Scroll to top
     ===================*/
     $.scrollUp({
@@ -20,6 +21,7 @@
         scrollSpeed: 900,
         animation: 'fade'
     });
+
     /* testimonials Slider Active
     =============================*/
     $('.testimonials').owlCarousel({
@@ -33,6 +35,7 @@
         navText: ['<i class="ti-arrow-left"></i>', '<i class="ti-arrow-right" ></i>'],
         items: 1
     });
+
     /* testimonials Slider Active
     =============================*/
     $('.screen-slider').owlCarousel({
@@ -49,6 +52,7 @@
         animateOut: 'fadeOut',
         center: true,
     });
+
     /* testimonials Slider Active
     =============================*/
     $('.clients').owlCarousel({
@@ -103,18 +107,7 @@
     // Call the functions 
     magnifPopup();
 
-    //Background Parallax
-    $('.header-area').parallax("50%", -0.4);
-    $('.price-area').parallax("50%", -0.5);
-    $('.testimonial-area').parallax("10%", -0.2);
-
-
     $('#accordion .panel-title a').prepend('<span></span>');
-
-
-
-
-
 
     //Function to animate slider captions 
     function doAnimations(elems) {
@@ -135,14 +128,15 @@
         $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
 
     //Initialize carousel 
-    $myCarousel.carousel();
+    $myCarousel.carousel({
+        interval: 50000
+    });
 
     //Animate captions in first slide on page load 
     doAnimations($firstAnimatingElems);
 
     //Pause carousel  
     $myCarousel.carousel('pause');
-
 
     //Other slides to be animated on carousel slide event 
     $myCarousel.on('slide.bs.carousel', function (e) {
@@ -174,7 +168,7 @@
                     event.preventDefault();
                     $('html, body').animate({
                         scrollTop: target.offset().top
-                    }, 1000, function () {
+                    }, 600, function () {
                         // Callback after animation
                         // Must change focus!
                         var $target = $(target);
@@ -191,13 +185,9 @@
         });
 
 
-
-
-
-
     /* Preloader Js
     ===================*/
     $(window).on("load", function () {
-        $('.preloader').fadeOut(500);
+        $('.preloader').fadeOut(300);
     });
 })(jQuery);

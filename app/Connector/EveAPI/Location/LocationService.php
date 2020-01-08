@@ -21,6 +21,9 @@
             curl_close($c);
 
             $ret = json_decode($ret);
+            if (isset($ret->error)) {
+            	throw new \Exception($ret->error);
+			}
             $rlp = new ResourceLookupService();
             $ret->ship_type_name = $rlp->generalNameLookup($ret->ship_type_id);
 
