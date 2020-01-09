@@ -1,39 +1,61 @@
 <?php
 
 
-	namespace App\Connector\DotlanConnector;
+    namespace App\Connector\DotlanConnector;
 
 
-	use App\Connector\HttpScraperApiCode;
-	use PHPHtmlParser\Dom;
+    use App\Connector\DotlanConnector\Entities\RouteStep;
+    use App\Connector\HttpScraperApiCode;
+    use Illuminate\Support\Facades\Cache;
+    use Illuminate\Support\Facades\Log;
+    use pQuery\DomNode;
+    use pQuery\IQuery;
 
-	class RouteConnector extends HttpScraperApiCode {
+    class RouteConnector extends HttpScraperApiCode {
 
-		/**
-		 * @param string $from
-		 * @param string $to
-		 * @param int    $routeType 0: fastest, 2: prefer hisec, 3: prefer lowsec
-		 */
-		public function checkRouteSafety(string $from, string $to, int $routeType) {
-			$html = $this->getHtml(sprintf("http://evemaps.dotlan.net/route/%d:%s:%s",
-			$routeType, $from, $to));
+        /**
+         * @param string $from
+         * @param string $to
+         * @param int    $routeType 0: fastest, 2: prefer hisec, 3: prefer lowsec
+         * @return RouteStep[]|array
+         */
+        public function checkRouteSafety(string $from, string $to, int $routeType) {
+            $cacheKey = sprintf("Dotlan-%s-%s-%d", $from, $to, $routeType);
+            if (Cache::has($cacheKey)) {
+                $html = Cache::get($cacheKey);
+            }
+            else {
+                $html = $this->getHtml(sprintf("http://evemaps.dotlan.net/route/%d:%s:%s",
+                    $routeType, $from, $to));
+                Cache::put($cacheKey, $html, 20);
+            }
 
-			$dom = new Dom();
-			$dom->loadFromFile($html);
-			$rows = $dom->find("html body div#outer div#body div#main.clearfix div#col_main div#inner div#navtools table.tablelist.table-tooltip tbody tr");
+           /** @var DomNode $dom */
+            $dom = \pQuery::parseStr($html);
 
-			$m = "";
-			foreach ($rows as $i => $row) {
-				// Skip header
-				if ($i == 0) continue;
+            /** @var IQuery $r */
+            $r = $dom->query("#navtools > table > tr");
 
-				$m .= print_r($row, 1) ;
-			}
+            /** @var RouteStep[] $jumps */
+            $jumps = [];
+            for($i=1; $i<$r->count(); $i++) {
+                /** @var DomNode $node */
+                $node = $r[$i];
+                /** @var DomNode[] $cells */
+                $cells = $node->query("td");
+                $step = new RouteStep();
+                $step->solarSystem = $cells[2]->text();
+                $step->securityStatus = $cells[3]->text();
+                $step->sovereignty = $cells[4]->text();
+                $step->kills = $cells[5]->text();
+                $step->jumps = $cells[6]->text();
 
-		return $m;
+                $jumps[] = $step;
+            }
+
+            return $jumps;
 
 
+        }
 
-		}
-
-	}
+    }

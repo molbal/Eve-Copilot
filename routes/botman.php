@@ -1,6 +1,7 @@
 <?php
 
-	use App\Connector\DotlanConnector\RouteConnector;
+    use App\Connector\DotlanConnector\Entities\RouteStep;
+    use App\Connector\DotlanConnector\RouteConnector;
 	use App\Conversations\LinkCharacterConversation;
     use App\Conversations\SetEmergencyContactConversation;
     use App\Conversations\SetHomeConversation;
@@ -10,6 +11,7 @@
     use App\Conversations\SingleCommands\LocationCommands;
     use App\Conversations\SingleCommands\MiscCommands;
     use BotMan\BotMan\BotMan;
+    use Illuminate\Support\Collection;
 
 
     /** @var \BotMan\BotMan\BotMan $botman */
@@ -59,11 +61,50 @@
     /** @var IntelCommands $intelService */
     $intelService = resolve('App\Conversations\SingleCommands\IntelCommands');
     $botman->hears("whois {charId}", $intelService->simpleWhois());
-    $botman->hears("testr {a} {b} {c}", function (BotMan $bot, string $a, string $b, int $c) {
+    $botman->hears("testr {a} {b} {c}", function (BotMan $bot, string $a, string $b,  $c) {
     	try {
     		$rc = new RouteConnector();
-    		$bot->reply($rc->checkRouteSafety($a, $b, $c));
 
+    		switch (strtolower($c)) {
+                case 'quickest':
+                case 'fast':
+                case 'quick':
+                case 'shortest':
+                case 'short':
+                default:
+                    $typeI = 1;
+                    $typeS = "short";
+                    break;
+                case 'safe':
+                case 'safest':
+                case 'safer':
+                case 'highest':
+                    $typeI = 2;
+                    $typeS = "safe";
+                    break;
+                case 'unsafe':
+                case 'unsafest':
+                case 'shadiest':
+                case 'lowest':
+                    $typeI = 3;
+                    $typeS = "unsafe";
+                    break;
+            }
+
+            /** @var RouteStep[] $systems */
+    		$systems = $rc->checkRouteSafety($a, $b, $typeI);
+
+    		$m = sprintf("🗺 Showing the %s route from %s to %s:\n", $typeS, $a, $b);
+    		$sovs = [];
+    		foreach ($systems as $i => $system) {
+    		    $m .= "\r\n".($i+1).": ".$system;
+    		    $sovs[] = $system->sovereignty;
+            }
+
+    		$m .= "\r\n\r\n 🛂 This route passes through the territories of ".implode(', ', array_unique($sovs)) . " (in route order)";
+    		$bot->reply($m);
+    		$bot->reply("For more details check Dotlan maps: ".sprintf("http://evemaps.dotlan.net/route/%d:%s:%s",
+                    $typeI, $a, $b));
     	}
 		catch (Exception $e) {
     		$bot->reply($e->getMessage()." ".$e->getFile()." ".$e->getLine());
