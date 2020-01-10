@@ -14,7 +14,7 @@ class Link extends Migration
     public function up()
     {
         Schema::create('link', function (Blueprint $table) {
-            $table->string("CHAT_ID", 64)->comment("Chat ID");
+            $table->string("CHAT_ID", 64)->index()->comment("Chat ID");
             $table->bigInteger('CHAR_ID')->comment("EVE character ID");
             $table->timestamps();
             $table->primary(['CHAT_ID', 'CHAR_ID']);

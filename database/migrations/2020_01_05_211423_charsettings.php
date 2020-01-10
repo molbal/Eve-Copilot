@@ -18,6 +18,7 @@ class Charsettings extends Migration
             $table->string("PARAM", 32);
             $table->string("VAL", 512);
             $table->timestamp("CREATED_AT")->useCurrent();
+
             $table->primary(["CHAR_ID", "PARAM"]);
         });
     }

@@ -18,7 +18,6 @@ class Characters extends Migration
             $table->string("REFRESH_TOKEN",1000)->comment("Eve OAuth2 Refresh Token");
             $table->string("CONTROL_TOKEN", 64)->index()->comment("this token must be provided in the chat to allow access to this character");
             $table->timestamps();
-
         });
 
 
