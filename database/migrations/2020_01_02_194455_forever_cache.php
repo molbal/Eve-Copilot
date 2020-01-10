@@ -14,6 +14,7 @@ class ForeverCache extends Migration
     public function up()
     {
         Schema::create("forevercache", function (Blueprint $table) {
+			$table->engine = 'InnoDB';
            $table->unsignedBigInteger("ID")->primary();
            $table->timestamp("created_at")->useCurrent();
            $table->string("Name", 256)->index();

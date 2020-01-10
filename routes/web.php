@@ -57,11 +57,11 @@
 			abort(403, "Invalid maintenance token.");
 		}
 
-		if ($today != date("YMD")) {
+		if ($today != date("Ymd")) {
 			abort(403, "Invalid second parameter");
 		}
 		echo "DB maintenance starts \n";
-		echo Artisan::call('refresh', ['--force' => true]);
+		echo Artisan::call('migrate:refresh', ['--force' => true]);
 		echo "DB maintenance Over";
 	});
 

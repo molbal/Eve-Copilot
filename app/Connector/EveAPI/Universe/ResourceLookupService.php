@@ -5,8 +5,8 @@
 
 
     use App\Connector\EveAPI\EveAPICore;
-    use Illuminate\Filesystem\Cache;
-    use Illuminate\Support\Facades\DB;
+	use Illuminate\Support\Facades\Cache;
+	use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\Log;
 
     class ResourceLookupService extends EveAPICore {
@@ -225,5 +225,23 @@
                 return $name;
             }
             throw new \InvalidArgumentException("No item ID with name $id found in ESI");
+        }
+
+
+
+		public function getSecurityStatus(int $charId): float {
+			$cacheKey = "SecStatus-" . $charId;
+			if (Cache::has($cacheKey)) {
+        		return floatval(Cache::get($cacheKey));
+			}
+
+			$ret = $this->simpleGet(null, "characters/93940047/");
+			if (!isset($ret->security_status)) {
+				throw new \Exception(isset($ret->security_status) ? $ret->security_status : "Could not get security status");
+			}
+			$secStatus = $ret->security_status;
+			Cache::put($cacheKey, $secStatus, 60);
+			return floatval($secStatus);
+
         }
     }

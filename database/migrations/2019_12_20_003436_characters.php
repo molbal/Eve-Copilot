@@ -13,6 +13,9 @@ class Characters extends Migration
      */
     public function up() {
         Schema::create('characters', function (Blueprint $table) {
+
+			$table->engine = 'InnoDB';
+
             $table->bigInteger('ID')->primary()->comment("EVE character ID");
             $table->string("NAME", 256)->comment("EVE character name");
             $table->string("REFRESH_TOKEN",1000)->comment("Eve OAuth2 Refresh Token");
