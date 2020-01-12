@@ -5,7 +5,7 @@
 
 
     use App\Connector\EveAPI\EveAPICore;
-    use Illuminate\Filesystem\Cache;
+    use Illuminate\Support\Facades\Cache;
     use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\Log;
 
@@ -225,5 +225,20 @@
                 return $name;
             }
             throw new \InvalidArgumentException("No item ID with name $id found in ESI");
+        }
+
+        public function getSecurityStatus(int $charId): float {
+            if (Cache::has("sec-status-$charId")) {
+                return Cache::get("sec-status-$charId");
+            }
+
+            $ret = $this->simpleGet(null, "/characters/$charId/");
+            if (isset($ret->security_status)) {
+                Cache::put("sec-status-$charId", $ret->security_status, 30);
+                return $ret->security_status;
+            }
+            else {
+                throw new \Exception("Could not get sec status");
+            }
         }
     }

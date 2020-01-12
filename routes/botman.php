@@ -2,7 +2,9 @@
 
     use App\Connector\DotlanConnector\Entities\RouteStep;
     use App\Connector\DotlanConnector\RouteConnector;
-	use App\Conversations\LinkCharacterConversation;
+    use App\Connector\EveAPI\Universe\ResourceLookupService;
+    use App\Connector\SecurityStatusTools;
+    use App\Conversations\LinkCharacterConversation;
     use App\Conversations\SetEmergencyContactConversation;
     use App\Conversations\SetHomeConversation;
     use App\Conversations\SingleCommands\CharacterManagementCommands;
@@ -64,6 +66,7 @@
     $botman->hears("testr {a} {b} {c}", function (BotMan $bot, string $a, string $b,  $c) {
     	try {
     		$rc = new RouteConnector();
+    		$rlp = new ResourceLookupService();
 
     		switch (strtolower($c)) {
                 case 'quickest':
@@ -96,15 +99,20 @@
 
     		$m = sprintf("🗺 Showing the %s route from %s to %s:\n", $typeS, $a, $b);
     		$sovs = [];
+    		$ssmin = 10;
+    		$ssmax = -10;
+    		$shoot = false;
+
     		foreach ($systems as $i => $system) {
-    		    $m .= "\r\n".($i+1).": ".$system;
+    		    $m .= "\r\n".($i+1).": ".$system->solarSystem;
     		    $sovs[] = $system->sovereignty;
+    		    $ssmin = min($ssmin,$system->securityStatus);
+    		    $ssmax = max($ssmax,$system->securityStatus);
             }
 
     		$m .= "\r\n\r\n 🛂 This route passes through the territories of ".implode(', ', array_unique($sovs)) . " (in route order)";
+    		$m .= "\r\n\r\n 👮‍ The route's minimum security status is $ssmin and maximum is $ssmax";
     		$bot->reply($m);
-    		$bot->reply("For more details check Dotlan maps: ".sprintf("http://evemaps.dotlan.net/route/%d:%s:%s",
-                    $typeI, $a, $b));
     	}
 		catch (Exception $e) {
     		$bot->reply($e->getMessage()." ".$e->getFile()." ".$e->getLine());
