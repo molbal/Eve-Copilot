@@ -14,10 +14,12 @@ class Charsettings extends Migration
     public function up()
     {
         Schema::create("charsettings", function (Blueprint $table) {
+			$table->engine = 'InnoDB';
             $table->bigInteger("CHAR_ID");
             $table->string("PARAM", 32);
             $table->string("VAL", 512);
             $table->timestamp("CREATED_AT")->useCurrent();
+
             $table->primary(["CHAR_ID", "PARAM"]);
         });
     }

@@ -36,17 +36,34 @@
     Route::get("/eve/auth/callback", 'Auth\AuthController@handleProviderCallback');
 
 
-    /**
-     * Runs database migrations
-     */
-    Route::get("/maintenance/db/{secret}", function ($secret) {
-        if ($secret != env("MAINTENANCE_TOKEN")) {
-            abort(403, "Invalid maintenance token.");
-        }
-        echo "DB maintenance starts \n";
-        echo Artisan::call('migrate', ['--force' => true]);
-        echo "DB maintenance Over";
-    });
+	/**
+	 * Runs database migrations
+	 */
+	Route::get("/maintenance/db/{secret}", function ($secret) {
+		if ($secret != env("MAINTENANCE_TOKEN")) {
+			abort(403, "Invalid maintenance token.");
+		}
+		echo "DB maintenance starts \n";
+		echo Artisan::call('migrate', ['--force' => true]);
+		echo "DB maintenance Over";
+	});
+
+
+	/**
+	 * Removes data and reruns database migrations
+	 */
+	Route::get("/maintenance/db/reset/{secret}/{today}", function ($secret, $today) {
+		if ($secret != env("MAINTENANCE_TOKEN")) {
+			abort(403, "Invalid maintenance token.");
+		}
+
+		if ($today != date("Ymd")) {
+			abort(403, "Invalid second parameter");
+		}
+		echo "DB maintenance starts \n";
+		echo Artisan::call('migrate:refresh', ['--force' => true]);
+		echo "DB maintenance Over";
+	});
 
     /**
      * Caches the cache and optimizes config and cache
@@ -61,18 +78,18 @@
         Artisan::call("route:clear");
     });
 
-    /**
-     * Caches the cache and optimizes config and cache
-     */
-    Route::get("/maintenance/enable-cache/{secret}", function ($secret) {
-        if ($secret != env("MAINTENANCE_TOKEN")) {
-            abort(403, "Invalid maintenance token.");
-        }
+	/**
+	 * Caches the cache and optimizes config and cache
+	 */
+	Route::get("/maintenance/enable-cache/{secret}", function ($secret) {
+		if ($secret != env("MAINTENANCE_TOKEN")) {
+			abort(403, "Invalid maintenance token.");
+		}
 
-        Artisan::call("config:cache");
-        Artisan::call("route:cache");
-        Artisan::call("optimize", ["--force" => true]);
-    });
+		Artisan::call("config:cache");
+		Artisan::call("route:cache");
+		Artisan::call("optimize", ["--force" => true]);
+	});
 
     /**
      * Token view

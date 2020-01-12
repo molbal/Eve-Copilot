@@ -23,8 +23,13 @@ class UpdateLink extends Migration
      * @return void
      */
     public function down() {
-        Schema::table("link", function (Blueprint $table) {
-            $table->dropColumn(["active"]);
-        });
+    	try {
+			Schema::table("link", function (Blueprint $table) {
+				$table->dropColumn(["active"]);
+			});
+		}
+		catch (Exception $e) {
+
+		}
     }
 }
