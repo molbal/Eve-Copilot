@@ -405,6 +405,23 @@
                         to the trade stations, <strong>home</strong> for your home set with <code>set home</code>, or any
                         <strong>structure</strong>, <strong>station</strong> or <strong>solar system</strong>.
                     </p>
+
+                    <h3>Check route</h3>
+                    <small>
+                        <code>Scout route from {Start system} to {End system} {Route type}</code>
+                        <code>Check between {Start system} and {End system} {Route type}</code>
+                        <code>Route check {Start system} {End system} {Route type}</code>
+                        <code>Autoscout {Start system} {End system} {Route type}</code>
+                    </small>
+                    <p>
+                        This command checks whether it is for your to travel this route. For the <strong>start system</strong>
+                        and <strong>end system</strong> give solar system names, and for the <strong>route type</strong> parameter
+                        give either: <em>quickest, fast, quick, shortest, short</em> for the shortest route, <em>safe, safest, safer, highest</em>
+                        for the safe route, and <em>unsafe, unsafest, shadiest, lowest</em> for the unsafe route. <br>
+                        The bot will check the security statuses of systems and compare it to your own, checking if
+                        faction police will shoot you. At the same time it checks kill numbers in system and notify you when
+                        the kill number is more than 10 for the last 3 hours.
+                    </p>
                 </div>
             </div>
         </div>
