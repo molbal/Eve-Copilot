@@ -51,7 +51,9 @@
 	$botman->hears("Go to {target}", $locationCommands->navigateTo());
 	$botman->hears("Set route to {target}", $locationCommands->navigateTo());
 	$botman->hears("Scout route from {a} to {b} {c}", $locationCommands->autoScout());
+	$botman->hears("Check route from {a} to {b} {c}", $locationCommands->autoScout());
 	$botman->hears("Check between {a} and {b} {c}", $locationCommands->autoScout());
+	$botman->hears("Scout between {a} and {b} {c}", $locationCommands->autoScout());
 	$botman->hears("Route check {a} {b} {c}", $locationCommands->autoScout());
 	$botman->hears("Autoscout {a} {b} {c}", $locationCommands->autoScout());
 

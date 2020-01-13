@@ -409,6 +409,8 @@
                     <h3>Check route</h3>
                     <small>
                         <code>Scout route from {Start system} to {End system} {Route type}</code>
+                        <code>Check route from {Start system} to {End system} {Route type}</code>
+                        <code>Scout between {Start system} and {End system} {Route type}</code>
                         <code>Check between {Start system} and {End system} {Route type}</code>
                         <code>Route check {Start system} {End system} {Route type}</code>
                         <code>Autoscout {Start system} {End system} {Route type}</code>

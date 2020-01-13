@@ -14,7 +14,7 @@
          */
         public static function willFactionPoliceShootAtMe(float $secStatus, float $systemSecStatus): bool {
             if ($secStatus >= -2.0) {
-                return true;
+                return false;
             }
             else if ($secStatus >= -2.5) {
                 return $systemSecStatus >= 0.9;
@@ -32,7 +32,7 @@
                 return $systemSecStatus >= 0.5;
             }
 			else {
-				return false;
+				return true;
 			}
         }
     }
