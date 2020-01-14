@@ -63,61 +63,7 @@
     /** @var IntelCommands $intelService */
     $intelService = resolve('App\Conversations\SingleCommands\IntelCommands');
     $botman->hears("whois {charId}", $intelService->simpleWhois());
-    $botman->hears("testr {a} {b} {c}", function (BotMan $bot, string $a, string $b,  $c) {
-    	try {
-    		$rc = new RouteConnector();
-    		$rlp = new ResourceLookupService();
-
-    		switch (strtolower($c)) {
-                case 'quickest':
-                case 'fast':
-                case 'quick':
-                case 'shortest':
-                case 'short':
-                default:
-                    $typeI = 1;
-                    $typeS = "short";
-                    break;
-                case 'safe':
-                case 'safest':
-                case 'safer':
-                case 'highest':
-                    $typeI = 2;
-                    $typeS = "safe";
-                    break;
-                case 'unsafe':
-                case 'unsafest':
-                case 'shadiest':
-                case 'lowest':
-                    $typeI = 3;
-                    $typeS = "unsafe";
-                    break;
-            }
-
-            /** @var RouteStep[] $systems */
-    		$systems = $rc->checkRouteSafety($a, $b, $typeI);
-
-    		$m = sprintf("🗺 Showing the %s route from %s to %s:\n", $typeS, $a, $b);
-    		$sovs = [];
-    		$ssmin = 10;
-    		$ssmax = -10;
-    		$shoot = false;
-
-    		foreach ($systems as $i => $system) {
-    		    $m .= "\r\n".($i+1).": ".$system->solarSystem;
-    		    $sovs[] = $system->sovereignty;
-    		    $ssmin = min($ssmin,$system->securityStatus);
-    		    $ssmax = max($ssmax,$system->securityStatus);
-            }
-
-    		$m .= "\r\n\r\n 🛂 This route passes through the territories of ".implode(', ', array_unique($sovs)) . " (in route order)";
-    		$m .= "\r\n\r\n 👮‍ The route's minimum security status is $ssmin and maximum is $ssmax";
-    		$bot->reply($m);
-    	}
-		catch (Exception $e) {
-    		$bot->reply($e->getMessage()." ".$e->getFile()." ".$e->getLine());
-    	}
-	});
+    $botman->hears("identify {targetName}", $intelService->identify());
 
 
     /**

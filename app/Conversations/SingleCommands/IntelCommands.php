@@ -4,9 +4,11 @@
     namespace App\Conversations\SingleCommands;
 
 
+    use App\Connector\ChatCharLink;
     use App\Connector\EveAPI\Universe\ResourceLookupService;
     use BotMan\BotMan\BotMan;
     use Closure;
+    use Illuminate\Support\Facades\Log;
 
     class IntelCommands {
 
@@ -33,6 +35,25 @@
                     //$bot->reply(print_r($this->rlp->getCharacterName($charId), 1));
                 } catch (\Exception $e) {
                     $bot->reply("Cannot find this character: " . $e->getMessage());
+                }
+            };
+        }
+
+        /**
+         * Identifies a character
+         *
+         * @return Closure
+         */
+        public function identify(): Closure {
+            return function (BotMan $bot, string $targetName) {
+                try {
+                    $targetId = $this->rlp->getCharacterId($targetName);
+
+                    $stats = json_decode(file_get_contents("https://zkillboard.com/api/stats/characterID/$targetId/"));
+                    Log::info(print_r($stats, 1));
+                    $bot->reply(print_r($stats->allTimeSum, 1));
+                } catch (\Exception $e) {
+                    $bot->reply("Cannot identify: " . $e->getMessage());
                 }
             };
         }
