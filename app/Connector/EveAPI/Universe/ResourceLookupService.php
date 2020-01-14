@@ -227,18 +227,25 @@
             throw new \InvalidArgumentException("No item ID with name $id found in ESI");
         }
 
+		/**
+		 * Gets the security status
+		 * @param int $charId
+		 *
+		 * @return float
+		 * @throws \Exception
+		 */
         public function getSecurityStatus(int $charId): float {
             if (Cache::has("sec-status-$charId")) {
                 return Cache::get("sec-status-$charId");
             }
 
-            $ret = $this->simpleGet(null, "/characters/$charId/");
+            $ret = $this->simpleGet($charId, "characters/$charId/");
             if (isset($ret->security_status)) {
                 Cache::put("sec-status-$charId", $ret->security_status, 30);
                 return $ret->security_status;
             }
             else {
-                throw new \Exception("Could not get sec status");
+                throw new \Exception("Could not get sec status for $charId -> " .print_r($ret, 1) );
             }
         }
     }

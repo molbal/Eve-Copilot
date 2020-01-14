@@ -5,10 +5,13 @@
 
 
     use App\Connector\ChatCharLink;
-    use App\Connector\EveAPI\ImageAPI;
+	use App\Connector\DotlanConnector\Entities\RouteStep;
+	use App\Connector\DotlanConnector\RouteConnector;
+	use App\Connector\EveAPI\ImageAPI;
     use App\Connector\EveAPI\Location\LocationService;
     use App\Connector\EveAPI\Universe\ResourceLookupService;
-    use App\Helpers\CharacterSettings;
+	use App\Connector\SecurityStatusTools;
+	use App\Helpers\CharacterSettings;
     use BotMan\BotMan\BotMan;
     use BotMan\BotMan\Messages\Attachments\Image;
     use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
@@ -132,4 +135,97 @@
                 }
             };
         }
+
+
+
+		/**
+		 * @return Closure
+		 */
+		function autoScout() : Closure {
+			return function (BotMan $bot, string $a, string $b, $c) {
+				try {
+					$rc = new RouteConnector();
+
+					switch (strtolower($c)) {
+						case 'quickest':
+						case 'fast':
+						case 'quick':
+						case 'shortest':
+						case 'short':
+						default:
+							$typeI = 1;
+							$typeS = "short";
+							break;
+						case 'safe':
+						case 'safest':
+						case 'safer':
+						case 'highest':
+							$typeI = 2;
+							$typeS = "safe";
+							break;
+						case 'unsafe':
+						case 'unsafest':
+						case 'shadiest':
+						case 'lowest':
+							$typeI = 3;
+							$typeS = "unsafe";
+							break;
+					}
+
+					/** @var RouteStep[] $systems */
+					$systems = $rc->checkRouteSafety($a, $b, $typeI);
+
+					$m = sprintf("🗺 Showing the %s route from %s to %s (%d jumps)", $typeS, ucfirst($a), ucfirst($b), count($systems));
+					$sovs = [];
+					$ssmin = new RouteStep('', +1.0);
+					$ssmax = new RouteStep('', -1.0);
+					$shoot = false;
+					$sys = [];
+					$chatId = $bot->getUser()->getId();
+					$charId = ChatCharLink::getActive($chatId);
+					$secStatus = $this->rlp->getSecurityStatus($charId);
+					$shoot = 0;
+					$camps = 0;
+					foreach ($systems as $i => $system) {
+						if (SecurityStatusTools::willFactionPoliceShootAtMe($secStatus, $system->securityStatus)) {
+							$safe = "🏴";
+							$shoot++;
+						} else {
+							$safe = "";
+						}
+
+						if ($system->kills >= 10) {
+							$camp = sprintf("🏴‍☠️(%d kills lately)", $system->kills);
+							$camps++;
+						} else {
+							$camp = "";
+						}
+
+						$sys[] = sprintf("%s (%1.1f)%s%s", $system->solarSystem, $system->securityStatus, $safe, $camp);
+						$sovs[] = $system->sovereignty;
+						if ($system->securityStatus < $ssmin->securityStatus) {
+							$ssmin = $system;
+						}
+						if ($system->securityStatus > $ssmax->securityStatus) {
+							$ssmax = $system;
+						}
+
+					}
+					$m .= "\r\n\r\n 👉 " . implode("\r\n", $sys);
+//			$m .= "\r\n\r\n 👉 " . implode(" » ", $sys);
+					$m .= sprintf("\r\n\r\n 🛂 This route passes through the territories of %s (in route order)", implode(', ', array_unique($sovs)));
+					$m .= sprintf("\r\n\r\n 👮‍ The route's minimum security status is %1.1f in %s and maximum is %1.1f in %s", $ssmin->securityStatus, $ssmin->solarSystem, $ssmax->securityStatus, $ssmax->solarSystem);
+
+					if ($shoot) {
+						$m .= sprintf("\r\n\r\n 🏴 Warning! Faction police will shoot at you in %d system%s marked with the black flag, because your security status is %1.2f", $shoot, (($shoot > 1) ? "s" : ""), $secStatus);
+					}
+					if ($camps) {
+						$m .= "\r\n\r\n 🏴‍☠️ Warning! The systems marked with a pirate flag had more than 10 kills in the last 3 hours - this could be a gatecamp.";
+					}
+					$bot->reply($m);
+				} catch (\Exception $e) {
+					$bot->reply($e->getMessage() . " " . $e->getFile() . " " . $e->getLine());
+				}
+			};
+		}
     }
