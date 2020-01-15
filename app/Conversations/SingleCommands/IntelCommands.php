@@ -6,8 +6,10 @@
 
     use App\Connector\ChatCharLink;
     use App\Connector\EveAPI\Universe\ResourceLookupService;
+    use App\Helpers\ConversationCache;
     use BotMan\BotMan\BotMan;
     use Closure;
+    use Illuminate\Support\Facades\Cache;
     use Illuminate\Support\Facades\Log;
 
     class IntelCommands {
@@ -49,11 +51,30 @@
                 try {
                     $targetId = $this->rlp->getCharacterId($targetName);
 
-                    $stats = json_decode(file_get_contents("https://zkillboard.com/api/stats/characterID/$targetId/"));
+                    if (Cache::has("quickcache-$targetName")) {
+                        $ret = Cache::get("quickcache-$targetName");
+                    }
+                    else {
+                        $ret = file_get_contents("https://zkillboard.com/api/stats/characterID/$targetId/");
+                        Cache::put("quickcache-$targetName", $ret, 30);
+                    }
+                    $stats = json_decode($ret);
+                    $targetName = $stats->info->name;
+
+                    $m = sprintf("🕵️‍♂️ Target pilot is %s (%1.1f security status).\r\n\r\nTarget has %d confirmed kills, %d%% dangerous, wins %2.1f%% of its fights and %d%% likely to call and receive reinforcements.",
+                        $targetName,
+                        $stats->info->secStatus,
+                        $stats->allTimeSum,
+                        $stats->dangerRatio,
+                        $stats->shipsDestroyed/($stats->shipsLost+$stats->shipsDestroyed)*100,
+                        $stats->gangRatio
+                    );
+
+                    ConversationCache::put($bot->getUser()->getId(), "identify-char-id", $targetId, 15);
                     Log::info(print_r($stats, 1));
-                    $bot->reply(print_r($stats->allTimeSum, 1));
+                    $bot->reply($m);
                 } catch (\Exception $e) {
-                    $bot->reply("Cannot identify: " . $e->getMessage());
+                    $bot->reply("Sorry, I can't find this pilot. 😫");
                 }
             };
         }

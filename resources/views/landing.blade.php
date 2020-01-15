@@ -423,6 +423,9 @@
                         The bot will check the security statuses of systems and compare it to your own, checking if
                         faction police will shoot you. At the same time it checks kill numbers in system and notify you when
                         the kill number is more than 10 for the last 3 hours.
+                        <br>
+                        <em>Data for this function is provided by <a href="http://evemaps.dotlan.net/" target="_blank">DOTLAN :: EveMaps</a></em>
+
                     </p>
                 </div>
             </div>
@@ -466,12 +469,16 @@
                 <img data-toggle="tooltip" src="images/eve/chars/4.png"
                      class="img-rounded pull-right shadow margin-left-md hidden-xs" style="height: 356px;width: 200px;" alt="">
                 <div>
-                    <h3>TBA</h3>
+                    <h3>Threat estimation</h3>
                     <small>
-                        <code>...</code>
+                        <code>Identify {Character Name}</code>
                     </small>
                     <p>
-                        ...
+                        This command identifies a character. It checks the target's kill count, kill efficiency, gives back a dangeourness level and gang ratio and security status.
+                        <br>
+                        It also remembers the pilot name for 15 minutes, preparing the pilot for <strong>thorough threat estimation</strong>.
+                        <br>
+                        <em>Data for this function is provided by <a href="https://zkillboard.com" target="_blank">zKillboard.</a></em>
                     </p>
                 </div>
             </div>
