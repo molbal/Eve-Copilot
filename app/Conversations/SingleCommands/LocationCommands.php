@@ -224,7 +224,7 @@
 					}
 					$bot->reply($m);
 				} catch (\Exception $e) {
-					$bot->reply($e->getMessage() . " " . $e->getFile() . " " . $e->getLine());
+					$bot->reply("Sorry, unable to check this route.");
 				}
 			};
 		}

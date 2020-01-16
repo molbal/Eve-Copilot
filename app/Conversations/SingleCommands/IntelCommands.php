@@ -61,17 +61,23 @@
                     $stats = json_decode($ret);
                     $targetName = $stats->info->name;
 
+                    try {
+                    	$winRatio = $stats->shipsDestroyed/($stats->shipsLost ?? 0)+($stats->shipsDestroyed ?? 0)*100;
+					}
+					catch (\Exception $e) {
+                    	$winRatio = 0;
+					}
+
                     $m = sprintf("🕵️‍♂️ Target pilot is %s (%1.1f security status).\r\n\r\nTarget has %d confirmed kills, %d%% dangerous, wins %2.1f%% of its fights and %d%% likely to call and receive reinforcements.",
                         $targetName,
                         $stats->info->secStatus,
-                        $stats->allTimeSum,
-                        $stats->dangerRatio,
-                        $stats->shipsDestroyed/($stats->shipsLost+$stats->shipsDestroyed)*100,
-                        $stats->gangRatio
+                        $stats->allTimeSum ?? 0,
+                        $stats->dangerRatio ?? 0,
+                        $winRatio,
+                        $stats->gangRatio ?? 0
                     );
 
                     ConversationCache::put($bot->getUser()->getId(), "identify-char-id", $targetId, 15);
-                    Log::info(print_r($stats, 1));
                     $bot->reply($m);
                 } catch (\Exception $e) {
                     $bot->reply("Sorry, I can't find this pilot. 😫");
