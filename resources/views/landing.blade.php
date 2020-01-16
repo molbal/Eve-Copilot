@@ -469,14 +469,28 @@
                 <img data-toggle="tooltip" src="images/eve/chars/4.png"
                      class="img-rounded pull-right shadow margin-left-md hidden-xs" style="height: 356px;width: 200px;" alt="">
                 <div>
-                    <h3>Threat estimation</h3>
+                    <h3>Quick threat estimation</h3>
                     <small>
                         <code>Identify {Character Name}</code>
+                        <code>ID {Character Name}</code>
                     </small>
                     <p>
-                        This command identifies a character. It checks the target's kill count, kill efficiency, gives back a dangeourness level and gang ratio and security status.
+                        This command identifies a character. It checks the target's kill count, kill efficiency, gives back a dangerousness level and gang ratio and security status.
                         <br>
-                        It also remembers the pilot name for 15 minutes, preparing the pilot for <strong>thorough threat estimation</strong>.
+                        It also remembers the pilot name for 15 minutes, preparing the pilot for <strong>thorough threat estimation</strong>, which function is best used with this command.
+                        <br>
+                        <em>Data for this function is provided by <a href="https://zkillboard.com" target="_blank">zKillboard.</a></em>
+                    </p>
+                    <h3>Thorough Threat estimation</h3>
+                    <small>
+                        <code>Deep scan {Character name}</code>
+                        <code>Thorough scan {Character name}</code>
+                        <code>Threat estimation {Character name}</code>
+                    </small>
+                    <p>
+                        This command scans a characters' threat level thoroughly. It checks the most used ships and hunting locations of the target, displaying up to 7 of them with their kill count next to each one. The co-pilot will also check whether the target has kills in your current system..
+                        <br>
+                        If you used <strong>Quick threat estimation</strong> within the last 15 minutes, you can omit the character name because the Co-pilot will automatically use the last identified character.
                         <br>
                         <em>Data for this function is provided by <a href="https://zkillboard.com" target="_blank">zKillboard.</a></em>
                     </p>
@@ -629,7 +643,30 @@
                         <ul class="blog-meta">
                             <li><span class="ti-user"></span> <a href="#">Support & Reps</a></li>
                         </ul>
-                        <p>Thank you Squizz for letting this service rely on zKillboard stats</p>
+                        <p>Thank you Squizz for letting this service rely on zKillboard stats, and Wollari, for letting this service check Dotlan Maps</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <div class="single-blog">
+                    <div class="blog-photo">
+                        <img src="images/eve/imrich.png" alt="">
+                    </div>
+                    <div class="blog-content">
+                        <h3><a href="javascript:void(0)">You</a></h3>
+                        <ul class="blog-meta">
+                            <li><span class="ti-user"></span> <a href="#">Infrastructure</a></li>
+                        </ul>
+                        <p>Any assistance with the server upkeep is greatly appreciated.</p>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_donations"/>
+                            <input type="hidden" name="business" value="TZX5GJQA4USZQ"/>
+                            <input type="hidden" name="currency_code" value="EUR"/>
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                                   border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
+                                   alt="Donate with PayPal button"/>
+                            <img alt="" border="0" src="https://www.paypal.com/en_HU/i/scr/pixel.gif" width="1" height="1"/>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -650,18 +687,6 @@
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <p>
-                    <p>Any assistance with the server upkeep is greatly appreciated.</p>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input type="hidden" name="cmd" value="_donations"/>
-                        <input type="hidden" name="business" value="TZX5GJQA4USZQ"/>
-                        <input type="hidden" name="currency_code" value="EUR"/>
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
-                               border="0" name="submit" title="PayPal - The safer, easier way to pay online!"
-                               alt="Donate with PayPal button"/>
-                        <img alt="" border="0" src="https://www.paypal.com/en_HU/i/scr/pixel.gif" width="1" height="1"/>
-                    </form>
-                    </p>
                 </div>
             </div>
         </div>

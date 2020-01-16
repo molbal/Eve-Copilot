@@ -72,6 +72,13 @@
     $intelService = resolve('App\Conversations\SingleCommands\IntelCommands');
     $botman->hears("whois {charId}", $intelService->simpleWhois());
     $botman->hears("identify {targetName}", $intelService->identify());
+    $botman->hears("ID {targetName}", $intelService->identify());
+	$botman->hears("deep scan {targetName}", $intelService->thoroughScan());
+	$botman->hears("thorough scan {targetName}", $intelService->thoroughScan());
+	$botman->hears("threat estimation {targetName}", $intelService->thoroughScan());
+	$botman->hears("deep scan", $intelService->thoroughScan());
+	$botman->hears("thorough scan", $intelService->thoroughScan());
+	$botman->hears("threat estimation", $intelService->thoroughScan());
 
 
 	/**

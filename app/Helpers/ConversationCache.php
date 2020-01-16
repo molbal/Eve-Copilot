@@ -45,6 +45,19 @@ class ConversationCache
         Cache::put(self::getKey($id, $key), $value, $expiresInMinutes);
     }
 
+	/**
+	 * The has method may be used to determine if an item exists in the cache. This method will return false if the
+	 * value is null:
+	 *
+	 * @param        $id
+	 * @param string $key
+	 *
+	 * @return bool
+	 */
+	public static function has($id, string $key ) {
+		return Cache::has(self::getKey($id, $key));
+    }
+
     /**
      * You may remove items from the cache using the forget method.
      * @param        $id

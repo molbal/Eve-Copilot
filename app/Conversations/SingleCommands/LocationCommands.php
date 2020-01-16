@@ -64,7 +64,7 @@
                 } catch (\Exception $e) {
                     $location .= $e->getMessage() . " " . $e->getFile() . " @" . $e->getLine();
                     Log::error($location);
-                    $bot->reply("An error occurred while coming up with the response. (" . $e->getMessage() . ":" . $e->getFile() . "@" . $e->getLine() . ")");
+                    $bot->reply("An error occurred while coming up with the response. 😒");
                 }
 
             };
