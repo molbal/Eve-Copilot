@@ -427,6 +427,18 @@
                         <em>Data for this function is provided by <a href="http://evemaps.dotlan.net/" target="_blank">DOTLAN :: EveMaps</a></em>
 
                     </p>
+                    <h3>Are we there yet?</h3>
+                    <small>
+                        <code>When do we get to {target}</code>
+                        <code>Tell me when we reach {target}</code>
+                        <code>Tell me when we get to {target}</code>
+                        <code>Are we in {target} yet</code>
+                    </small>
+                    <p>
+                        If you are brave enough to fly autopilot AFK, the co-pilot will monitor your journey and send you a message when you reach the target system.
+                        <strong>{Target}</strong> is a solar system name. If you don't reach the system in 6 hours the co-pilot will silently stop looking. One character
+                        can only have one 'Are we there yet?' target at a time.
+                    </p>
                 </div>
             </div>
         </div>

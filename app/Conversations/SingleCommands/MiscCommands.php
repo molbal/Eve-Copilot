@@ -43,7 +43,7 @@
          */
         public function fallback(): Closure {
             return function (BotMan $bot) {
-                $bot->reply('🤷‍♂️ Sorry, I did not understand what you said. \r\nPlease check your message for typos or see what I can understand here: https://co-pilot.eve-nt.uk#features');
+                $bot->reply("🤷‍♂️ Sorry, I did not understand what you said. \r\nPlease check your message for typos or see what I can understand here: https://co-pilot.eve-nt.uk#features");
             };
         }
     }
