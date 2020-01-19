@@ -206,7 +206,7 @@ This table contains the active number of route checks
         <td>CHAT_ID</td>
         <td>CHAT ID</td>
         <td>string</td>
-        <td>-/td>
+        <td>-</td>
     </tr>
     <tr>
         <td>CHAR_ID</td>
