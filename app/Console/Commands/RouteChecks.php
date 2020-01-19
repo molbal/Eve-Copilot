@@ -9,6 +9,7 @@ use BotMan\Drivers\Facebook\FacebookDriver;
 use BotMan\Drivers\Telegram\TelegramDriver;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class RouteChecks extends Command
 {
@@ -53,7 +54,7 @@ class RouteChecks extends Command
         }
 
         // Clean expired
-        $table->whereRaw('expired_at < NOW()')->delete();
+        $table->whereRaw('expire_at < NOW()')->delete();
 
 
         $checks = $table->get();
@@ -63,6 +64,8 @@ class RouteChecks extends Command
     }
 
     private function checkRoute($entry) {
+        $this->info(print_r($entry, 1));
+        Log::info(print_r($entry, 1));
         /** @var ResourceLookupService $rlp */
         $rlp = resolve('App\Connector\EveAPI\Universe\ResourceLookupService');
 
@@ -83,7 +86,7 @@ class RouteChecks extends Command
             }
         }
         catch (\Exception $e) {
-            $this->error($e);
+            $this->error($e." ".$e->getTraceAsString());
         }
     }
 }

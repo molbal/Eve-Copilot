@@ -29,6 +29,10 @@ Please see the website homepage for commands. (No reason for documenting them tw
 - Set the Facebook Messenger URL here: https://developers.facebook.com/apps/<your facebook app id>>/messenger/settings/
 - Set the Telegram Messenger URL by running the `php artisan botman:telegram:register` command  
 - Set the EVE Online 3rd party application callback URL: https://developers.eveonline.com/applications/details/<your eve online app id>
+- Some functions need scheduled tasks. To enable this, please have the following CRON job set up: (This is only needed on worker instances)
+ ```
+* * * * * php /path/to/artisan schedule:run >> /dev/null 2>&1
+```
 
 ## Database scheme
 
@@ -238,3 +242,7 @@ This table contains the active number of route checks
 ## Cache scheme
 - Eve ESI access tokens (each valid for 20m) are cached.
 - Ongoing chats "session" variables are also cached 
+
+## Wishes, bugs, contact
+
+You can talk to me on Twitter (@veetor_in_eve) or open an issue here. If you find a security vulnerability please don't use the issue tracker but send me a mail at veetor@outlook.com.
