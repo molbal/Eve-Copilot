@@ -56,6 +56,10 @@
 	$botman->hears("Scout between {a} and {b} {c}", $locationCommands->autoScout());
 	$botman->hears("Route check {a} {b} {c}", $locationCommands->autoScout());
 	$botman->hears("Autoscout {a} {b} {c}", $locationCommands->autoScout());
+	$botman->hears("When do we get to {target}", $locationCommands->notifyWhenArrived());
+	$botman->hears("Tell me when we reach {target}", $locationCommands->notifyWhenArrived());
+	$botman->hears("Tell me when we get to {target}", $locationCommands->notifyWhenArrived());
+	$botman->hears("Are we in {target} yet", $locationCommands->notifyWhenArrived());
 
 	/**
 	 * Emergency contacts

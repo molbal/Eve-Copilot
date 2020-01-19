@@ -15,7 +15,9 @@
     use BotMan\BotMan\BotMan;
     use BotMan\BotMan\Messages\Attachments\Image;
     use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
+    use Carbon\Carbon;
     use Closure;
+    use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\Log;
 
     class LocationCommands {
@@ -70,7 +72,46 @@
             };
         }
 
+        /**
+         * Does the notify me when I arrive command
+         * @return Closure
+         */
+        public function notifyWhenArrived():Closure {
+            return function (BotMan $bot, string $target) {
+                try {
+                    if (!$target) {
+                        throw new \Exception("Please specify the target system.");
+                    }
 
+                    $chatId = $bot->getUser()->getId();
+                    $charId = ChatCharLink::getActive($chatId);
+                    $systemId = $this->rlp->getSolarSystemId($target);
+
+                    $baseQuery = DB::table("route_checks")->where('CHAR_ID', '=', $charId);
+
+                    // Remove old entry
+                    $baseQuery->delete();
+
+                    // Insert new entry
+                    $baseQuery->insert([
+                        'CHAT_TYPE' => $bot->getDriver()->getName() == "Telegram" ? 'telegram' : 'fb-messenger',
+                        'CHAT_ID' => $chatId,
+                        'CHAR_ID' => $charId,
+                        'TARGET_SYS_ID' => $systemId,
+                        'expires_at' => Carbon::now()->addHour(6)
+                    ]);
+
+                    $bot->reply("🐱‍👤 Sure, I'll notify you when you get to $target.\r\nHowever, if it takes more, than 6 hours to get there, I'm going to let it go");
+                } catch (\Exception $e) {
+                    $bot->reply("An error occurred while setting notification: " . $e->getMessage());
+                }
+            };
+        }
+
+        /**
+         * Adds navigate to command
+         * @return Closure
+         */
         public function navigateTo(): Closure {
             return function (Botman $bot, string $target) {
                 try {
