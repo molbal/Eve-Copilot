@@ -207,7 +207,7 @@
             return $systemId;
         }
         /**
-         * General name lookup. Caches and works for ItemIDs
+         * General name lookup. Caches and works for ItemIDs and solar systems too
          *
          * @param int $id
          * @return string

@@ -64,7 +64,7 @@
                 } catch (\Exception $e) {
                     $location .= $e->getMessage() . " " . $e->getFile() . " @" . $e->getLine();
                     Log::error($location);
-                    $bot->reply("An error occurred while coming up with the response. (" . $e->getMessage() . ":" . $e->getFile() . "@" . $e->getLine() . ")");
+                    $bot->reply("An error occurred while coming up with the response. 😒");
                 }
 
             };
@@ -224,7 +224,7 @@
 					}
 					$bot->reply($m);
 				} catch (\Exception $e) {
-					$bot->reply($e->getMessage() . " " . $e->getFile() . " " . $e->getLine());
+					$bot->reply("Sorry, unable to check this route.");
 				}
 			};
 		}
