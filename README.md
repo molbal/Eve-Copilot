@@ -186,6 +186,55 @@ This table stores eve character related settings, like home location and emergen
     </tr>
 </table>
 
+### route_checks
+This table contains the active number of route checks
+
+<table>
+    <tr>
+        <td><b>Column name</b></td>
+        <td><b>Purpose</b></td>
+        <td><b>Type</b></td>
+        <td><b>Index</b></td>
+    </tr>
+    <tr>
+        <td>CHAT_TYPE</td>
+        <td>Chat type. Needed for where to contact the capsuleer.</td>
+        <td>enum: fb-messenger, telegram</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>CHAT_ID</td>
+        <td>CHAT ID</td>
+        <td>string</td>
+        <td>-/td>
+    </tr>
+    <tr>
+        <td>CHAR_ID</td>
+        <td>EVE Character ID</td>
+        <td>bigInteger</td>
+        <td>Primary</td>
+    </tr>
+    <tr>
+        <td>TARGET_SYS_ID</td>
+        <td>the target solar system</td>
+        <td>bigInteger</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>Time where the request was recorded</td>
+        <td>timestamp</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>expires_at</td>
+        <td>Time when the co-pilot stops checking the location. </td>
+        <td>timestamp</td>
+        <td>-</td>
+    </tr>
+</table>
+
+
 ## Cache scheme
 - Eve ESI access tokens (each valid for 20m) are cached.
 - Ongoing chats "session" variables are also cached 
