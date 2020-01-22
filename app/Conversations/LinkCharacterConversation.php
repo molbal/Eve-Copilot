@@ -111,6 +111,7 @@
 
                 // Respond
                 $this->say("Perfect. I am now a co-pilot for ".$charName." 👨‍✈️");
+                $this->say("Now you can use advanced commands such as 'Identify $charName' or others. If you haven't done it yet, now is a great time to see my features at https://co-pilot.eve-nt.uk");
 
                 // Set current link as active
                 ChatCharLink::setActive($this->bot->getUser()->getId(), $charId);

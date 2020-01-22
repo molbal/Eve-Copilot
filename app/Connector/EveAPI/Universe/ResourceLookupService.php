@@ -148,8 +148,13 @@
             curl_close($ch);
 
             /** @var string $stationName */
-            $stationName = json_decode($ret)->name;
-
+            try {
+                $stationName = json_decode($ret)->name;
+            }
+            catch (\Exception $e) {
+                Log::error("Could not get structure name for $structureId - ESI Rsponse: ".$ret);
+                $stationName = "Unknown structure";
+            }
             return $stationName;
         }
 
