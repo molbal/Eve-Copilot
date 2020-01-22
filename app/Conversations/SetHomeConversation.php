@@ -44,7 +44,7 @@
         protected $newHomeId;
 
         /** @var int */
-        private $attempts;
+        protected $attempts;
 
 
         public function confirmUser() {

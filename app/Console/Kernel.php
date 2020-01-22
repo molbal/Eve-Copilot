@@ -27,6 +27,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->command('ecp:routecheck')->everyMinute()->withoutOverlapping(10);
+        $schedule->command('ecp:discord_bot')->everyMinute()->withoutOverlapping(30);
     }
 
     /**
