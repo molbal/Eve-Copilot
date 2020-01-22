@@ -68,22 +68,27 @@
 						Cache::put("quickcache-$targetName", $ret, 30);
 					}
 					$stats = json_decode($ret);
-					$targetName = $stats->info->name;
+					if (!isset($stats->info->name)) {
+						$bot->reply("I couldn't find  any info for this capsuleer, sorry.");
+					} else {
 
-					try {
-						$winRatio = $stats->shipsDestroyed / (($stats->shipsLost ?? 0) + ($stats->shipsDestroyed ?? 0)) * 100;
-					} catch (\Exception $e) {
-						$winRatio = 0;
+						$targetName = $stats->info->name;
+
+						try {
+							$winRatio = $stats->shipsDestroyed / (($stats->shipsLost ?? 0) + ($stats->shipsDestroyed ?? 0)) * 100;
+						} catch (\Exception $e) {
+							$winRatio = 0;
+						}
+
+						$m = sprintf("🕵️‍♂️ Target pilot is %s (%1.1f security status).\r\n\r\nTarget has %d confirmed kills, %d%% dangerous, wins %2.1f%% of its fights and %d%% likely to call and receive reinforcements. (According to zKillboard)", $targetName, $stats->info->secStatus, $stats->allTimeSum ?? 0, $stats->dangerRatio ?? 0, $winRatio, $stats->gangRatio ?? 0);
+
+						$convId = $bot->getUser()->getId();
+						ConversationCache::put($convId, "identify-char-id", $targetId, 15);
+						ConversationCache::put($convId, "identify-char-name", $targetName, 15);
+						$bot->reply($m);
 					}
-
-					$m = sprintf("🕵️‍♂️ Target pilot is %s (%1.1f security status).\r\n\r\nTarget has %d confirmed kills, %d%% dangerous, wins %2.1f%% of its fights and %d%% likely to call and receive reinforcements.", $targetName, $stats->info->secStatus, $stats->allTimeSum ?? 0, $stats->dangerRatio ?? 0, $winRatio, $stats->gangRatio ?? 0);
-
-					$convId = $bot->getUser()->getId();
-					ConversationCache::put($convId, "identify-char-id", $targetId, 15);
-					ConversationCache::put($convId, "identify-char-name", $targetName, 15);
-					$bot->reply($m);
 				} catch (\Exception $e) {
-					$bot->reply("Sorry, I can't find this pilot. 😫");
+					$bot->reply("Sorry, I can't find this pilot. 😫 ");
 				}
 			};
 		}
@@ -107,6 +112,10 @@
 						throw new Exception("Sorry, could not find target character.");
 					}
 
+					if ($targetName == "") {
+						throw new Exception("Sorry, could not find target character.");
+					}
+
 					// Query data
 					if (Cache::has("quickcache-$targetName")) {
 						$ret = Cache::get("quickcache-$targetName");
@@ -123,9 +132,9 @@
 						foreach ($ret->topAllTime as $list) {
 							if ($list->type == "ship") {
 								for ($i = 0; $i < min(7, count($list->data)); $i++) {
-										$name = $this->rlp->generalNameLookup($list->data[$i]->shipTypeID);
-										if ($name == "Capsule") continue;
-										$topShips[] = sprintf("%s (%d kills)", $name, $list->data[$i]->kills);
+									$name = $this->rlp->generalNameLookup($list->data[$i]->shipTypeID);
+									if ($name == "Capsule") continue;
+									$topShips[] = sprintf("%s (%d kills)", $name, $list->data[$i]->kills);
 								}
 							}
 						}

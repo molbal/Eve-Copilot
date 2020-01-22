@@ -43,6 +43,9 @@
          */
         protected $newHomeId;
 
+        /** @var int */
+        private $attempts;
+
 
         public function confirmUser() {
 
@@ -115,6 +118,12 @@
         }
 
         private function askForStationName() {
+			$this->attempts++;
+
+			if ($this->attempts > 5) {
+				$this->say("Please ask something else.");
+				return;
+			}
             try {
                 $getFullName = Question::create("Please paste  the full name of your home, for example 'Jita IV - Moon 4 - Caldari Navy Assembly Plant'");
                 $this->ask($getFullName, function (Answer $answer3) {
@@ -168,7 +177,7 @@
          * @return mixed
          */
         public function run() {
-
+		$this->attempts = 0;
             try {
 
                 $this->resourceLookup = new ResourceLookupService();
