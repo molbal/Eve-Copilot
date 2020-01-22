@@ -109,6 +109,7 @@
                     <strong>emergency</strong> assistance.
                     <br>
                     On <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
+                <p><strong>Now available in open testing.</strong></p>
                 <div class="btn-group">
                     <a href="#activate-copilot" class="btn button white">Get started</a>
                     <a href="#features-summary" class="btn button white">See functions</a>

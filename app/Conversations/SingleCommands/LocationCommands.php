@@ -183,7 +183,7 @@
 		 * @return Closure
 		 */
 		function autoScout() : Closure {
-			return function (BotMan $bot, string $a, string $b, $c) {
+			return function (BotMan $bot, string $a, string $b, $c="") {
 				try {
 					$rc = new RouteConnector();
 
@@ -242,7 +242,7 @@
 							$camp = "";
 						}
 
-						$sys[] = sprintf("%s (%1.1f)%s%s", $system->solarSystem, $system->securityStatus, $safe, $camp);
+						$sys[] = sprintf("%s ( %1.1f )%s%s", $system->solarSystem, $system->securityStatus, $safe, $camp);
 						$sovs[] = $system->sovereignty;
 						if ($system->securityStatus < $ssmin->securityStatus) {
 							$ssmin = $system;
