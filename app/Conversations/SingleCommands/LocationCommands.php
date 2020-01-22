@@ -172,7 +172,7 @@
                     $this->locationService->setWaypoint($charId, $target_id);
                     $bot->reply("Route set to $name - Follow the waypoints or press Ctrl+S in EVE to toggle the autopilot.");
                 } catch (\Exception $e) {
-                    $bot->reply("Could not set waypoint: " . $e->getMessage(). " (".$e->getFile()."@".$e->getLine().")");
+                    $bot->reply("💔Could not set waypoint: ".$e->getMessage());
                 }
             };
         }
@@ -265,7 +265,7 @@
 					}
 					$bot->reply($m);
 				} catch (\Exception $e) {
-					$bot->reply("Sorry, unable to check this route.");
+					$bot->reply("🤮 Sorry, unable to check this route: " . $e->getMessage());
 				}
 			};
 		}

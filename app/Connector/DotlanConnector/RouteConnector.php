@@ -30,8 +30,15 @@
                 Cache::put($cacheKey, $html, 20);
             }
 
-           /** @var DomNode $dom */
-            $dom = \pQuery::parseStr($html);
+			/** @var DomNode $dom */
+			$dom = \pQuery::parseStr($html);
+
+            if (stripos($html, "The following errors have occured") !== false ){
+				/** @var IQuery $er */
+            	$er = $dom->query("#navtools div.normal ul li");
+				throw new \Exception("Dotlan maps returned an error " . ($er->count() > 0 ? $er[0]->text() : "") );
+			}
+
 
             /** @var IQuery $r */
             $r = $dom->query("#navtools > table > tr");
