@@ -213,10 +213,15 @@
 							break;
 					}
 
+                    if (strpos($a, '{') !== false) {
+                        $bot->reply("You can omit { and } characters, they only mark that you are supposed to write something there.");
+                    }
+                    $a = str_replace(['{', '}'], '', $a);
+                    $b = str_replace(['{', '}'], '', $b);
 					/** @var RouteStep[] $systems */
 					$systems = $rc->checkRouteSafety($a, $b, $typeI);
 
-					$m = sprintf("🗺 Showing the %s route from %s to %s (%d jumps)", $typeS, ucfirst($a), ucfirst($b), count($systems));
+                    $m = sprintf("🗺 Showing the %s route from %s to %s (%d jumps)", $typeS, ucfirst($a), ucfirst($b), count($systems));
 					$sovs = [];
 					$ssmin = new RouteStep('', +1.0);
 					$ssmax = new RouteStep('', -1.0);
@@ -253,7 +258,6 @@
 
 					}
 					$m .= "\r\n\r\n 👉 " . implode("\r\n", $sys);
-//			$m .= "\r\n\r\n 👉 " . implode(" » ", $sys);
 					$m .= sprintf("\r\n\r\n 🛂 This route passes through the territories of %s (in route order)", implode(', ', array_unique($sovs)));
 					$m .= sprintf("\r\n\r\n 👮‍ The route's minimum security status is %1.1f in %s and maximum is %1.1f in %s", $ssmin->securityStatus, $ssmin->solarSystem, $ssmax->securityStatus, $ssmax->solarSystem);
 
@@ -265,6 +269,7 @@
 					}
 					$bot->reply($m);
 				} catch (\Exception $e) {
+				    Log::error($e->getMessage()." ".$e->getTraceAsString());
 					$bot->reply("🤮 Sorry, unable to check this route: " . $e->getMessage());
 				}
 			};

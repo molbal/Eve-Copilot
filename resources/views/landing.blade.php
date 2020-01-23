@@ -185,7 +185,7 @@
                                         <p>You can authenticate more users on this website and then add the characters
                                             to your chat via <code>Add character</code>.
                                             <br> After you added the characters you can refer to them using their names,
-                                            like <code>Switch to [character name]</code></p>
+                                            like <code>Switch to character name</code></p>
                                     </div>
                                     <div class="caption-button" data-animation="animated fadeInUp">
                                         <a href="#feature-multichar" class="button">Read more</a>
