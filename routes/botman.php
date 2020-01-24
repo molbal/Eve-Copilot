@@ -94,6 +94,7 @@
 	$botman->hears("deep scan", $intelService->thoroughScan());
 	$botman->hears("thorough scan", $intelService->thoroughScan());
 	$botman->hears("threat estimation", $intelService->thoroughScan());
+	$botman->hears("How elite is {targetName}", $intelService->howElite());
 
 
 	/**

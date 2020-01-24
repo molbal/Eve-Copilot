@@ -57,7 +57,12 @@ class RunDiscordBot extends Command
 		/** @var DiscordBot $discordController */
 		$discordController = resolve('App\Discord\DiscordBot');
 		Log::info("Created Discord Controller");
-		$discordController->handle();
+		try {
+			$discordController->handle();
+		}
+		catch (\Exception $e) {
+			Log::error("Discord bot stops: ".$e);
+		}
 		Log::info("Discord bot running over");
 		Cache::forget("DISCORD_RUNNING");
 

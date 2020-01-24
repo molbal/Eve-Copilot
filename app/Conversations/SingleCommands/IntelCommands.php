@@ -51,6 +51,35 @@
 		}
 
 		/**
+		 * @return Closure
+		 */
+		public function howElite() : Closure
+		{
+			return function (BotMan $bot, string $targetName) {
+
+				try {
+					$targetId = $this->rlp->getCharacterId($targetName);
+					if (Cache::has("quickcache-$targetName")) {
+						$ret = Cache::get("quickcache-$targetName");
+					} else {
+						$ret = file_get_contents("https://zkillboard.com/api/stats/characterID/$targetId/");
+						Cache::put("quickcache-$targetName", $ret, 30);
+					}
+					$ret = json_decode($ret);
+					$m = sprintf("😏 ELITE analysis for $targetName");
+					$m .= "\r\n";
+					$m .= sprintf("\r\n Kills efficiency: %d destroyed, %d lost, ratio: %1.1f%%", $ret->shipsDestroyed, $ret->shipsLost, ($ret->shipsDestroyed/max(1,$ret->shipsDestroyed+$ret->shipsLost))*100);
+					$m .= sprintf("\r\n Points efficiency: %d destroyed, %d lost, ratio: %1.1f%%", $ret->pointsDestroyed, $ret->pointsLost, ($ret->pointsDestroyed/max(1,$ret->pointsDestroyed+$ret->pointsLost))*100);
+					$m .= sprintf("\r\n ISK efficiency: %s ISK destroyed, %s ISK lost, ratio: %1.1f%%", number_format($ret->iskDestroyed, 0, ""," "), number_format($ret->iskLost, 0, ""," "), ($ret->iskDestroyed/max(1,$ret->iskDestroyed+$ret->iskLost))*100);
+
+					$bot->reply($m);
+				} catch (\Exception $e) {
+					$bot->reply("Sorry, can't check how elite this guy is. Probably there is a typo in its name or it is missing from zKillboard.".$e->getMessage()." ".$e->getFile()." ".$e->getLine());
+				}
+			};
+		}
+
+		/**
 		 * Identifies a character
 		 *
 		 * @return Closure
