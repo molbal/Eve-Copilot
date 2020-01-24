@@ -52,7 +52,7 @@ class RunDiscordBot extends Command
     		Log::info("Discord bot still running, not starting it again");
 			return;
 		}
-		Cache::put("DISCORD_BOT_RUNNING", true, 60);
+		Cache::put("DISCORD_BOT_RUNNING", true, 1);
 		Log::info("Starting Discord bot ");
 		/** @var DiscordBot $discordController */
 		$discordController = resolve('App\Discord\DiscordBot');

@@ -65,19 +65,35 @@
 		echo "DB maintenance Over";
 	});
 
-    /**
-     * Caches the cache and optimizes config and cache
-     */
-    Route::get("/maintenance/reset-cache/{secret}", function ($secret) {
-        if ($secret != env("MAINTENANCE_TOKEN")) {
-            abort(403, "Invalid maintenance token.");
-        }
+	/**
+	 * Caches the cache and optimizes config and cache
+	 */
+	Route::get("/maintenance/reset-cache/{secret}", function ($secret) {
+		if ($secret != env("MAINTENANCE_TOKEN")) {
+			abort(403, "Invalid maintenance token.");
+		}
 
-        \Illuminate\Support\Facades\Cache::forget("DISCORD_RUNNING");
-        Artisan::call("cache:clear");
-        Artisan::call("config:clear");
-        Artisan::call("route:clear");
-    });
+		\Illuminate\Support\Facades\Cache::forget("DISCORD_BOT_RUNNING");
+		Artisan::call("cache:clear");
+		Artisan::call("config:clear");
+		Artisan::call("route:clear");
+	});
+
+	/**
+	 * Caches the cache and optimizes config and cache
+	 */
+	Route::get("/maintenance/restart-discord-bot/{secret}", function ($secret) {
+		if ($secret != env("MAINTENANCE_TOKEN")) {
+			abort(403, "Invalid maintenance token.");
+		}
+
+		Log::info("Scheduling restarting discord bot, DISCORD_BOT_RESTART command set");
+		\Illuminate\Support\Facades\Cache::put("DISCORD_BOT_RESTART", true, 30);
+		Artisan::call("cache:clear");
+		Artisan::call("config:clear");
+		Artisan::call("route:clear");
+		`killall -u copilot php`;
+	});
 
 	/**
 	 * Caches the cache and optimizes config and cache

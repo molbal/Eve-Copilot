@@ -7,7 +7,8 @@
 	use App\Conversations\LinkCharacterConversationDiscord;
 	use App\Conversations\SetEmergencyContactConversation;
     use App\Conversations\SetHomeConversation;
-    use App\Conversations\SingleCommands\CharacterManagementCommands;
+	use App\Conversations\SetHomeConversationDiscord;
+	use App\Conversations\SingleCommands\CharacterManagementCommands;
     use App\Conversations\SingleCommands\EmergencyCommands;
     use App\Conversations\SingleCommands\IntelCommands;
     use App\Conversations\SingleCommands\LocationCommands;
@@ -70,6 +71,14 @@
 				$this->botman->listen();
 				$this->loop->addPeriodicTimer(60, function () {
 					Cache::put("DISCORD_BOT_RUNNING", true, 1);
+					if (Cache::has("DISCORD_BOT_RESTART")) {
+						Log::info("Restarting discord bot, DISCORD_BOT_RESTART command received.");
+						Cache::forget("DISCORD_BOT_RESTART");
+						$this->loop->stop();
+					}
+					else {
+						Log::info("Discord bot still running.");
+					}
 				});
 				$this->loop->run();
 			}
@@ -96,7 +105,7 @@
                 $bot->startConversation(new LinkCharacterConversationDiscord);
             });
             $this->botman->hears('Set home|New home', function (BotMan $bot) {
-                $bot->startConversation(new SetHomeConversation);
+                $bot->startConversation(new SetHomeConversationDiscord);
             });
             $this->botman->hears('New emergency contact|Set emergency contact', function (BotMan $bot) {
                 $bot->startConversation(new SetEmergencyContactConversation);
@@ -163,7 +172,7 @@
              * Introduction & fallback command
              */
             /** @var MiscCommands $miscCommands */
-//            $miscCommands = resolve('App\Conversations\SingleCommands\MiscCommands');
-//            $this->botman->hears("Hi|Hello|Yo|Sup|Hey|o7|o/|Oi", $miscCommands->sayHi());
+            $miscCommands = resolve('App\Conversations\SingleCommands\MiscCommands');
+            $this->botman->hears("co-pilot help|copilot help", $miscCommands->sayHi());
         }
     }

@@ -68,13 +68,11 @@
         private function askCitadelOrStation(): \Closure {
             return function (Answer $answer) {
                 try {
-
-                        if ($answer->getValue() === 'yes') {
-
-                            $stationType = "Is the new home a Station or an Upwell Structure?\r\nPlease respond with *station* or *structure*";
+                        if ($answer->getText() === 'yes') {
+                            $stationType = "Is the new home a Station or an Upwell Structure?\r\nPlease respond with `station` or `structure`";
                             $this->ask($stationType, $this->handleStationResponse());
                         } else {
-                            $this->say("Sure.");
+                            $this->say("Sure. You replied ".$answer->getText());
                         }
 
                 } catch (\Exception $e) {
@@ -88,16 +86,22 @@
          * @return \Closure
          */
         function handleStationResponse(): \Closure {
+			$this->attempts++;
 
             return function (Answer $answer2) {
                 try {
 					$this->newHomeType = $answer2->getText();
-					if (in_array(strtoupper($this->newHomeId), ["STATION","STRUCTURE"])) {
+					if (in_array(strtoupper($this->newHomeType), ["STATION","STRUCTURE"])) {
 						$this->say(sprintf("Sure. %s selected", ucfirst($answer2->getText())));
 						$this->askForStationName();
 					}
 					else {
-
+						$this->say("Please say `station` or `structure`, I don't understand what you said. ");
+						if ($this->attempts > 5) {
+							$this->say("Please start from the beginning, we could not get set a home in 5 tries.");
+							return;
+						}
+						$this->askCitadelOrStation();
 					}
                 } catch (\Exception $e) {
                     $this->say($e->getMessage());
@@ -113,7 +117,7 @@
 				return;
 			}
             try {
-                $getFullName = Question::create("Please paste  the full name of your home, for example 'Jita IV - Moon 4 - Caldari Navy Assembly Plant'");
+                $getFullName = "Please paste  the full name of your home, for example `Jita IV - Moon 4 - Caldari Navy Assembly Plant`";
                 $this->ask($getFullName, function (Answer $answer3) {
                     if ($answer3->getText() == "cancel") {
                         $this->say("Alright, cancelled.");
@@ -130,7 +134,7 @@
                             Log::info($e->getMessage());
                         }
                         if ($this->newHomeType == null) {
-                            $this->say("⚠ Could not find this station ($homeName). Please write cancel to cancel or try again and watch for typos");
+                            $this->say(sprintf("⚠ Could not find this station (_%s_). Please write `cancel` to cancel or try again and watch for typos", $homeName));
                             $this->askForStationName();
                         } else {
                             CharacterSettings::setSetting($this->charId, "HOME_ID", $this->newHomeId);
@@ -146,7 +150,7 @@
                             Log::info($e->getMessage());
                         }
                         if ($this->newHomeType == null) {
-                            $this->say("⚠ Could not find this structure ($homeName). Please write cancel to cancel or try again and watch for typos");
+                            $this->say(sprintf("⚠ Could not find this structure (_%s_). Please write cancel to cancel or try again and watch for typos", $homeName));
                             $this->askForStationName();
                         } else {
                             CharacterSettings::setSetting($this->charId, "HOME_ID", $this->newHomeId);
