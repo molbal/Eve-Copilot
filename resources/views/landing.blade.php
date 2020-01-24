@@ -507,6 +507,14 @@
                         <br>
                         <em>Data for this function is provided by <a href="https://zkillboard.com" target="_blank">zKillboard.</a></em>
                     </p>
+                    <h3>Elite check</h3>
+                    <small>
+                        <code>How elite is {Character Name}</code>
+                    </small>
+                    <p>
+                        This command checks how elite is the target: Kill, Point and ISK efficiency. <br>
+                        <em>This idea was requested by <a href="https://www.reddit.com/user/PieFlinger/" target="_blank" rel="nofollow">PieFlinger</a></em>
+                    </p>
                 </div>
             </div>
         </div>

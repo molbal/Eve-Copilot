@@ -74,7 +74,7 @@
 
 					$bot->reply($m);
 				} catch (\Exception $e) {
-					$bot->reply("Sorry, can't check how elite this guy is. Probably there is a typo in its name or it is missing from zKillboard.".$e->getMessage()." ".$e->getFile()." ".$e->getLine());
+					$bot->reply("Sorry, can't check how elite this guy is. Probably there is a typo in its name or it is missing from zKillboard.");
 				}
 			};
 		}
