@@ -16,7 +16,7 @@
     use BotMan\BotMan\Messages\Conversations\Conversation;
     use Illuminate\Support\Facades\Log;
 
-	class SetEmergencyContactConversation extends Conversation {
+	class SetEmergencyContactConversationDiscord extends Conversation {
 
         /** @var ResourceLookupService */
         protected $resourceLookup;
@@ -38,19 +38,16 @@
          */
         protected $newId;
 
+        /** @var int */
+        protected $attempts;
+
 
         public function confirmUser() {
-
+		$this->attemts = 0;
             try {
 
                 $question = ($this->previousId ? "Your previous emergency contact is  " . $this->previousName : " You don't have anyone set yet.");
-                $q = Question::create(sprintf("Would you like to set a new emergency contact for %s 🏠? %s", $this->charName, $question))
-                    ->callbackId("confirm_new_emergency_contact")
-                    ->addButtons([
-                        Button::create("Yes, set a new contact")->value("yes"),
-                        Button::create("No")->value("no"),
-                    ]);
-
+                $q = sprintf("Would you like to set a new emergency contact for %s 🏠? %s", $this->charName, $question);
                 return $this->ask($q, $this->askNewContactName());
 
             } catch (\Exception $e) {
@@ -65,18 +62,12 @@
         private function askNewContactName(): \Closure {
             return function (Answer $answer) {
                 try {
-
-                    if ($answer->isInteractiveMessageReply()) {
-                        if ($answer->getValue() === 'yes') {
-
-                            $askNameContact = Question::create("Please tell me the full name of your new contact.");
-                            $this->ask($askNameContact, $this->askForNewName());
-                        } else {
-                            $this->say("Sure.");
-                        }
-                    } else {
-                        $this->say("Please select a button instead of typing");
-                    }
+					if (strtolower($answer->getText()) === 'yes') {
+						$askNameContact = "Please tell me the full name of your new contact.";
+						$this->ask($askNameContact, $this->askForNewName());
+					} else {
+						$this->say("Alright, not touching this setting.");
+					}
                 } catch (\Exception $e) {
                     $this->say($e->getMessage());
                 }

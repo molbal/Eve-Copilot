@@ -6,7 +6,8 @@
     use App\Conversations\LinkCharacterConversation;
 	use App\Conversations\LinkCharacterConversationDiscord;
 	use App\Conversations\SetEmergencyContactConversation;
-    use App\Conversations\SetHomeConversation;
+	use App\Conversations\SetEmergencyContactConversationDiscord;
+	use App\Conversations\SetHomeConversation;
 	use App\Conversations\SetHomeConversationDiscord;
 	use App\Conversations\SingleCommands\CharacterManagementCommands;
     use App\Conversations\SingleCommands\EmergencyCommands;
@@ -92,8 +93,6 @@
 
 
         private function addCommands() {
-
-
             /**
              * Character management commands
              */
@@ -108,7 +107,7 @@
                 $bot->startConversation(new SetHomeConversationDiscord);
             });
             $this->botman->hears('New emergency contact|Set emergency contact', function (BotMan $bot) {
-                $bot->startConversation(new SetEmergencyContactConversation);
+                $bot->startConversation(new SetEmergencyContactConversationDiscord);
             });
 
 
