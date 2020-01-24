@@ -13,6 +13,7 @@ use App\Conversations\SingleCommands\MiscCommands;
 use App\Discord\DiscordBot;
 use BotMan\BotMan\BotMan;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
 
 class RunDiscordBot extends Command
@@ -47,10 +48,18 @@ class RunDiscordBot extends Command
      * @return mixed
      */
     public function handle() {
-        /** @var DiscordBot $discordController */
-        $discordController = resolve('App\Discord\DiscordBot');
-        Log::info("Created Discord Controller");
-        $discordController->handle();
+    	if (Cache::has("DISCORD_RUNNING")) {
+    		Log::info("Discord bot still running, not starting it again");
+			return;
+		}
+		Cache::forever("DISCORD_RUNNING", true);
+		Log::info("Starting Discord bot ");
+		/** @var DiscordBot $discordController */
+		$discordController = resolve('App\Discord\DiscordBot');
+		Log::info("Created Discord Controller");
+		$discordController->handle();
+		Log::info("Discord bot running over");
+		Cache::forget("DISCORD_RUNNING");
 
     }
 

@@ -270,7 +270,12 @@
 					$bot->reply($m);
 				} catch (\Exception $e) {
 				    Log::error($e->getMessage()." ".$e->getTraceAsString());
-					$bot->reply("🤮 Sorry, unable to check this route: " . $e->getMessage());
+				    try {
+						$bot->reply("🤮 Sorry, unable to check this route: " . $e->getMessage());
+					}
+					catch (\Exception $e) {
+				    	return;
+					}
 				}
 			};
 		}
