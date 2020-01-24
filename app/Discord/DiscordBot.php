@@ -4,7 +4,8 @@
     namespace App\Discord;
 
     use App\Conversations\LinkCharacterConversation;
-    use App\Conversations\SetEmergencyContactConversation;
+	use App\Conversations\LinkCharacterConversationDiscord;
+	use App\Conversations\SetEmergencyContactConversation;
     use App\Conversations\SetHomeConversation;
     use App\Conversations\SingleCommands\CharacterManagementCommands;
     use App\Conversations\SingleCommands\EmergencyCommands;
@@ -14,7 +15,9 @@
     use BotMan\BotMan\BotMan;
     use BotMan\BotMan\BotManFactory;
     use BotMan\BotMan\Drivers\DriverManager;
-    use React\EventLoop\Factory;
+	use Illuminate\Support\Facades\Cache;
+	use Illuminate\Support\Facades\Log;
+	use React\EventLoop\Factory;
 
     class DiscordBot {
 
@@ -55,17 +58,27 @@
 
             $discordBotmanFactory = new \JABirchall\BotMan\Drivers\Discord\Factory();
             $this->botman = $discordBotmanFactory->createForDiscord($config, $this->loop);
+
         }
 
 
         public function handle() {
 
-
             $this->addCommands();
-
             // Start listening
-            $this->botman->listen();
-            $this->loop->run();
+			try {
+				$this->botman->listen();
+				$this->loop->addPeriodicTimer(60, function () {
+					Cache::put("DISCORD_BOT_RUNNING", true, 1);
+				});
+				$this->loop->run();
+			}
+			catch (\Exception $e) {
+				Log::error("DISCORD_BOT_RUNNING error" . $e->getMessage(). " ".$e->getTraceAsString());
+				Cache::forget("DISCORD_BOT_RUNNING");
+			}
+
+
         }
 
 
@@ -80,7 +93,7 @@
             $this->botman->hears("Switch to {charName}", $charManagement->switchToCharacter());
             $this->botman->hears("My chars|My characters", $charManagement->listMyCharacters());
             $this->botman->hears('Link char|Link character|Add character|Add char', function (BotMan $bot) {
-                $bot->startConversation(new LinkCharacterConversation);
+                $bot->startConversation(new LinkCharacterConversationDiscord);
             });
             $this->botman->hears('Set home|New home', function (BotMan $bot) {
                 $bot->startConversation(new SetHomeConversation);
@@ -150,7 +163,7 @@
              * Introduction & fallback command
              */
             /** @var MiscCommands $miscCommands */
-            $miscCommands = resolve('App\Conversations\SingleCommands\MiscCommands');
-            $this->botman->hears("Hi|Hello|Yo|Sup|Hey|o7|o/|Oi", $miscCommands->sayHi());
+//            $miscCommands = resolve('App\Conversations\SingleCommands\MiscCommands');
+//            $this->botman->hears("Hi|Hello|Yo|Sup|Hey|o7|o/|Oi", $miscCommands->sayHi());
         }
     }

@@ -73,6 +73,7 @@
             abort(403, "Invalid maintenance token.");
         }
 
+        \Illuminate\Support\Facades\Cache::forget("DISCORD_RUNNING");
         Artisan::call("cache:clear");
         Artisan::call("config:clear");
         Artisan::call("route:clear");

@@ -48,11 +48,11 @@ class RunDiscordBot extends Command
      * @return mixed
      */
     public function handle() {
-    	if (Cache::has("DISCORD_RUNNING")) {
+    	if (Cache::has("DISCORD_BOT_RUNNING")) {
     		Log::info("Discord bot still running, not starting it again");
 			return;
 		}
-		Cache::forever("DISCORD_RUNNING", true);
+		Cache::put("DISCORD_BOT_RUNNING", true, 60);
 		Log::info("Starting Discord bot ");
 		/** @var DiscordBot $discordController */
 		$discordController = resolve('App\Discord\DiscordBot');
@@ -61,10 +61,11 @@ class RunDiscordBot extends Command
 			$discordController->handle();
 		}
 		catch (\Exception $e) {
+			Cache::forget("DISCORD_BOT_RUNNING");
 			Log::error("Discord bot stops: ".$e);
 		}
 		Log::info("Discord bot running over");
-		Cache::forget("DISCORD_RUNNING");
+		Cache::forget("DISCORD_BOT_RUNNING");
 
     }
 
