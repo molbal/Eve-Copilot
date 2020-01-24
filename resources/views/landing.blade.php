@@ -81,6 +81,10 @@
                                                                                  alt="."> Messenger</a></li>
                 <li><a href="http://t.me/eveonlinecopilot_bot" target="_blank"><img src="images/icons/telegram.png"
                                                                                     alt=""> Telegram</a></li>
+                <li><a href="https://discordapp.com/api/oauth2/authorize?client_id=669610629937496085&permissions=2048&scope=bot" target="_blank"><img src="images/icons/discord.png"
+                                                                                    alt=""> Discord</a></li>
+
+
             </ul>
         </nav>
     </div>
@@ -108,11 +112,11 @@
                 <p>Providing <strong>location &amp; navigation</strong>, <strong>intelligence</strong> and
                     <strong>emergency</strong> assistance.
                     <br>
-                    On <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
+                    On <strong>Discord</strong>, <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
                 <p><strong>Now available in open testing.</strong></p>
                 <div class="btn-group">
                     <a href="#activate-copilot" class="btn button white">Get started</a>
-                    <a href="#features-summary" class="btn button white">See functions</a>
+                    <a href="#features-summary" class="btn button white">See functions</a>í
                 </div>
             </div>
         </div>
@@ -158,7 +162,7 @@
                         <img src="images/eve/tempest.png" alt="">
                     </div>
                     <h4>3<sup>rd</sup> step</h4>
-                    <p>Open a conversation (<a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook
+                    <p>Open a conversation (<a href="https://discordapp.com/api/oauth2/authorize?client_id=669610629937496085&permissions=2048&scope=bot" class="btn-link">Discord</a>, <a class="btn-link" href="https://m.me/eveonlinecopilot" target="_blank">Facebook
                             Messenger</a> or <a class="btn-link" href="http://t.me/eveonlinecopilot_bot"
                                                 target="_blank">Telegram</a>) and say
                         <br> <code>Add character</code></p>
@@ -544,9 +548,11 @@
                     <p>
                         The co-pilot briefly introduces itself.
                     </p>
+                    <p><em>Note: on Discord you can access this command with <code>copilot help</code></em></p>
 
                     <h3>Clarification request</h3>
                     <p>When the co-pilot can not understand your message, it will ask you to check for typos and link this page.</p>
+                    <p><em>Note: This does not work on Discord</em></p>
                 </div>
             </div>
         </div>
@@ -819,8 +825,5 @@
 
 
 </script>
-
 </body>
-
 </html>
-<!-- https://discordapp.com/api/oauth2/authorize?client_id=669610629937496085&permissions=2048&scope=bot -->
