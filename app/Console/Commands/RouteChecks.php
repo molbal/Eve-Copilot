@@ -10,6 +10,7 @@
     use Illuminate\Console\Command;
     use Illuminate\Support\Facades\DB;
     use Illuminate\Support\Facades\Log;
+    use JABirchall\BotMan\Drivers\Discord\DiscordDriver;
     use mysql_xdevapi\Exception;
 
     class RouteChecks extends Command {
@@ -72,7 +73,7 @@
                 if ($loc->solar_system_id == $entry->TARGET_SYS_ID) {
                     /** @var BotMan $bot */
                     $bot = resolve("botman");
-                    $driver = $entry->CHAT_TYPE == 'telegram' ? TelegramDriver::class : FacebookDriver::class;
+                    $driver = $this->getDriver($entry);
                     $hours = floor($entry->diff / 3600);
                     $mins = floor($entry->diff / 60 % 60);
                     $secs = floor($entry->diff % 60);
@@ -90,6 +91,21 @@
                 }
             } catch (\Exception $e) {
                 Log::error($e . " " . $e->getTraceAsString());
+            }
+        }
+
+        /**
+         * @param $entry
+         * @return string
+         */
+        private function getDriver($entry): string {
+            switch ($entry->CHAT_TYPE) {
+                case 'telegram':
+                    return TelegramDriver::class;
+                case 'fb-messenger':
+                    return FacebookDriver::class;
+                case 'discord':
+                    return DiscordDriver::class;
             }
         }
     }

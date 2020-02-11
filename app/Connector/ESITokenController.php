@@ -56,7 +56,7 @@
             ]);
 
             curl_setopt($ch,CURLOPT_VERBOSE ,true);
-            curl_setopt($ch,CURLOPT_STDERR ,fopen('./curl-token.log', 'w+'));
+            curl_setopt($ch,CURLOPT_STDERR ,fopen('./curl-token-'.$this->charId.'.log', 'w+'));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
             $esiResponse = curl_exec($ch);
