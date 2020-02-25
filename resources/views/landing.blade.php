@@ -113,10 +113,12 @@
                     <strong>emergency</strong> assistance.
                     <br>
                     On <strong>Discord</strong>, <strong>Facebook Messenger</strong> and <strong>Telegram</strong>.</p>
-                <p><strong>Now available in open testing.</strong></p>
+                <p><strong>Now available in open testing.</strong>
+                <div class="alert alert-danger">The Discord both is now turned off, because it used too much server resources and this affected other services on this server.</div>
+                </p>
                 <div class="btn-group">
                     <a href="#activate-copilot" class="btn button white">Get started</a>
-                    <a href="#features-summary" class="btn button white">See functions</a>í
+                    <a href="#features-summary" class="btn button white">See functions</a>
                 </div>
             </div>
         </div>
